@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Personalizaciones adicionales */
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+
+/* Fuente personalizada similar al diseño */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+body {
+    font-family: 'Inter', sans-serif;
+}
