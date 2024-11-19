@@ -115,10 +115,6 @@
 
 
 
-
-
-
-
         <!-- Sección Misión y Visión -->
     <section id="mision-vision" class="py-32 bg-white">
         <div class="container mx-auto px-12 lg:px-24 grid grid-cols-1 md:grid-cols-2 gap-20">
@@ -151,46 +147,57 @@
 
 
     <!-- Sección de Contacto -->
-    <section class="w-full max-w-7xl flex justify-end px-6">
-        <!-- Contenedor del formulario con degradado -->
-        <div class="bg-gradient-to-br from-gray-100 to-gray-200 p-10 rounded-xl shadow-lg w-full max-w-md">
-            <!-- Título y descripción -->
-            <h2 class="text-3xl font-semibold text-gray-800 mb-4">Lorem ipsum</h2>
-            <p class="text-gray-600 mb-8 leading-relaxed">Lorem ipsum dolor sit amet consectetur adipiscing elit tortor eu dolorol egestas morbi sem vulputate etiam facilisis pellentesque ut quis.</p>
-
-            <!-- Formulario -->
-            <form class="grid grid-cols-1 gap-4">
-                <!-- Campos del formulario en dos columnas -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
-                        <label for="name" class="block text-gray-700 font-medium mb-2">Nombre</label>
-                        <input type="text" id="name" placeholder="Ingresar Nombre" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400">
+    <section id="contacto" class="w-full flex justify-center items-center py-40 bg-gray-100 relative min-h-screen">
+        <!-- Imagen de fondo -->
+        <div class="absolute inset-0 w-3/4 bg-cover bg-center" style="background-image: url('assets/contact.png');"></div>
+        <!-- Contenedor del formulario -->
+        <div class="relative w-full max-w-7xl flex justify-end">
+            <div class="bg-white p-10 rounded-xl shadow-lg w-full max-w-lg">
+                <!-- Título y descripción -->
+                <h2 class="text-4xl font-bold text-black mb-4">Cotizaciones<br> de Servicios</h2>
+                <p class="text-gray-700 mb-8 leading-relaxed">
+                    Por favor sírvase llenar el siguiente formulario para poder ayudarlo de la mejor manera y llevar su proyecto al siguiente nivel.
+                </p>
+                <!-- Formulario -->
+                <form class="grid grid-cols-1 gap-6">
+                    <!-- Campos del formulario en dos columnas -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label for="name" class="block text-gray-800 font-medium mb-2">Nombre</label>
+                            <input type="text" id="name" placeholder="Ingresar Nombre" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-gray-800 font-medium mb-2">Email</label>
+                            <input type="email" id="email" placeholder="Ingresar Email" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400">
+                        </div>
+                        <div>
+                            <label for="phone" class="block text-gray-800 font-medium mb-2">Teléfono/Celular</label>
+                            <input type="text" id="phone" placeholder="Ingresar Teléfono" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400">
+                        </div>
+                        <div>
+                            <label for="company" class="block text-gray-800 font-medium mb-2">Empresa</label>
+                            <input type="text" id="company" placeholder="Ingresar Empresa" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400">
+                        </div>
                     </div>
+                    <!-- Campo de mensaje -->
                     <div>
-                        <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
-                        <input type="email" id="email" placeholder="Ingresar Email" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400">
+                        <label for="message" class="block text-gray-800 font-medium mb-2">Déjanos un mensaje...</label>
+                        <textarea id="message" placeholder="Ingrese la información que considere relevante para realizar una mejor cotización" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400"></textarea>
                     </div>
-                    <div>
-                        <label for="phone" class="block text-gray-700 font-medium mb-2">Teléfono</label>
-                        <input type="text" id="phone" placeholder="Ingresar Teléfono" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400">
+                    <!-- Botón de enviar -->
+                    <div class="flex justify-start mt-4">
+                        <button type="submit" class="bg-black text-white font-semibold py-3 px-8 rounded-full hover:bg-gray-700 transition-all">
+                            Enviar
+                        </button>
                     </div>
-                    <div>
-                        <label for="company" class="block text-gray-700 font-medium mb-2">Empresa</label>
-                        <input type="text" id="company" placeholder="Ingresar Empresa" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400">
-                    </div>
-                </div>
-                <!-- Campo de mensaje -->
-                <div>
-                    <label for="message" class="block text-gray-700 font-medium mb-2">Déjanos un mensaje...</label>
-                    <textarea id="message" placeholder="Ingresar mensaje" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400"></textarea>
-                </div>
-                <!-- Botón de enviar -->
-                <div class="flex justify-start mt-4">
-                    <button type="submit" class="bg-gray-800 text-white font-semibold py-3 px-8 rounded-lg hover:bg-gray-700 transition-all">Enviar</button>
-                </div>
-            </form>
+                </form>
+            </div>
         </div>
     </section>
+
+
+
+
 
     <!-- Footer -->
     <footer class="w-full max-w-4xl mx-auto text-gray-800 mt-16">
