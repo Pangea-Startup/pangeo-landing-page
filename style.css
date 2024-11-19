@@ -2,14 +2,62 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Personalizaciones adicionales */
+/* Importar la fuente Raleway */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap');
+
+/* Fuente general */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Raleway', sans-serif;
 }
 
+/* Hero Section Background */
+.hero-background {
+    background-image: url('assets/fondo-pangeo.png'); /* Ruta de la imagen de fondo */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: brightness(30%); /* Oscurece solo la imagen de fondo */
+    z-index: 1;
+}
 
-/* Fuente personalizada similar al diseño */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
-body {
-    font-family: 'Inter', sans-serif;
+/* Hero Section */
+.hero-section .text-center {
+    position: relative;
+    z-index: 10; /* El contenido estará siempre sobre la imagen */
+}
+
+/* Estilo para títulos */
+h1 {
+    font-size: 60px; /* Tamaño para títulos */
+    font-weight: 600; /* Bold */
+}
+
+/* Estilo para subtítulos */
+.subtitle {
+    font-size: 48px; /* Tamaño para subtítulos */
+    font-weight: 600; /* Semibold */
+}
+
+/* Subtítulos específicos en Hero */
+.hero-subtitle {
+    font-size: 30px; /* Tamaño específico */
+    font-weight: 300; /* Medium */
+}
+
+/* Texto general */
+p, a, .content-text {
+    font-size: 18px; /* Texto general */
+    font-weight: 400; /* Regular */
+}
+
+/* Opciones de navegación */
+nav a {
+    font-size: 22px; /* Tamaño del texto de la navegación */
+    color: white; /* Blanco por defecto */
+    font-weight: 400; /* Semibold */
+    transition: color 0.2s ease-in-out;
+}
+
+nav a:hover {
+    color: #d1d5db; /* Gris claro personalizado para hover */
 }
