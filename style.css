@@ -20,6 +20,23 @@ body {
     z-index: 1;
 }
 
+
+.title-with-bar h2 {
+    position: relative;
+    padding-left: 20px; /* Espaciado para la barrita */
+}
+
+.title-with-bar h2::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 6px; /* Grosor de la barrita */
+    height: 100%; /* Altura igual al título */
+    background-color: #38b2ac; /* Color de la barrita */
+    border-radius: 1px; /* Opcional: bordes redondeados */
+}
+
 /* Hero Section */
 .hero-section .text-center {
     position: relative;
