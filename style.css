@@ -12,12 +12,20 @@ body {
 
 /* Hero Section Background */
 .hero-background {
-    background-image: url('assets/fondo-pangeo.png'); /* Ruta de la imagen de fondo */
+    background-image: url('assets/fondo-pangeo.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    filter: brightness(30%); /* Oscurece solo la imagen de fondo */
+    filter: brightness(30%);
+    position: absolute;
+    inset: 0;
     z-index: 1;
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    overflow: hidden; /* Para asegurar que los elementos no se desborden */
 }
 
 
@@ -41,6 +49,54 @@ body {
 .hero-section .text-center {
     position: relative;
     z-index: 10; /* El contenido estará siempre sobre la imagen */
+}
+
+/* Estilo para títulos */
+.hero-section h1 {
+    font-size: clamp(36px, 5vw, 60px); /* Mínimo 36px, preferido 5vw, máximo 60px */
+    font-weight: 600;
+    color: white;
+    line-height: 1.2;
+}
+
+/* Subtítulos específicos en Hero */
+.hero-subtitle {
+    font-size: clamp(16px, 2vw, 24px); /* Mínimo 16px, preferido 2vw, máximo 24px */
+    font-weight: 300;
+    color: white;
+    margin-bottom: 1.5rem;
+    line-height: 1.4; /* Ajusta la separación entre líneas */
+}
+
+
+/* Botón del Hero */
+.btn-hero {
+    font-size: clamp(14px, 1.5vw, 18px);
+    padding: 0.75rem 1.5rem;
+    background-color: white;
+    color: #1a202c;
+    font-weight: 600;
+    border-radius: 9999px; /* Clase 'rounded-full' */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.2s ease-in-out;
+}
+
+.btn-hero:hover {
+    background-color: #f7fafc; /* Cambia el color al hacer hover */
+}
+
+/* Animación de entrada */
+.hero-content {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease-in-out forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Estilo para títulos */
@@ -77,4 +133,38 @@ nav a {
 
 nav a:hover {
     color: #d1d5db; /* Gris claro personalizado para hover */
+}
+
+
+/* Menú móvil oculto por defecto */
+#mobile-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%; /* Debajo del header */
+    left: 0;
+    background-color: #1a202c; /* Color del menú desplegable */
+    width: 100%; /* Ancho completo */
+    z-index: 20;
+}
+
+/* Mostrar menú cuando se active */
+#mobile-menu.show {
+    display: block; /* Mostrar cuando la clase 'show' está activa */
+}
+
+/* Botón de hamburguesa */
+#menu-toggle {
+    cursor: pointer;
+}
+
+/* Ocultar menú móvil en pantallas grandes */
+@media (min-width: 768px) {
+    #mobile-menu {
+        display: flex;
+        position: relative;
+        background-color: transparent;
+        flex-direction: row;
+        width: auto;
+    }
 }

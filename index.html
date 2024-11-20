@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pangea Landing Page</title>
+    <title>Pangeo Landing Page</title>
     <!-- Tailwind CSS CDN -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <!-- Estilos personalizados -->
@@ -18,29 +18,36 @@
             <div>
                 <img src="assets/Logo 4.png" alt="Logo" class="h-10 w-auto">
             </div>
+            <!-- Toggle Button for Mobile -->
+            <button id="menu-toggle" class="block md:hidden focus:outline-none">
+                <svg class="h-8 w-8 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
             <!-- Navigation -->
-            <nav class="space-x-10">
-                <a href="#inicio" class="hover:text-gray-300 transition-colors duration-200">Inicio</a>
-                <a href="#servicios" class="hover:text-gray-300 transition-colors duration-200">Servicios</a>
-                <a href="#nosotros" class="hover:text-gray-300 transition-colors duration-200">Nosotros</a>
-                <a href="#contacto" class="hover:text-gray-300 transition-colors duration-200">Contacto</a>
+            <nav id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-black md:bg-transparent md:relative md:flex md:items-center md:space-x-10">
+                <a href="#inicio" class="block md:inline-block text-white hover:text-gray-300 transition-colors duration-200 px-4 py-2">Inicio</a>
+                <a href="#servicios" class="block md:inline-block text-white hover:text-gray-300 transition-colors duration-200 px-4 py-2">Servicios</a>
+                <a href="#nosotros" class="block md:inline-block text-white hover:text-gray-300 transition-colors duration-200 px-4 py-2">Nosotros</a>
+                <a href="#contacto" class="block md:inline-block text-white hover:text-gray-300 transition-colors duration-200 px-4 py-2">Contacto</a>
             </nav>
         </div>
     </header>
+
+
 
     <!-- Hero Section -->
     <section class="hero-section flex items-center justify-center h-screen relative">
         <!-- Background Image -->
         <div class="hero-background absolute inset-0"></div>
         <!-- Content -->
-        <div class="text-center px-4 relative z-10">
+        <div class="text-center px-4 relative z-10 hero-content">
             <h1 class="mb-4 text-white">SOLUCIONES INNOVADORAS <br>PARA TERRENOS DESAFIANTES</h1>
             <p class="hero-subtitle text-white">Ingeniería de confianza para un futuro seguro</p>
-            <a href="#conozca" class="inline-block mt-6 px-6 py-3 bg-white text-gray-800 font-semibold rounded-full shadow-md hover:bg-gray-100 transition">
-                Conozca Pangea →
-            </a>
+            <a href="#conozca" class="inline-block mt-6 btn-hero">Conozca Pangea →</a>
         </div>
     </section>
+
 
     
 
@@ -58,8 +65,8 @@
                 </div>
                 <!-- Descripción del servicio -->
                 <div class="w-full md:w-3/4 md:pl-8">
-                    <h3 class="text-2xl font-semibold text-gray-800 mb-2">Servicio 1</h3>
-                    <p class="text-gray-600 leading-relaxed">Lorem ipsum dolor sit amet consectetur. Leo purus ut fermentum vestibulum habitant arcu facilisi. Lacinia enim imperdiet et leo adipiscing. Magnis mauris ut mauris metus ac. Vel consectetur sed rhoncus ut.</p>
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-2">Geotecnia</h3>
+                    <p class="text-gray-600 leading-relaxed">Ofrecemos soluciones especializadas en geotecnia para garantizar la seguridad y eficiencia de sus proyectos de ingeniería. Con experiencia en estudios de suelos, diseño de cimentaciones y modelamiento avanzado, acompañamos cada fase de su proyecto, desde la exploración inicial hasta su fase final de construcción.</p>
                 </div>
             </div>
             <hr class="my-8 border-gray-300">
@@ -72,8 +79,8 @@
                 </div>
                 <!-- Descripción del servicio -->
                 <div class="w-full md:w-3/4 md:pl-8">
-                    <h3 class="text-2xl font-semibold text-gray-800 mb-2">Servicio 2</h3>
-                    <p class="text-gray-600 leading-relaxed">Lorem ipsum dolor sit amet consectetur. Leo purus ut fermentum vestibulum habitant arcu facilisi. Lacinia enim imperdiet et leo adipiscing. Magnis mauris ut mauris metus ac. Vel consectetur sed rhoncus ut.</p>
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-2">Geología</h3>
+                    <p class="text-gray-600 leading-relaxed">Apoyamos sus proyectos con un análisis geológico detallado y preciso, esencial para anticipar y gestionar condiciones del terreno. Nuestra experiencia en evaluación geomecánica, mapeo geológico y análisis de estabilidad en taludes garantiza decisiones informadas y seguras en cada etapa de desarrollo.</p>
                 </div>
             </div>
             <hr class="my-8 border-gray-300">
@@ -86,8 +93,21 @@
                 </div>
                 <!-- Descripción del servicio -->
                 <div class="w-full md:w-3/4 md:pl-8">
-                    <h3 class="text-2xl font-semibold text-gray-800 mb-2">Servicio 3</h3>
-                    <p class="text-gray-600 leading-relaxed">Lorem ipsum dolor sit amet consectetur. Leo purus ut fermentum vestibulum habitant arcu facilisi. Lacinia enim imperdiet et leo adipiscing. Magnis mauris ut mauris metus ac. Vel consectetur sed rhoncus ut.</p>
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-2">Geofísica y sismología</h3>
+                    <p class="text-gray-600 leading-relaxed">Aplicamos técnicas geofísicas innovadoras para obtener una visión detallada de la estratigrafía del subsuelo y proporcionamos datos claves para el diseño geotécnico. A través de ensayos geofísicos y su interpretación, combinamos métodos indirectos que permiten caracterizar el terreno con precisión, optimizando el diseño y la seguridad de las infraestructuras.</p>
+                </div>
+            </div>
+            <hr class="my-8 border-gray-300">
+
+            <div class="flex flex-col md:flex-row items-start">
+                <!-- Imagen del servicio -->
+                <div class="w-full md:w-1/4 flex justify-center md:justify-start mb-4 md:mb-0">
+                    <div class="bg-gray-300 w-32 h-32 rounded-md"></div> <!-- Placeholder para la imagen -->
+                </div>
+                <!-- Descripción del servicio -->
+                <div class="w-full md:w-3/4 md:pl-8">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-2">Capacitaciones in-house</h3>
+                    <p class="text-gray-600 leading-relaxed">Nuestras capacitaciones permiten fortalecer los conocimientos y aptitudes que requieren su equipo de trabajo mediante programas especializados y personalizados diseñados exclusivamente para atender el objetivo específico de su organización. Nuestros servicios están asociados a:</p>
                 </div>
             </div>
         </div>
@@ -218,13 +238,13 @@
         </div>
 
         <!-- Línea Divisora -->
-        <hr class="border-gray-300 mb-8">
+        <hr class="border-gray-300 mb-10">
 
         <!-- Sección Central del Footer -->
         <div class="grid grid-cols-1 md:grid-cols-3 text-center md:text-left items-center mb-8">
             <!-- Logo -->
             <div class="flex justify-center md:justify-start mb-4 md:mb-0">
-                <span class="text-2xl font-semibold">Logo</span>
+                <img src="assets/Logo-1.png" alt="Logo Pangea" class="h-10 w-auto">
             </div>
             <!-- Enlaces de Navegación -->
             <div class="flex justify-center space-x-8 font-medium">
@@ -244,11 +264,11 @@
         </div>
 
         <!-- Línea Divisora -->
-        <hr class="border-gray-300 mb-4">
+        <hr class="border-gray-300 mb-6">
 
         <!-- Copyright -->
         <div class="text-center text-sm text-gray-600">
-            © 2024 Pangea
+            Copyright © 2024 Pangeo
         </div>
     </footer>
 
