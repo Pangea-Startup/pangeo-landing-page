@@ -2,14 +2,169 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Personalizaciones adicionales */
+/* Importar la fuente Raleway */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap');
+
+/* Fuente general */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Raleway', sans-serif;
+}
+
+/* Hero Section Background */
+.hero-background {
+    background-image: url('assets/fondo-pangeo.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: brightness(30%);
+    position: absolute;
+    inset: 0;
+    z-index: 1;
 }
 
 
-/* Fuente personalizada similar al diseño */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
-body {
-    font-family: 'Inter', sans-serif;
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    overflow: hidden; /* Para asegurar que los elementos no se desborden */
+}
+
+
+.title-with-bar h2 {
+    position: relative;
+    padding-left: 20px; /* Espaciado para la barrita */
+}
+
+.title-with-bar h2::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 6px; /* Grosor de la barrita */
+    height: 100%; /* Altura igual al título */
+    background-color: #38b2ac; /* Color de la barrita */
+    border-radius: 1px; /* Opcional: bordes redondeados */
+}
+
+/* Hero Section */
+.hero-section .text-center {
+    position: relative;
+    z-index: 10; /* El contenido estará siempre sobre la imagen */
+}
+
+/* Estilo para títulos */
+.hero-section h1 {
+    font-size: clamp(24px, 5vw, 60px); /* Mínimo 36px, preferido 5vw, máximo 60px */
+    font-weight: 600;
+    color: white;
+    line-height: 1.2;
+}
+
+/* Subtítulos específicos en Hero */
+.hero-subtitle {
+    font-size: clamp(16px, 3vw, 30px); /* Mínimo 16px, preferido 2vw, máximo 24px */
+    font-weight: 300;
+    color: white;
+    margin-bottom: 1.5rem;
+    line-height: 1.4; /* Ajusta la separación entre líneas */
+}
+
+
+/* Botón del Hero */
+.btn-hero {
+    font-size: clamp(14px, 1.5vw, 18px);
+    padding: 0.75rem 1.5rem;
+    background-color: white;
+    color: #1a202c;
+    font-weight: 600;
+    border-radius: 9999px; /* Clase 'rounded-full' */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.2s ease-in-out;
+}
+
+.btn-hero:hover {
+    background-color: #f7fafc; /* Cambia el color al hacer hover */
+}
+
+/* Animación de entrada */
+.hero-content {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease-in-out forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Estilo para títulos */
+h1 {
+    font-size: 60px; /* Tamaño para títulos */
+    font-weight: 600; /* Bold */
+}
+
+/* Estilo para subtítulos */
+.subtitle {
+    font-size: 48px; /* Tamaño para subtítulos */
+    font-weight: 600; /* Semibold */
+}
+
+
+/* Texto general */
+p, a, .content-text {
+    font-size: 18px; /* Texto general */
+    font-weight: 400; /* Regular */
+}
+
+/* Opciones de navegación */
+nav a {
+    font-size: 22px; /* Tamaño del texto de la navegación */
+    color: white; /* Blanco por defecto */
+    font-weight: 400; /* Semibold */
+    transition: color 0.2s ease-in-out;
+}
+
+nav a:hover {
+    color: #d1d5db; /* Gris claro personalizado para hover */
+}
+
+
+/* Menú móvil oculto por defecto */
+#mobile-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%; /* Debajo del header */
+    left: 0;
+    background-color: #1a202c; /* Color del menú desplegable */
+    width: 100%; /* Ancho completo */
+    z-index: 20;
+}
+
+/* Mostrar menú cuando se active */
+#mobile-menu.show {
+    display: block; /* Mostrar cuando la clase 'show' está activa */
+}
+
+/* Botón de hamburguesa */
+#menu-toggle {
+    cursor: pointer;
+}
+
+
+
+/* Ocultar menú móvil en pantallas grandes */
+@media (min-width: 768px) {
+    #mobile-menu {
+        display: flex;
+        position: relative;
+        background-color: transparent;
+        flex-direction: row;
+        width: auto;
+    }
+
 }

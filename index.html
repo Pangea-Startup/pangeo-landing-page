@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pangea Landing Page</title>
+    <title>Pangeo Landing Page</title>
     <!-- Tailwind CSS CDN -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Estilos personalizados -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-gray-100 font-sans leading-normal tracking-normal">
@@ -14,26 +15,39 @@
     <header class="bg-transparent fixed w-full top-0 z-10">
         <div class="container mx-auto flex justify-between items-center py-6 px-8">
             <!-- Logo -->
-            <div class="text-2xl font-semibold text-gray-800">Logo</div>
+            <div>
+                <img src="assets/Logo 4.png" alt="Logo" class="h-12 w-auto">
+            </div>
+            <!-- Toggle Button for Mobile -->
+            <button id="menu-toggle" class="block md:hidden focus:outline-none">
+                <svg class="h-8 w-8 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
             <!-- Navigation -->
-            <nav class="space-x-10">
-                <a href="#inicio" class="text-gray-600 hover:text-gray-800 transition-colors duration-200">Inicio</a>
-                <a href="#servicios" class="text-gray-600 hover:text-gray-800 transition-colors duration-200">Servicios</a>
-                <a href="#nosotros" class="text-gray-600 hover:text-gray-800 transition-colors duration-200">Nosotros</a>
-                <a href="#contacto" class="text-gray-600 hover:text-gray-800 transition-colors duration-200">Contacto</a>
+            <nav id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-black md:bg-transparent md:relative md:flex md:items-center md:space-x-10">
+                <a href="#inicio" class="block md:inline-block text-white hover:text-gray-300 transition-colors duration-200 px-4 py-2">Inicio</a>
+                <a href="#servicios" class="block md:inline-block text-white hover:text-gray-300 transition-colors duration-200 px-4 py-2">Servicios</a>
+                <a href="#nosotros" class="block md:inline-block text-white hover:text-gray-300 transition-colors duration-200 px-4 py-2">Nosotros</a>
+                <a href="#contacto" class="block md:inline-block text-white hover:text-gray-300 transition-colors duration-200 px-4 py-2">Contacto</a>
             </nav>
         </div>
     </header>
 
+
+
     <!-- Hero Section -->
-    <section class="flex items-center justify-center h-screen bg-gray-300" style="background-image: url('your-image-url.jpg'); background-size: cover; background-position: center;">
-        <div class="text-center px-4">
-            <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Un equipo dedicado <br> a hacer crecer su empresa</h1>
-            <a href="#conozca" class="inline-block mt-6 px-6 py-3 bg-white text-gray-800 font-semibold rounded-full shadow-md hover:bg-gray-100 transition">
-                Conozca Pangea →
-            </a>
+    <section class="hero-section flex items-center justify-center h-screen relative">
+        <!-- Background Image -->
+        <div class="hero-background absolute inset-0"></div>
+        <!-- Content -->
+        <div class="text-center px-4 relative z-10 hero-content">
+            <h1 class="mb-4 text-white">SOLUCIONES INNOVADORAS <br>PARA TERRENOS DESAFIANTES</h1>
+            <p class="hero-subtitle text-white">Ingeniería de confianza para un futuro seguro</p>
+            <a href="#conozca" class="inline-block mt-6 btn-hero">Conozca Pangeo →</a>
         </div>
     </section>
+
 
     
 
@@ -51,8 +65,8 @@
                 </div>
                 <!-- Descripción del servicio -->
                 <div class="w-full md:w-3/4 md:pl-8">
-                    <h3 class="text-2xl font-semibold text-gray-800 mb-2">Servicio 1</h3>
-                    <p class="text-gray-600 leading-relaxed">Lorem ipsum dolor sit amet consectetur. Leo purus ut fermentum vestibulum habitant arcu facilisi. Lacinia enim imperdiet et leo adipiscing. Magnis mauris ut mauris metus ac. Vel consectetur sed rhoncus ut.</p>
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-2">Geotecnia</h3>
+                    <p class="text-gray-600 leading-relaxed">Ofrecemos soluciones especializadas en geotecnia para garantizar la seguridad y eficiencia de sus proyectos de ingeniería. Con experiencia en estudios de suelos, diseño de cimentaciones y modelamiento avanzado, acompañamos cada fase de su proyecto, desde la exploración inicial hasta su fase final de construcción.</p>
                 </div>
             </div>
             <hr class="my-8 border-gray-300">
@@ -65,8 +79,8 @@
                 </div>
                 <!-- Descripción del servicio -->
                 <div class="w-full md:w-3/4 md:pl-8">
-                    <h3 class="text-2xl font-semibold text-gray-800 mb-2">Servicio 2</h3>
-                    <p class="text-gray-600 leading-relaxed">Lorem ipsum dolor sit amet consectetur. Leo purus ut fermentum vestibulum habitant arcu facilisi. Lacinia enim imperdiet et leo adipiscing. Magnis mauris ut mauris metus ac. Vel consectetur sed rhoncus ut.</p>
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-2">Geología</h3>
+                    <p class="text-gray-600 leading-relaxed">Apoyamos sus proyectos con un análisis geológico detallado y preciso, esencial para anticipar y gestionar condiciones del terreno. Nuestra experiencia en evaluación geomecánica, mapeo geológico y análisis de estabilidad en taludes garantiza decisiones informadas y seguras en cada etapa de desarrollo.</p>
                 </div>
             </div>
             <hr class="my-8 border-gray-300">
@@ -79,67 +93,131 @@
                 </div>
                 <!-- Descripción del servicio -->
                 <div class="w-full md:w-3/4 md:pl-8">
-                    <h3 class="text-2xl font-semibold text-gray-800 mb-2">Servicio 3</h3>
-                    <p class="text-gray-600 leading-relaxed">Lorem ipsum dolor sit amet consectetur. Leo purus ut fermentum vestibulum habitant arcu facilisi. Lacinia enim imperdiet et leo adipiscing. Magnis mauris ut mauris metus ac. Vel consectetur sed rhoncus ut.</p>
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-2">Geofísica y sismología</h3>
+                    <p class="text-gray-600 leading-relaxed">Aplicamos técnicas geofísicas innovadoras para obtener una visión detallada de la estratigrafía del subsuelo y proporcionamos datos claves para el diseño geotécnico. A través de ensayos geofísicos y su interpretación, combinamos métodos indirectos que permiten caracterizar el terreno con precisión, optimizando el diseño y la seguridad de las infraestructuras.</p>
+                </div>
+            </div>
+            <hr class="my-8 border-gray-300">
+
+            <div class="flex flex-col md:flex-row items-start">
+                <!-- Imagen del servicio -->
+                <div class="w-full md:w-1/4 flex justify-center md:justify-start mb-4 md:mb-0">
+                    <div class="bg-gray-300 w-32 h-32 rounded-md"></div> <!-- Placeholder para la imagen -->
+                </div>
+                <!-- Descripción del servicio -->
+                <div class="w-full md:w-3/4 md:pl-8">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-2">Capacitaciones in-house</h3>
+                    <p class="text-gray-600 leading-relaxed">Nuestras capacitaciones permiten fortalecer los conocimientos y aptitudes que requieren su equipo de trabajo mediante programas especializados y personalizados diseñados exclusivamente para atender el objetivo específico de su organización. Nuestros servicios están asociados a:</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Sección Nosotros -->
-    <section id="nosotros" class="w-full max-w-7xl mx-auto px-6 py-16 flex flex-col md:flex-row items-center space-y-8 md:space-y-0 md:space-x-8">
-    <!-- Contenedor de texto -->
-    <div class="w-full md:w-1/2">
-        <h2 class="text-4xl font-semibold text-gray-800 mb-4">Nosotros</h2>
-        <p class="text-gray-600 leading-relaxed">Lorem ipsum dolor sit amet consectetur. Leo purus ut fermentum vestibulum habitant arcu facilisi. Lacinia enim imperdiet et leo adipiscing. Magnis mauris ut mauris metus ac. Vel consectetur sed rhoncus ut.</p>
-    </div>
-    <!-- Contenedor de imagen -->
-    <div class="w-full md:w-1/2 flex justify-center md:justify-end">
-        <div class="bg-gray-300 w-80 h-60 rounded-md"></div> <!-- Placeholder de imagen -->
-    </div>
-    </section>
-
-    <!-- Sección de Contacto -->
-    <section class="w-full max-w-7xl flex justify-end px-6">
-        <!-- Contenedor del formulario con degradado -->
-        <div class="bg-gradient-to-br from-gray-100 to-gray-200 p-10 rounded-xl shadow-lg w-full max-w-md">
-            <!-- Título y descripción -->
-            <h2 class="text-3xl font-semibold text-gray-800 mb-4">Lorem ipsum</h2>
-            <p class="text-gray-600 mb-8 leading-relaxed">Lorem ipsum dolor sit amet consectetur adipiscing elit tortor eu dolorol egestas morbi sem vulputate etiam facilisis pellentesque ut quis.</p>
-
-            <!-- Formulario -->
-            <form class="grid grid-cols-1 gap-4">
-                <!-- Campos del formulario en dos columnas -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
-                        <label for="name" class="block text-gray-700 font-medium mb-2">Nombre</label>
-                        <input type="text" id="name" placeholder="Ingresar Nombre" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400">
-                    </div>
-                    <div>
-                        <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
-                        <input type="email" id="email" placeholder="Ingresar Email" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400">
-                    </div>
-                    <div>
-                        <label for="phone" class="block text-gray-700 font-medium mb-2">Teléfono</label>
-                        <input type="text" id="phone" placeholder="Ingresar Teléfono" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400">
-                    </div>
-                    <div>
-                        <label for="company" class="block text-gray-700 font-medium mb-2">Empresa</label>
-                        <input type="text" id="company" placeholder="Ingresar Empresa" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400">
-                    </div>
-                </div>
-                <!-- Campo de mensaje -->
-                <div>
-                    <label for="message" class="block text-gray-700 font-medium mb-2">Déjanos un mensaje...</label>
-                    <textarea id="message" placeholder="Ingresar mensaje" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400"></textarea>
-                </div>
-                <!-- Botón de enviar -->
-                <div class="flex justify-start mt-4">
-                    <button type="submit" class="bg-gray-800 text-white font-semibold py-3 px-8 rounded-lg hover:bg-gray-700 transition-all">Enviar</button>
-                </div>
-            </form>
+    <section id="nosotros" class="w-full px-6 py-40 bg-gradient-to-b from-white via-gray-100 to-gray-150">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center space-y-8 md:space-y-0 md:space-x-8">
+            <!-- Contenedor de texto -->
+            <div class="w-full md:w-1/2">
+                <h2 class="text-7xl font-bold text-black mb-12">Nosotros</h2>
+                <p class="text-black text-lg leading-normal">
+                    Somos una consultora enfocada en las geociencias y nos<br> dedicamos a ser el aliado estratégico que requiere el proyecto<br> de nuestros clientes.
+                    <br><br>
+                    Contamos con un equipo de expertos altamente<br> comprometidos y con una trayectoria profesional sólida para<br> garantizar precisión y confiabilidad en cada proyecto. 
+                    Nuestra<br> filosofía se basa en la innovación contemporánea y la mejora<br> continua de nuestros diseños, siempre enfocados en alcanzar<br> el éxito junto a nuestros clientes.
+                </p>
+            </div>
+            <!-- Contenedor de imagen -->
+            <div class="w-full md:w-1/2 flex justify-center md:justify-end">
+                <div class="bg-gray-300" style="width: 750px; height: 500px;"></div> <!-- Dimensiones personalizadas con CSS -->
+            </div>
         </div>
     </section>
+
+
+
+        <!-- Sección Misión y Visión -->
+    <section id="mision-vision" class="py-32 bg-white">
+        <div class="container mx-auto px-12 lg:px-24 grid grid-cols-1 md:grid-cols-2 gap-20">
+            <!-- Contenedor Misión -->
+            <div class="p-8">
+                <div class="title-with-bar">
+                    <h2 class="text-6xl font-bold text-black mb-6">Misión</h2>
+                    <p class="text-black leading-normal">
+                        Nuestra misión es utilizar las geociencias para crear <br> soluciones innovadoras y sostenibles que respondan a los <br> desafíos ingenieriles actuales, contribuyendo al desarrollo<br> y bienestar de nuestras comunidades y del entorno.
+                    </p>
+                </div>
+            </div>
+            <!-- Contenedor Visión -->
+            <div class="p-8">
+                <div class="title-with-bar">
+                    <h2 class="text-6xl font-bold text-black mb-6">Visión</h2>
+                    <p class="text-black leading-normal">
+                        Nuestra visión es transformar el mundo a través de diseños<br> seguros y sostenibles, que impulsen la construcción de un<br> futuro más próspero y seguro para las personas.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+    <!-- Sección de Contacto -->
+    <section id="contacto" class="w-full flex justify-center items-center py-40 bg-gray-100 relative min-h-screen">
+        <!-- Imagen de fondo -->
+        <div class="absolute inset-0 w-3/4 bg-cover bg-center" style="background-image: url('assets/contact.png');"></div>
+        <!-- Contenedor del formulario -->
+        <div class="relative w-full max-w-7xl flex justify-end">
+            <div class="bg-white p-10 rounded-xl shadow-lg w-full max-w-lg">
+                <!-- Título y descripción -->
+                <h2 class="text-4xl font-bold text-black mb-4">Cotizaciones<br> de Servicios</h2>
+                <p class="text-gray-700 mb-8 leading-relaxed">
+                    Por favor sírvase llenar el siguiente formulario para poder ayudarlo de la mejor manera y llevar su proyecto al siguiente nivel.
+                </p>
+                <!-- Formulario -->
+                <form class="grid grid-cols-1 gap-6">
+                    <!-- Campos del formulario en dos columnas -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label for="name" class="block text-gray-800 font-medium mb-2">Nombre</label>
+                            <input type="text" id="name" placeholder="Ingresar Nombre" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-gray-800 font-medium mb-2">Email</label>
+                            <input type="email" id="email" placeholder="Ingresar Email" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400">
+                        </div>
+                        <div>
+                            <label for="phone" class="block text-gray-800 font-medium mb-2">Teléfono/Celular</label>
+                            <input type="text" id="phone" placeholder="Ingresar Teléfono" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400">
+                        </div>
+                        <div>
+                            <label for="company" class="block text-gray-800 font-medium mb-2">Empresa</label>
+                            <input type="text" id="company" placeholder="Ingresar Empresa" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400">
+                        </div>
+                    </div>
+                    <!-- Campo de mensaje -->
+                    <div>
+                        <label for="message" class="block text-gray-800 font-medium mb-2">Déjanos un mensaje...</label>
+                        <textarea id="message" placeholder="Ingrese la información que considere relevante para realizar una mejor cotización" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400"></textarea>
+                    </div>
+                    <!-- Botón de enviar -->
+                    <div class="flex justify-start mt-4">
+                        <button type="submit" class="bg-black text-white font-semibold py-3 px-8 rounded-full hover:bg-gray-700 transition-all">
+                            Enviar
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+
+
 
     <!-- Footer -->
     <footer class="w-full max-w-4xl mx-auto text-gray-800 mt-16">
@@ -160,13 +238,13 @@
         </div>
 
         <!-- Línea Divisora -->
-        <hr class="border-gray-300 mb-8">
+        <hr class="border-gray-300 mb-10">
 
         <!-- Sección Central del Footer -->
         <div class="grid grid-cols-1 md:grid-cols-3 text-center md:text-left items-center mb-8">
             <!-- Logo -->
             <div class="flex justify-center md:justify-start mb-4 md:mb-0">
-                <span class="text-2xl font-semibold">Logo</span>
+                <img src="assets/Logo-1.png" alt="Logo Pangea" class="h-10 w-auto">
             </div>
             <!-- Enlaces de Navegación -->
             <div class="flex justify-center space-x-8 font-medium">
@@ -186,11 +264,11 @@
         </div>
 
         <!-- Línea Divisora -->
-        <hr class="border-gray-300 mb-4">
+        <hr class="border-gray-300 mb-6">
 
         <!-- Copyright -->
         <div class="text-center text-sm text-gray-600">
-            © 2024 Pangea
+            Copyright © 2024 Pangeo
         </div>
     </footer>
 
