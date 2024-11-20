@@ -12,7 +12,7 @@
 <body class="bg-gray-100 font-sans leading-normal tracking-normal">
 
     <!-- Header -->
-    <header class="bg-transparent fixed w-full top-0 z-10">
+    <header id="navbar" class="bg-transparent fixed w-full top-0 z-10">
         <div class="container mx-auto flex justify-between items-center py-6 px-8">
             <!-- Logo -->
             <div>
@@ -48,50 +48,66 @@
     <section id="servicios" class="py-16 bg-white">
         <div class="container mx-auto px-6">
             <!-- Título de la sección -->
-            <h2 class="text-4xl font-bold text-gray-800 mb-12">Nuestros Servicios</h2>
-    
+            <h2 class="text-gray-800 mb-12">Nuestros Servicios</h2>
+
             <!-- Servicio 1 -->
             <div class="flex flex-col md:flex-row items-start mb-12">
-                <!-- Imagen del servicio -->
                 <div class="w-full md:w-1/4 flex justify-center md:justify-start mb-4 md:mb-0">
-                    <div class="bg-gray-300 w-32 h-32 rounded-md"></div> <!-- Placeholder para la imagen -->
+                    <div class="bg-gray-300 w-32 h-32 rounded-md"></div>
                 </div>
-                <!-- Descripción del servicio -->
                 <div class="w-full md:w-3/4 md:pl-8">
-                    <h3 class="text-2xl font-semibold text-gray-800 mb-2">Servicio 1</h3>
-                    <p class="text-gray-600 leading-relaxed">Lorem ipsum dolor sit amet consectetur. Leo purus ut fermentum vestibulum habitant arcu facilisi. Lacinia enim imperdiet et leo adipiscing. Magnis mauris ut mauris metus ac. Vel consectetur sed rhoncus ut.</p>
+                    <h3 class="mb-2">Geotecnia</h3>
+                    <p class="leading-relaxed text-gray-600">
+                        Ofrecemos soluciones especializadas en geotecnia para garantizar la seguridad y eficiencia de sus proyectos de ingeniería. Con experiencia en estudios de suelos, diseño de cimentaciones y modelamiento avanzado, acompañamos cada fase de su proyecto, desde la exploración inicial hasta su fase final de construcción.
+                    </p>
                 </div>
             </div>
             <hr class="my-8 border-gray-300">
-    
+
             <!-- Servicio 2 -->
             <div class="flex flex-col md:flex-row items-start mb-12">
-                <!-- Imagen del servicio -->
                 <div class="w-full md:w-1/4 flex justify-center md:justify-start mb-4 md:mb-0">
-                    <div class="bg-gray-300 w-32 h-32 rounded-md"></div> <!-- Placeholder para la imagen -->
+                    <div class="bg-gray-300 w-32 h-32 rounded-md"></div>
                 </div>
-                <!-- Descripción del servicio -->
                 <div class="w-full md:w-3/4 md:pl-8">
-                    <h3 class="text-2xl font-semibold text-gray-800 mb-2">Servicio 2</h3>
-                    <p class="text-gray-600 leading-relaxed">Lorem ipsum dolor sit amet consectetur. Leo purus ut fermentum vestibulum habitant arcu facilisi. Lacinia enim imperdiet et leo adipiscing. Magnis mauris ut mauris metus ac. Vel consectetur sed rhoncus ut.</p>
+                    <h3 class="mb-2">Geología</h3>
+                    <p class="leading-relaxed text-gray-600">
+                        Apoyamos sus proyectos con un análisis geológico detallado y preciso, esencial para anticipar y gestionar condiciones del terreno. Nuestra experiencia en evaluación geomecánica, mapeo geológico y análisis de estabilidad en taludes garantiza decisiones informadas y seguras en cada etapa de desarrollo.
+                    </p>
                 </div>
             </div>
             <hr class="my-8 border-gray-300">
-    
+
             <!-- Servicio 3 -->
-            <div class="flex flex-col md:flex-row items-start">
-                <!-- Imagen del servicio -->
+            <div class="flex flex-col md:flex-row items-start mb-12">
                 <div class="w-full md:w-1/4 flex justify-center md:justify-start mb-4 md:mb-0">
-                    <div class="bg-gray-300 w-32 h-32 rounded-md"></div> <!-- Placeholder para la imagen -->
+                    <div class="bg-gray-300 w-32 h-32 rounded-md"></div>
                 </div>
-                <!-- Descripción del servicio -->
                 <div class="w-full md:w-3/4 md:pl-8">
-                    <h3 class="text-2xl font-semibold text-gray-800 mb-2">Servicio 3</h3>
-                    <p class="text-gray-600 leading-relaxed">Lorem ipsum dolor sit amet consectetur. Leo purus ut fermentum vestibulum habitant arcu facilisi. Lacinia enim imperdiet et leo adipiscing. Magnis mauris ut mauris metus ac. Vel consectetur sed rhoncus ut.</p>
+                    <h3 class="mb-2">Geofísica y Sismología</h3>
+                    <p class="leading-relaxed text-gray-600">
+                        Aplicamos técnicas geofísicas innovadoras para obtener una visión detallada de la estratigrafía del subsuelo y proporcionamos datos claves para el diseño geotécnico. A través de ensayos geofísicos y su interpretación, combinamos métodos indirectos que permiten caracterizar el terreno con precisión, optimizando el diseño y la seguridad de las infraestructuras.
+                    </p>
+                </div>
+            </div>
+            <hr class="my-8 border-gray-300">
+
+            <!-- Servicio 4 -->
+            <div class="flex flex-col md:flex-row items-start">
+                <div class="w-full md:w-1/4 flex justify-center md:justify-start mb-4 md:mb-0">
+                    <div class="bg-gray-300 w-32 h-32 rounded-md"></div>
+                </div>
+                <div class="w-full md:w-3/4 md:pl-8">
+                    <h3 class="mb-2">Capacitaciones in-house</h3>
+                    <p class="leading-relaxed text-gray-600">
+                        Nuestras capacitaciones permiten fortalecer los conocimientos y aptitudes que requieren su equipo de trabajo mediante programas especializados y personalizados diseñados exclusivamente para atender el objetivo específico de su organización. Nuestros servicios están asociados a:
+                    </p>
                 </div>
             </div>
         </div>
     </section>
+
+
 
     <!-- Sección Nosotros -->
     <section id="nosotros" class="w-full max-w-7xl mx-auto px-6 py-16 flex flex-col md:flex-row items-center space-y-8 md:space-y-0 md:space-x-8">
@@ -197,11 +213,11 @@
 
         <!-- Copyright -->
         <div class="text-center text-sm text-gray-600">
-            © 2024 Pangea
+            © 2024 Pangeo Advisors
         </div>
     </footer>
 
     <!-- JavaScript -->
-    <script src="script.js"></script>
+    <script src="scripts.js" defer></script>
 </body>
 </html>

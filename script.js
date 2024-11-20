@@ -1,3 +1,4 @@
+// Lógica para el formulario de contacto
 document.getElementById("contactForm").addEventListener("submit", function(event) {
     event.preventDefault();
 
@@ -20,3 +21,20 @@ document.getElementById("contactForm").addEventListener("submit", function(event
     // Aquí puedes agregar la lógica para enviar los datos a un servidor o API
     alert("Mensaje enviado. ¡Gracias por contactarnos!");
 });
+
+// Lógica para ocultar y mostrar la barra de navegación
+let lastScrollPosition = 0;
+const navbar = document.getElementById("navbar");
+
+window.addEventListener("scroll", () => {
+    const currentScrollPosition = window.pageYOffset;
+
+    if (currentScrollPosition > lastScrollPosition) {
+        navbar.classList.add("hidden-navbar");
+    } else {
+        navbar.classList.remove("hidden-navbar");
+    }
+
+    lastScrollPosition = currentScrollPosition;
+});
+

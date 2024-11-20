@@ -27,9 +27,29 @@ body {
 }
 
 /* Estilo para títulos */
+h1, h2, h3 {
+    font-family: 'Raleway', sans-serif;
+}
+
 h1 {
-    font-size: 60px; /* Tamaño para títulos */
-    font-weight: 600; /* Bold */
+    font-size: 60px;
+    font-weight: 600;
+}
+
+h2 {
+    font-size: 48px;
+    font-weight: 600;
+}
+
+h3 {
+    font-size: 36px;
+    font-weight: 700;
+}
+
+/* Texto general */
+p, a {
+    font-size: 18px;
+    font-weight: 400;
 }
 
 /* Estilo para subtítulos */
@@ -44,20 +64,36 @@ h1 {
     font-weight: 300; /* Medium */
 }
 
+
+
 /* Texto general */
 p, a, .content-text {
     font-size: 18px; /* Texto general */
     font-weight: 400; /* Regular */
 }
 
+
+
 /* Opciones de navegación */
 nav a {
-    font-size: 22px; /* Tamaño del texto de la navegación */
-    color: white; /* Blanco por defecto */
-    font-weight: 400; /* Semibold */
+    font-size: 22px;
+    color: white;
+    font-weight: 400;
     transition: color 0.2s ease-in-out;
 }
 
 nav a:hover {
-    color: #d1d5db; /* Gris claro personalizado para hover */
+    color: #d1d5db;
 }
+
+#navbar {
+    transform: translateY(0); /* Por defecto, navbar visible */
+    transition: transform 0.3s ease-in-out; /* Transición suave */
+}
+
+
+#navbar.hidden-navbar {
+    transform: translateY(-100%); /* Ocultar navbar */
+    transition: transform 0.3s ease-in-out; /* Transición suave */
+}
+
