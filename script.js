@@ -53,6 +53,18 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    // Detectar cambios en el tamaño de la pantalla
+    window.addEventListener("resize", () => {
+        const isLargeScreen = window.innerWidth >= 768; // Pantallas grandes (>=768px)
+        if (isLargeScreen) {
+            // Ocultar el menú móvil en pantallas grandes
+            if (mobileMenu) {
+                mobileMenu.classList.add("hidden");
+                mobileMenu.classList.remove("block");
+            }
+        }
+    });
+
     // Lógica de internacionalización
     let currentLanguage = "es"; // Idioma predeterminado
     let translations = {};
@@ -90,11 +102,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Resaltar el idioma seleccionado
     function highlightCurrentLanguage(lang) {
         document.querySelectorAll("[data-lang-switch]").forEach((button) => {
-            if (button.getAttribute("data-lang-switch") === lang) {
-                button.classList.add("lang-active");
-            } else {
-                button.classList.remove("lang-active");
-            }
+            button.classList.toggle("lang-active", button.getAttribute("data-lang-switch") === lang);
         });
     }
 
