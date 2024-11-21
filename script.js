@@ -70,13 +70,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Función para actualizar los textos en el HTML
     function updateText() {
-        document.querySelectorAll("[data-i18n]").forEach((element) => {
+        const elementsToTranslate = document.querySelectorAll("[data-i18n]");
+
+        elementsToTranslate.forEach((element) => {
+            // Verifica si el texto ya ha sido actualizado
+            if (element.textContent.trim() !== "" && element.dataset.i18nInitialized) {
+                return; // Si el texto ya fue actualizado, lo ignora
+            }
+
+            // Extrae las claves de la traducción
             const keys = element.getAttribute("data-i18n").split(".");
             let text = translations;
+
             keys.forEach((key) => {
                 text = text[key]; // Navega por las claves del JSON
             });
-            element.textContent = text || "Traducción no encontrada"; // Maneja textos no encontrados
+
+            // Actualiza el texto del elemento o muestra un mensaje si no se encuentra
+            element.textContent = text || "Traducción no encontrada";
+
+            // Marca el elemento como inicializado
+            element.dataset.i18nInitialized = true;
         });
     }
 
