@@ -142,12 +142,19 @@ nav a:hover {
     left: 0;
     background-color: #1a202c; /* Color del menú desplegable */
     width: 100%; /* Ancho completo */
-    z-index: 20;
+    z-index: 50;
+    transition: all 0.3s ease-in-out;
 }
+
 
 /* Mostrar menú cuando se active */
 #mobile-menu.show {
     display: block; /* Mostrar cuando la clase 'show' está activa */
+}
+
+/* Mostrar menú al quitar la clase hidden */
+#mobile-menu.block {
+    display: block;
 }
 
 /* Botón de hamburguesa */

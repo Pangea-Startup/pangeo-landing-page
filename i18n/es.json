@@ -1,0 +1,53 @@
+{
+    "header": {
+      "menu_inicio": "Inicio",
+      "menu_servicios": "Servicios",
+      "menu_nosotros": "Nosotros",
+      "menu_contacto": "Contacto"
+    },
+    "hero": {
+      "title": "SOLUCIONES INNOVADORAS PARA TERRENOS DESAFIANTES",
+      "subtitle": "Ingeniería de confianza para un futuro seguro",
+      "button": "Conozca Pangeo →"
+    },
+    "services": {
+      "title": "Nuestros Servicios",
+      "geotecnia_title": "Geotecnia",
+      "geotecnia_description": "Ofrecemos soluciones especializadas en geotecnia para garantizar la seguridad y eficiencia de sus proyectos de ingeniería. Con experiencia en estudios de suelos, diseño de cimentaciones y modelamiento avanzado, acompañamos cada fase de su proyecto, desde la exploración inicial hasta su fase final de construcción.",
+      "geologia_title": "Geología",
+      "geologia_description": "Apoyamos sus proyectos con un análisis geológico detallado y preciso, esencial para anticipar y gestionar condiciones del terreno. Nuestra experiencia en evaluación geomecánica, mapeo geológico y análisis de estabilidad en taludes garantiza decisiones informadas y seguras en cada etapa de desarrollo.",
+      "geofisica_title": "Geofísica y sismología",
+      "geofisica_description": "Aplicamos técnicas geofísicas innovadoras para obtener una visión detallada de la estratigrafía del subsuelo y proporcionamos datos claves para el diseño geotécnico. A través de ensayos geofísicos y su interpretación, combinamos métodos indirectos que permiten caracterizar el terreno con precisión, optimizando el diseño y la seguridad de las infraestructuras.",
+      "capacitaciones_title": "Capacitaciones in-house",
+      "capacitaciones_description": "Nuestras capacitaciones permiten fortalecer los conocimientos y aptitudes que requieren su equipo de trabajo mediante programas especializados y personalizados diseñados exclusivamente para atender el objetivo específico de su organización."
+    },
+    "about": {
+      "title": "Nosotros",
+      "description": "Somos una consultora enfocada en las geociencias y nos dedicamos a ser el aliado estratégico que requiere el proyecto de nuestros clientes. Contamos con un equipo de expertos altamente comprometidos y con una trayectoria profesional sólida para garantizar precisión y confiabilidad en cada proyecto. Nuestra filosofía se basa en la innovación contemporánea y la mejora continua de nuestros diseños, siempre enfocados en alcanzar el éxito junto a nuestros clientes."
+    },
+    "mission_vision": {
+      "mission_title": "Misión",
+      "mission_description": "Nuestra misión es utilizar las geociencias para crear soluciones innovadoras y sostenibles que respondan a los desafíos ingenieriles actuales, contribuyendo al desarrollo y bienestar de nuestras comunidades y del entorno.",
+      "vision_title": "Visión",
+      "vision_description": "Nuestra visión es transformar el mundo a través de diseños seguros y sostenibles, que impulsen la construcción de un futuro más próspero y seguro para las personas."
+    },
+    "contact": {
+      "title": "Cotizaciones de Servicios",
+      "description": "Por favor sírvase llenar el siguiente formulario para poder ayudarlo de la mejor manera y llevar su proyecto al siguiente nivel.",
+      "name": "Nombre",
+      "email": "Email",
+      "phone": "Teléfono/Celular",
+      "company": "Empresa",
+      "message": "Déjanos un mensaje...",
+      "send_button": "Enviar"
+    },
+    "footer": {
+      "contact_us": "Contáctanos",
+      "services": "Servicios",
+      "about_us": "Nosotros",
+      "phone": "+51 999 999 999",
+      "email": "pangea@gmail.com",
+      "copyright": "Copyright © 2024 Pangeo"
+    }
+  }
+  

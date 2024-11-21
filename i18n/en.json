@@ -1,0 +1,53 @@
+{
+    "header": {
+      "menu_inicio": "Home",
+      "menu_servicios": "Services",
+      "menu_nosotros": "About Us",
+      "menu_contacto": "Contact"
+    },
+    "hero": {
+      "title": "INNOVATIVE SOLUTIONS FOR CHALLENGING TERRAINS",
+      "subtitle": "Engineering you can trust for a secure future",
+      "button": "Discover Pangeo →"
+    },
+    "services": {
+      "title": "Our Services",
+      "geotecnia_title": "Geotechnics",
+      "geotecnia_description": "We offer specialized geotechnical solutions to ensure the safety and efficiency of your engineering projects. With expertise in soil studies, foundation design, and advanced modeling, we support every phase of your project, from initial exploration to final construction.",
+      "geologia_title": "Geology",
+      "geologia_description": "We support your projects with detailed and precise geological analysis, essential to anticipate and manage terrain conditions. Our experience in geomechanical evaluation, geological mapping, and slope stability analysis ensures informed and safe decisions at every development stage.",
+      "geofisica_title": "Geophysics and Seismology",
+      "geofisica_description": "We apply innovative geophysical techniques to obtain a detailed view of subsurface stratigraphy and provide key data for geotechnical design. Through geophysical testing and its interpretation, we combine indirect methods to precisely characterize the terrain, optimizing infrastructure design and safety.",
+      "capacitaciones_title": "In-House Training",
+      "capacitaciones_description": "Our training programs strengthen the knowledge and skills your team requires through specialized and customized programs designed exclusively to address your organization's specific objectives."
+    },
+    "about": {
+      "title": "About Us",
+      "description": "We are a consultancy focused on geosciences, dedicated to being the strategic ally required by our clients' projects. We have a team of highly committed experts with a solid professional background to ensure precision and reliability in every project. Our philosophy is based on contemporary innovation and continuous improvement of our designs, always focused on achieving success together with our clients."
+    },
+    "mission_vision": {
+      "mission_title": "Mission",
+      "mission_description": "Our mission is to use geosciences to create innovative and sustainable solutions that address current engineering challenges, contributing to the development and well-being of our communities and the environment.",
+      "vision_title": "Vision",
+      "vision_description": "Our vision is to transform the world through safe and sustainable designs that drive the construction of a more prosperous and secure future for people."
+    },
+    "contact": {
+      "title": "Service Quotations",
+      "description": "Please fill out the following form to help us assist you in the best possible way and take your project to the next level.",
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "company": "Company",
+      "message": "Leave us a message...",
+      "send_button": "Send"
+    },
+    "footer": {
+      "contact_us": "Contact Us",
+      "services": "Services",
+      "about_us": "About Us",
+      "phone": "+51 999 999 999",
+      "email": "pangea@gmail.com",
+      "copyright": "Copyright © 2024 Pangeo"
+    }
+  }
+  
