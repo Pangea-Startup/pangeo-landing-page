@@ -186,6 +186,30 @@ nav a:hover {
     object-fit: cover; /* Asegura que la imagen se recorte y no se deforme */
 }
 
+
+/* Contenedor de botones de idioma */
+#language-switch {
+    position: none; /* Para posicionamiento preciso */
+    z-index: 50; /* Por encima de otros elementos */
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espaciado entre botones */
+}
+
+/* Estilo de los botones */
+#language-switch button {
+    color: white; /* Color del texto */
+    font-size: 1rem; /* Tamaño del texto */
+    font-weight: 500; /* Semibold */
+    transition: color 0.2s ease-in-out; /* Suavidad en hover */
+}
+
+#language-switch button:hover {
+    color: #d1d5db; /* Gris claro personalizado para hover */
+}
+
+
+
 /* Estado inicial del menú móvil */
 #mobile-menu {
     display: none;
@@ -235,6 +259,11 @@ nav a:hover {
         display: flex;
         justify-content: flex-end; /* Botones de idioma alineados a la derecha */
     }
+
+    #language-switch {
+        top: 50%; /* Mantén centrado verticalmente */
+        right: 40%; /* Ajusta posición horizontal para pantallas grandes */
+    }
 }
 
 /* Mostrar menú móvil en pantallas pequeñas */
@@ -255,6 +284,12 @@ nav a:hover {
         width: 100%;
         z-index: 50;
         transition: all 0.3s ease-in-out;
+    }
+
+    #language-switch {
+        top: 50%; /* Ajusta más arriba para pantallas pequeñas */
+        right: 50%; /* Centrado horizontalmente */
+
     }
 
     nav.md\\:flex {
