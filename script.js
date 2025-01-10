@@ -27,19 +27,72 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Lógica del menú hamburguesa
+
+    const header = document.querySelector("header");
+    const heroSection = document.querySelector(".hero-section");
     const menuToggle = document.getElementById("menu-toggle");
     const mobileMenu = document.getElementById("mobile-menu");
 
-    if (menuToggle && mobileMenu) {
-        // Mostrar/ocultar el menú móvil
-        menuToggle.addEventListener("click", () => {
-            if (mobileMenu.classList.contains("hidden")) {
-                mobileMenu.classList.remove("hidden");
-                mobileMenu.classList.add("block");
+    let lastScrollTop = 0; // Dirección del scroll
+    let isMenuActive = false; // Estado del menú hamburguesa
+
+    // Lógica de scroll
+    const handleScroll = () => {
+        const currentScroll = window.scrollY;
+
+        // Mostrar/ocultar header al hacer scroll
+        if (currentScroll > lastScrollTop && !isMenuActive) {
+            header.style.transform = "translateY(-100%)"; // Ocultar al bajar
+        } else if (!isMenuActive) {
+            header.style.transform = "translateY(0)"; // Mostrar al subir
+        }
+        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+
+        // Cambiar color del fondo según la posición
+        if (!isMenuActive) {
+            if (currentScroll > heroSection.offsetHeight - 50) {
+                header.classList.add("scrolled"); // Fondo azul
             } else {
-                mobileMenu.classList.remove("block");
-                mobileMenu.classList.add("hidden");
+                header.classList.remove("scrolled"); // Fondo transparente
+            }
+        }
+    };
+
+    // Observador para la sección hero
+    const observer = new IntersectionObserver(
+        (entries) => {
+            const entry = entries[0];
+            if (!entry.isIntersecting && !isMenuActive) {
+                header.classList.add("scrolled"); // Fondo azul fuera del hero
+            } else if (!isMenuActive) {
+                header.classList.remove("scrolled"); // Fondo transparente en el hero
+            }
+        },
+        { root: null, threshold: 0.1 }
+    );
+    observer.observe(heroSection);
+
+    // Lógica del menú hamburguesa
+    if (menuToggle && mobileMenu) {
+        menuToggle.addEventListener("click", () => {
+            isMenuActive = !isMenuActive; // Cambiar el estado del menú
+
+            if (isMenuActive) {
+                // Abrir el menú
+                mobileMenu.style.display = "flex";
+                setTimeout(() => {
+                    mobileMenu.classList.add("active");
+                }, 10);
+                header.classList.add("menu-active"); // Forzar fondo azul
+                header.style.transform = "translateY(0)"; // Mostrar header
+            } else {
+                // Cerrar el menú
+                mobileMenu.classList.remove("active");
+                setTimeout(() => {
+                    mobileMenu.style.display = "none";
+                }, 300);
+                header.classList.remove("menu-active");
+                handleScroll(); // Volver a aplicar la lógica de scroll
             }
         });
 
@@ -47,23 +100,19 @@ document.addEventListener("DOMContentLoaded", () => {
         const menuLinks = mobileMenu.querySelectorAll("a");
         menuLinks.forEach((link) => {
             link.addEventListener("click", () => {
-                mobileMenu.classList.remove("block");
-                mobileMenu.classList.add("hidden");
+                isMenuActive = false;
+                mobileMenu.classList.remove("active");
+                setTimeout(() => {
+                    mobileMenu.style.display = "none";
+                }, 300);
+                header.classList.remove("menu-active");
+                handleScroll(); // Actualizar el estado del header
             });
         });
     }
 
-    // Detectar cambios en el tamaño de la pantalla
-    window.addEventListener("resize", () => {
-        const isLargeScreen = window.innerWidth >= 768; // Pantallas grandes (>=768px)
-        if (isLargeScreen) {
-            // Ocultar el menú móvil en pantallas grandes
-            if (mobileMenu) {
-                mobileMenu.classList.add("hidden");
-                mobileMenu.classList.remove("block");
-            }
-        }
-    });
+    // Agregar el evento de scroll
+    window.addEventListener("scroll", handleScroll);
 
     // Lógica de internacionalización
     let currentLanguage = "es"; // Idioma predeterminado
@@ -80,16 +129,29 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // Función para actualizar los textos en el HTML
+    function updatePlaceholders() {
+        document.querySelectorAll("[data-placeholder-i18n]").forEach((element) => {
+            const placeholderKey = element.getAttribute("data-placeholder-i18n");
+            const keys = placeholderKey.split(".");
+            let text = translations;
+            keys.forEach((key) => {
+                text = text[key];
+            });
+            element.placeholder = text || "";
+        });
+    }
+    
+    // Actualizar placeholders cuando se cambie el idioma
     function updateText() {
         document.querySelectorAll("[data-i18n]").forEach((element) => {
             const keys = element.getAttribute("data-i18n").split(".");
             let text = translations;
             keys.forEach((key) => {
-                text = text[key]; // Navega por las claves del JSON
+                text = text[key];
             });
-            element.textContent = text || "Traducción no encontrada"; // Maneja textos no encontrados
+            element.textContent = text || "";
         });
+        updatePlaceholders(); // Llamar a la función de placeholders
     }
 
     // Función para cambiar de idioma

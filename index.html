@@ -38,7 +38,7 @@
                 <svg class="h-8 w-8 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
-            </button>
+            </button>            
         </div>
     
         <!-- Menú móvil (pantallas pequeñas) -->
@@ -138,13 +138,8 @@
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center space-y-8 md:space-y-0 md:space-x-8">
             <!-- Contenedor de texto -->
             <div class="w-full md:w-1/2">
-                <h2 class="text-7xl font-bold text-black mb-12">Nosotros</h2>
-                <p class="text-black text-lg leading-normal">
-                    Somos una consultora enfocada en las geociencias y nos<br> dedicamos a ser el aliado estratégico que requiere el proyecto<br> de nuestros clientes.
-                    <br><br>
-                    Contamos con un equipo de expertos altamente<br> comprometidos y con una trayectoria profesional sólida para<br> garantizar precisión y confiabilidad en cada proyecto. 
-                    Nuestra<br> filosofía se basa en la innovación contemporánea y la mejora<br> continua de nuestros diseños, siempre enfocados en alcanzar<br> el éxito junto a nuestros clientes.
-                </p>
+                <h2 class="text-7xl font-bold text-black mb-12" data-i18n="about.title"></h2>
+                <p class="text-black text-lg leading-normal" data-i18n="about.description"></p>
             </div>
             <!-- Contenedor de imagen -->
             <div class="w-full md:w-1/2 flex justify-center md:justify-end">
@@ -153,38 +148,25 @@
         </div>
     </section>
 
-
-
-        <!-- Sección Misión y Visión -->
+    <!-- Sección Misión y Visión -->
     <section id="mision-vision" class="py-32 bg-white">
         <div class="container mx-auto px-12 lg:px-24 grid grid-cols-1 md:grid-cols-2 gap-20">
             <!-- Contenedor Misión -->
             <div class="p-8">
                 <div class="title-with-bar">
-                    <h2 class="text-6xl font-bold text-black mb-6">Misión</h2>
-                    <p class="text-black leading-normal">
-                        Nuestra misión es utilizar las geociencias para crear <br> soluciones innovadoras y sostenibles que respondan a los <br> desafíos ingenieriles actuales, contribuyendo al desarrollo<br> y bienestar de nuestras comunidades y del entorno.
-                    </p>
+                    <h2 class="text-6xl font-bold text-black mb-6" data-i18n="mission_vision.mission_title"></h2>
+                    <p class="text-black leading-normal" data-i18n="mission_vision.mission_description"></p>
                 </div>
             </div>
             <!-- Contenedor Visión -->
             <div class="p-8">
                 <div class="title-with-bar">
-                    <h2 class="text-6xl font-bold text-black mb-6">Visión</h2>
-                    <p class="text-black leading-normal">
-                        Nuestra visión es transformar el mundo a través de diseños<br> seguros y sostenibles, que impulsen la construcción de un<br> futuro más próspero y seguro para las personas.
-                    </p>
+                    <h2 class="text-6xl font-bold text-black mb-6" data-i18n="mission_vision.vision_title"></h2>
+                    <p class="text-black leading-normal" data-i18n="mission_vision.vision_description"></p>
                 </div>
             </div>
         </div>
     </section>
-
-
-
-
-
-
-
 
     <!-- Sección de Contacto -->
     <section id="contacto" class="w-full flex justify-center items-center py-40 bg-gray-100 relative min-h-screen">
@@ -195,46 +177,46 @@
             <div class="bg-white p-16 py-20 rounded-xl shadow-lg w-full max-w-2xl" style="min-height: 110%;">
 
                 <!-- Título y descripción -->
-                <h2 class="text-4xl font-bold text-black mb-4">Cotizaciones<br> de Servicios</h2>
-                <p class="text-gray-700 mb-8 leading-relaxed">
-                    Por favor sírvase llenar el siguiente formulario para poder ayudarlo de la mejor manera y llevar su proyecto al siguiente nivel.
-                </p>
+                <h2 class="text-4xl font-bold text-black mb-4" data-i18n="contact.title"></h2>
+                <p class="text-gray-700 mb-8 leading-relaxed" data-i18n="contact.description"></p>
+
                 <!-- Formulario -->
                 <form class="grid grid-cols-1 gap-6">
                     <!-- Campos del formulario en dos columnas -->
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
-                            <label for="name" class="block text-gray-800 font-medium mb-2">Nombre</label>
-                            <input type="text" id="name" placeholder="Ingresar Nombre" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400">
+                            <label for="name" class="block text-gray-800 font-medium mb-2" data-i18n="contact.name"></label>
+                            <input type="text" id="name" placeholder="" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400" data-placeholder-i18n="contact.name">
                         </div>
                         <div>
-                            <label for="email" class="block text-gray-800 font-medium mb-2">Email</label>
-                            <input type="email" id="email" placeholder="Ingresar Email" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400">
+                            <label for="email" class="block text-gray-800 font-medium mb-2" data-i18n="contact.email"></label>
+                            <input type="email" id="email" placeholder="" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400" data-placeholder-i18n="contact.email">
                         </div>
                         <div>
-                            <label for="phone" class="block text-gray-800 font-medium mb-2">Teléfono/Celular</label>
-                            <input type="text" id="phone" placeholder="Ingresar Teléfono" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400">
+                            <label for="phone" class="block text-gray-800 font-medium mb-2" data-i18n="contact.phone"></label>
+                            <input type="text" id="phone" placeholder="" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400" data-placeholder-i18n="contact.phone">
                         </div>
                         <div>
-                            <label for="company" class="block text-gray-800 font-medium mb-2">Empresa</label>
-                            <input type="text" id="company" placeholder="Ingresar Empresa" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400">
+                            <label for="company" class="block text-gray-800 font-medium mb-2" data-i18n="contact.company"></label>
+                            <input type="text" id="company" placeholder="" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400" data-placeholder-i18n="contact.company">
                         </div>
                     </div>
+
                     <!-- Campo de mensaje -->
                     <div>
-                        <label for="message" class="block text-gray-800 font-medium mb-2">Déjanos un mensaje...</label>
-                        <textarea id="message" placeholder="Ingrese la información que considere relevante para realizar una mejor cotización" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400"></textarea>
+                        <label for="message" class="block text-gray-800 font-medium mb-2" data-i18n="contact.message"></label>
+                        <textarea id="message" placeholder="" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400" data-placeholder-i18n="contact.message"></textarea>
                     </div>
+
                     <!-- Botón de enviar -->
                     <div class="flex justify-start mt-4">
-                        <button type="submit" class="bg-black text-white font-semibold py-3 px-8 rounded-full hover:bg-gray-700 transition-all">
-                            Enviar
-                        </button>
+                        <button type="submit" class="bg-black text-white font-semibold py-3 px-8 rounded-full hover:bg-gray-700 transition-all" data-i18n="contact.send_button"></button>
                     </div>
                 </form>
             </div>
         </div>
     </section>
+
 
 
 
@@ -267,17 +249,17 @@
             </div>
             <!-- Enlaces de Navegación -->
             <div class="flex justify-center space-x-8 font-medium">
-                <a href="#" class="text-gray-600 hover:text-gray-800">Nosotros</a>
-                <a href="#" class="text-gray-600 hover:text-gray-800">Servicios</a>
-                <a href="#" class="text-gray-600 hover:text-gray-800">Contacto</a>
+                <a href="#" class="text-gray-600 hover:text-gray-800" data-i18n="footer.about_us"></a>
+                <a href="#" class="text-gray-600 hover:text-gray-800" data-i18n="footer.services"></a>
+                <a href="#" class="text-gray-600 hover:text-gray-800" data-i18n="footer.contact_us"></a>
             </div>
             <!-- Información de Contacto -->
             <div class="text-center md:text-right">
                 <p class="text-gray-600 hover:text-gray-800">
-                    <a href="tel:+51999999999" class="hover:underline">+51 999 999 999</a>
+                    <a href="tel:+51999999999" class="hover:underline" data-i18n="footer.phone"></a>
                 </p>
                 <p class="text-gray-600 hover:text-gray-800">
-                    <a href="mailto:pangea@gmail.com" class="hover:underline">pangea@gmail.com</a>
+                    <a href="mailto:pangea@gmail.com" class="hover:underline" data-i18n="footer.email"></a>
                 </p>
             </div>
         </div>
@@ -286,10 +268,9 @@
         <hr class="border-gray-300 mb-6">
     
         <!-- Copyright -->
-        <div class="text-center text-sm text-gray-600">
-            Copyright © 2024 Pangeo
-        </div>
+        <div class="text-center text-sm text-gray-600" data-i18n="footer.copyright"></div>
     </footer>
+    
     
     
 

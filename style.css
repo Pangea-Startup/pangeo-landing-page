@@ -23,6 +23,29 @@ body {
 }
 
 
+/* Estilos base del header */
+header {
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    will-change: background-color, transform;
+}
+
+/* Header con fondo azul cuando está scrolleado o el menú está activo */
+header.scrolled,
+header.menu-active {
+    background-color: #1a202c; /* Azul oscuro */
+}
+
+/* Header con fondo transparente cuando no está scrolleado ni el menú activo */
+header:not(.scrolled):not(.menu-active) {
+    background-color: transparent;
+}
+
+
+/* Estilo adicional cuando el menú hamburguesa está activo */
+header.menu-active {
+    background-color: #1a202c !important; /* Fuerza el fondo azul */
+}
+
 
 /* Hero Section */
 .hero-section {
@@ -133,29 +156,28 @@ nav a:hover {
 }
 
 
-/* Menú móvil oculto por defecto */
+/* Estado inicial del menú móvil */
 #mobile-menu {
     display: none;
     flex-direction: column;
     position: absolute;
-    top: 100%; /* Debajo del header */
+    top: 100%;
     left: 0;
-    background-color: #1a202c; /* Color del menú desplegable */
-    width: 100%; /* Ancho completo */
+    background-color: #1a202c; /* Azul oscuro */
+    width: 100%;
     z-index: 50;
-    transition: all 0.3s ease-in-out;
+    opacity: 0; /* Comienza invisible */
+    transform: translateY(-20px); /* Posición inicial fuera de vista */
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
-
-/* Mostrar menú cuando se active */
-#mobile-menu.show {
-    display: block; /* Mostrar cuando la clase 'show' está activa */
+/* Cuando el menú móvil está activo */
+#mobile-menu.active {
+    display: flex;
+    opacity: 1; /* Totalmente visible */
+    transform: translateY(0); /* Posición original */
 }
 
-/* Mostrar menú al quitar la clase hidden */
-#mobile-menu.block {
-    display: block;
-}
 
 /* Botón de hamburguesa */
 #menu-toggle {
@@ -167,10 +189,6 @@ nav a:hover {
 @media (min-width: 768px) {
     #mobile-menu {
         display: none;
-        position: relative;
-        background-color: transparent;
-        flex-direction: row;
-        width: auto;
     }
 
     #menu-toggle {
@@ -192,11 +210,13 @@ nav a:hover {
 /* Mostrar menú móvil en pantallas pequeñas */
 @media (max-width: 768px) {
     #menu-toggle {
-        display: block; /* Visible solo en pantallas pequeñas */
+        display: flex;
+        align-items: center; /* Centrar el contenido verticalmente */
+        justify-content: center; /* Centrar el contenido horizontalmente */
     }
 
     #mobile-menu {
-        display: flex;
+        display: none;
         flex-direction: column;
         position: absolute;
         top: 100%; /* Justo debajo del header */
@@ -208,7 +228,9 @@ nav a:hover {
     }
 
     nav.md\\:flex {
-        display: none; /* Esconde el menú de pantallas grandes */
+        display: flex;
+        justify-content: center; /* Centra las opciones en pantallas grandes */
+        flex-grow: 1;
     }
 
     .hidden.md\\:flex {
