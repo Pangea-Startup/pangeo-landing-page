@@ -23,6 +23,39 @@ body {
 }
 
 
+/* Estilos base del header */
+header {
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    will-change: background-color, transform;
+    z-index: 1;
+}
+
+/* Header con fondo azul cuando está scrolleado o el menú está activo */
+header.scrolled,
+header.menu-active {
+    background-color: #1a202c; /* Azul oscuro */
+}
+
+/* Header con fondo transparente cuando no está scrolleado ni el menú activo */
+header:not(.scrolled):not(.menu-active) {
+    background-color: transparent;
+}
+
+
+/* Estilo adicional cuando el menú hamburguesa está activo */
+header.menu-active {
+    background-color: #1a202c !important; /* Fuerza el fondo azul */
+}
+
+.hero-section {
+    position: relative;
+    z-index: 1; /* Mantén esto bajo */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1; /* El contenido del Hero estará detrás del menú móvil */
+}
 
 /* Hero Section */
 .hero-section {
@@ -133,29 +166,48 @@ nav a:hover {
 }
 
 
-/* Menú móvil oculto por defecto */
+.service-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-top: 75%; /* Relación de aspecto 4:3 */
+    overflow: hidden;
+    border-radius: 0 60px 60px 0; /* Esquinas redondeadas a la derecha */
+    background: #f0f0f0; /* Fondo para imágenes de carga lenta */
+}
+
+/* Imagen dentro del contenedor */
+.service-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que la imagen se recorte y no se deforme */
+}
+
+/* Estado inicial del menú móvil */
 #mobile-menu {
     display: none;
     flex-direction: column;
-    position: absolute;
-    top: 100%; /* Debajo del header */
+    position: fixed; /* Cambiado a fixed */
+    top: 0;
     left: 0;
-    background-color: #1a202c; /* Color del menú desplegable */
-    width: 100%; /* Ancho completo */
-    z-index: 50;
-    transition: all 0.3s ease-in-out;
+    background-color: #1a202c; /* Azul oscuro */
+    width: 100%;
+    z-index: 9999; /* Muy alto para estar por encima de todo */
+    opacity: 0; /* Comienza invisible */
+    transform: translateY(-20px); /* Posición inicial fuera de vista */
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
-
-/* Mostrar menú cuando se active */
-#mobile-menu.show {
-    display: block; /* Mostrar cuando la clase 'show' está activa */
+/* Cuando el menú móvil está activo */
+#mobile-menu.active {
+    display: flex;
+    opacity: 1; /* Totalmente visible */
+    transform: translateY(0); /* Posición original */
 }
 
-/* Mostrar menú al quitar la clase hidden */
-#mobile-menu.block {
-    display: block;
-}
 
 /* Botón de hamburguesa */
 #menu-toggle {
@@ -163,15 +215,55 @@ nav a:hover {
 }
 
 
-
 /* Ocultar menú móvil en pantallas grandes */
 @media (min-width: 768px) {
     #mobile-menu {
-        display: flex;
-        position: relative;
-        background-color: transparent;
-        flex-direction: row;
-        width: auto;
+        display: none;
     }
 
+    #menu-toggle {
+        display: none; /* Aparece solo en pantallas pequeñas */
+    }
+
+    nav.md\\:flex {
+        display: flex;
+        justify-content: center; /* Centra las opciones en pantallas grandes */
+        flex-grow: 1; /* Permite centrar completamente en el espacio disponible */
+    }
+
+    .hidden.md\\:flex {
+        display: flex;
+        justify-content: flex-end; /* Botones de idioma alineados a la derecha */
+    }
+}
+
+/* Mostrar menú móvil en pantallas pequeñas */
+@media (max-width: 768px) {
+    #menu-toggle {
+        display: flex;
+        align-items: center; /* Centrar el contenido verticalmente */
+        justify-content: center; /* Centrar el contenido horizontalmente */
+    }
+
+    #mobile-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%; /* Justo debajo del header */
+        left: 0;
+        background-color: #1a202c; /* Color del menú desplegable */
+        width: 100%;
+        z-index: 50;
+        transition: all 0.3s ease-in-out;
+    }
+
+    nav.md\\:flex {
+        display: flex;
+        justify-content: center; /* Centra las opciones en pantallas grandes */
+        flex-grow: 1;
+    }
+
+    .hidden.md\\:flex {
+        display: none; /* Esconde los botones de idioma en pantallas pequeñas */
+    }
 }
