@@ -27,6 +27,7 @@ body {
 header {
     transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
     will-change: background-color, transform;
+    z-index: 1;
 }
 
 /* Header con fondo azul cuando está scrolleado o el menú está activo */
@@ -46,6 +47,15 @@ header.menu-active {
     background-color: #1a202c !important; /* Fuerza el fondo azul */
 }
 
+.hero-section {
+    position: relative;
+    z-index: 1; /* Mantén esto bajo */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1; /* El contenido del Hero estará detrás del menú móvil */
+}
 
 /* Hero Section */
 .hero-section {
@@ -156,16 +166,36 @@ nav a:hover {
 }
 
 
+.service-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-top: 75%; /* Relación de aspecto 4:3 */
+    overflow: hidden;
+    border-radius: 0 60px 60px 0; /* Esquinas redondeadas a la derecha */
+    background: #f0f0f0; /* Fondo para imágenes de carga lenta */
+}
+
+/* Imagen dentro del contenedor */
+.service-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que la imagen se recorte y no se deforme */
+}
+
 /* Estado inicial del menú móvil */
 #mobile-menu {
     display: none;
     flex-direction: column;
-    position: absolute;
-    top: 100%;
+    position: fixed; /* Cambiado a fixed */
+    top: 0;
     left: 0;
     background-color: #1a202c; /* Azul oscuro */
     width: 100%;
-    z-index: 50;
+    z-index: 9999; /* Muy alto para estar por encima de todo */
     opacity: 0; /* Comienza invisible */
     transform: translateY(-20px); /* Posición inicial fuera de vista */
     transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;

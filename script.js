@@ -33,99 +33,88 @@ document.addEventListener("DOMContentLoaded", () => {
     const menuToggle = document.getElementById("menu-toggle");
     const mobileMenu = document.getElementById("mobile-menu");
 
-    let lastScrollTop = 0; // Dirección del scroll
-    let isMenuActive = false; // Estado del menú hamburguesa
+    let lastScrollTop = 0;
+    let isMenuActive = false;
 
-    // Lógica de scroll
     const handleScroll = () => {
         const currentScroll = window.scrollY;
 
-        // Mostrar/ocultar header al hacer scroll
         if (currentScroll > lastScrollTop && !isMenuActive) {
-            header.style.transform = "translateY(-100%)"; // Ocultar al bajar
+            header.style.transform = "translateY(-100%)";
         } else if (!isMenuActive) {
-            header.style.transform = "translateY(0)"; // Mostrar al subir
+            header.style.transform = "translateY(0)";
         }
         lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
 
-        // Cambiar color del fondo según la posición
         if (!isMenuActive) {
             if (currentScroll > heroSection.offsetHeight - 50) {
-                header.classList.add("scrolled"); // Fondo azul
+                header.classList.add("scrolled");
             } else {
-                header.classList.remove("scrolled"); // Fondo transparente
+                header.classList.remove("scrolled");
             }
         }
     };
 
-    // Observador para la sección hero
-    const observer = new IntersectionObserver(
-        (entries) => {
-            const entry = entries[0];
-            if (!entry.isIntersecting && !isMenuActive) {
-                header.classList.add("scrolled"); // Fondo azul fuera del hero
-            } else if (!isMenuActive) {
-                header.classList.remove("scrolled"); // Fondo transparente en el hero
-            }
-        },
-        { root: null, threshold: 0.1 }
-    );
+    const observer = new IntersectionObserver((entries) => {
+        const entry = entries[0];
+        if (!entry.isIntersecting && !isMenuActive) {
+            header.classList.add("scrolled");
+        } else if (!isMenuActive) {
+            header.classList.remove("scrolled");
+        }
+    }, { root: null, threshold: 0.1 });
     observer.observe(heroSection);
 
-    // Lógica del menú hamburguesa
     if (menuToggle && mobileMenu) {
         menuToggle.addEventListener("click", () => {
-            isMenuActive = !isMenuActive; // Cambiar el estado del menú
+            isMenuActive = !isMenuActive;
 
             if (isMenuActive) {
-                // Abrir el menú
                 mobileMenu.style.display = "flex";
                 setTimeout(() => {
                     mobileMenu.classList.add("active");
                 }, 10);
-                header.classList.add("menu-active"); // Forzar fondo azul
-                header.style.transform = "translateY(0)"; // Mostrar header
+                header.classList.add("menu-active");
+                header.style.transform = "translateY(0)";
+                window.removeEventListener("scroll", handleScroll); // Desactiva el scroll
             } else {
-                // Cerrar el menú
                 mobileMenu.classList.remove("active");
-                setTimeout(() => {
-                    mobileMenu.style.display = "none";
-                }, 300);
                 header.classList.remove("menu-active");
-                handleScroll(); // Volver a aplicar la lógica de scroll
+                mobileMenu.addEventListener("transitionend", () => {
+                    if (!isMenuActive) mobileMenu.style.display = "none";
+                });
+                window.addEventListener("scroll", handleScroll); // Reactiva el scroll
             }
         });
 
-        // Cerrar el menú al hacer clic en un enlace
         const menuLinks = mobileMenu.querySelectorAll("a");
         menuLinks.forEach((link) => {
             link.addEventListener("click", () => {
                 isMenuActive = false;
                 mobileMenu.classList.remove("active");
-                setTimeout(() => {
-                    mobileMenu.style.display = "none";
-                }, 300);
                 header.classList.remove("menu-active");
-                handleScroll(); // Actualizar el estado del header
+                mobileMenu.addEventListener("transitionend", () => {
+                    if (!isMenuActive) mobileMenu.style.display = "none";
+                });
+                window.addEventListener("scroll", handleScroll);
             });
         });
     }
 
-    // Agregar el evento de scroll
     window.addEventListener("scroll", handleScroll);
 
-    // Lógica de internacionalización
-    let currentLanguage = "es"; // Idioma predeterminado
+    let currentLanguage = "es";
     let translations = {};
 
-    // Función para cargar las traducciones desde los archivos JSON
     async function loadTranslations(lang) {
         try {
             const response = await fetch(`./i18n/${lang}.json`);
             translations = await response.json();
-            updateText(); // Actualiza los textos en la página
+            updateText();
         } catch (error) {
             console.error("Error al cargar las traducciones:", error);
+            translations = {};
+            updateText();
         }
     }
 
@@ -140,8 +129,7 @@ document.addEventListener("DOMContentLoaded", () => {
             element.placeholder = text || "";
         });
     }
-    
-    // Actualizar placeholders cuando se cambie el idioma
+
     function updateText() {
         document.querySelectorAll("[data-i18n]").forEach((element) => {
             const keys = element.getAttribute("data-i18n").split(".");
@@ -151,27 +139,23 @@ document.addEventListener("DOMContentLoaded", () => {
             });
             element.textContent = text || "";
         });
-        updatePlaceholders(); // Llamar a la función de placeholders
+        updatePlaceholders();
     }
 
-    // Función para cambiar de idioma
     function changeLanguage(lang) {
         currentLanguage = lang;
         loadTranslations(lang);
-        highlightCurrentLanguage(lang); // Resalta el idioma seleccionado
+        highlightCurrentLanguage(lang);
     }
 
-    // Resaltar el idioma seleccionado
     function highlightCurrentLanguage(lang) {
         document.querySelectorAll("[data-lang-switch]").forEach((button) => {
             button.classList.toggle("lang-active", button.getAttribute("data-lang-switch") === lang);
         });
     }
 
-    // Inicializar i18n al cargar la página
     loadTranslations(currentLanguage);
 
-    // Agregar eventos a los botones de cambio de idioma
     document.querySelectorAll("[data-lang-switch]").forEach((button) => {
         button.addEventListener("click", (e) => {
             const lang = e.target.getAttribute("data-lang-switch");

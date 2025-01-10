@@ -74,12 +74,14 @@
         <div class="container mx-auto px-6">
             <!-- Título de la sección -->
             <h2 class="text-4xl font-bold text-gray-800 mb-12" data-i18n="services.title"></h2>
-    
+
             <!-- Servicio 1 -->
             <div class="flex flex-col md:flex-row items-start mb-12">
                 <!-- Imagen del servicio -->
                 <div class="w-full md:w-1/4 flex justify-center md:justify-start mb-4 md:mb-0">
-                    <div class="bg-gray-300 w-32 h-32 rounded-md"></div> <!-- Placeholder para la imagen -->
+                    <div class="service-image-wrapper">
+                        <img src="assets/06 Perfil Estratigráfico 2.png" alt="Geotecnia" class="service-image">
+                    </div>
                 </div>
                 <!-- Descripción del servicio -->
                 <div class="w-full md:w-3/4 md:pl-8">
@@ -88,12 +90,14 @@
                 </div>
             </div>
             <hr class="my-8 border-gray-300">
-    
+
             <!-- Servicio 2 -->
             <div class="flex flex-col md:flex-row items-start mb-12">
                 <!-- Imagen del servicio -->
                 <div class="w-full md:w-1/4 flex justify-center md:justify-start mb-4 md:mb-0">
-                    <div class="bg-gray-300 w-32 h-32 rounded-md"></div> <!-- Placeholder para la imagen -->
+                    <div class="service-image-wrapper">
+                        <img src="assets/03 Ensayo de permeabilidad in situ 1.png" alt="Geología" class="service-image">
+                    </div>
                 </div>
                 <!-- Descripción del servicio -->
                 <div class="w-full md:w-3/4 md:pl-8">
@@ -102,12 +106,14 @@
                 </div>
             </div>
             <hr class="my-8 border-gray-300">
-    
+
             <!-- Servicio 3 -->
             <div class="flex flex-col md:flex-row items-start">
                 <!-- Imagen del servicio -->
                 <div class="w-full md:w-1/4 flex justify-center md:justify-start mb-4 md:mb-0">
-                    <div class="bg-gray-300 w-32 h-32 rounded-md"></div> <!-- Placeholder para la imagen -->
+                    <div class="service-image-wrapper">
+                        <img src="assets/3 1.png" alt="Geofísica" class="service-image">
+                    </div>
                 </div>
                 <!-- Descripción del servicio -->
                 <div class="w-full md:w-3/4 md:pl-8">
@@ -121,7 +127,9 @@
             <div class="flex flex-col md:flex-row items-start">
                 <!-- Imagen del servicio -->
                 <div class="w-full md:w-1/4 flex justify-center md:justify-start mb-4 md:mb-0">
-                    <div class="bg-gray-300 w-32 h-32 rounded-md"></div> <!-- Placeholder para la imagen -->
+                    <div class="service-image-wrapper">
+                        <img src="assets/Portada Capacitaciones 1.png" alt="Capacitaciones" class="service-image">
+                    </div>    
                 </div>
                 <!-- Descripción del servicio -->
                 <div class="w-full md:w-3/4 md:pl-8">
@@ -133,20 +141,23 @@
     </section>
 
 
+
     <!-- Sección Nosotros -->
-    <section id="nosotros" class="w-full px-6 py-40 bg-gradient-to-b from-white via-gray-100 to-gray-150">
+    <section id="nosotros" class="w-full px-6 py-10 bg-gradient-to-b from-white via-gray-100 to-gray-150">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center space-y-8 md:space-y-0 md:space-x-8">
             <!-- Contenedor de texto -->
             <div class="w-full md:w-1/2">
-                <h2 class="text-7xl font-bold text-black mb-12" data-i18n="about.title"></h2>
+                <h2 class="text-5xl font-bold text-black mb-12" data-i18n="about.title"></h2> <!-- Tamaño ajustado -->
                 <p class="text-black text-lg leading-normal" data-i18n="about.description"></p>
             </div>
             <!-- Contenedor de imagen -->
             <div class="w-full md:w-1/2 flex justify-center md:justify-end">
-                <div class="bg-gray-300" style="width: 750px; height: 500px;"></div> <!-- Dimensiones personalizadas con CSS -->
+                <img src="assets/Nosotros 1.png" alt="Nosotros" class="w-full h-auto md:w-5/6">
             </div>
         </div>
     </section>
+
+
 
     <!-- Sección Misión y Visión -->
     <section id="mision-vision" class="py-32 bg-white">
