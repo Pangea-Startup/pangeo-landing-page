@@ -1,0 +1,124 @@
+/* Fondo del header siempre visible */
+header {
+    background-color: #1b5757;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+}
+/* Estilo del hero */
+.hero-section-geofisica {
+    position: relative;
+    height: 750px; /* Incrementamos la altura */
+    overflow: hidden;
+}
+
+.hero-background-geofisica {
+    background-image: url('../assets/fondo-geofisica.png'); /* Imagen específica para la sección */
+    background-size: cover;
+    background-position: bottom;
+    filter: brightness(70%);
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+.hero-overlay {
+    background: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+}
+
+.hero-content {
+    position: absolute;
+    bottom: 7rem; /* Sección más hacia abajo */
+    left: 9rem; /* Separación del borde izquierdo */
+    z-index: 3;
+    color: white;
+    padding: 0; /* Quitamos padding adicional */
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* No se necesita centrar verticalmente */
+}
+
+.hero-content h2 {
+    font-size: 1.75rem;
+    font-weight: 450;
+    margin-bottom: 0.5rem;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+
+/* Sección de descripción */
+.service-description {
+    background-color: #f7f7f7;
+}
+
+.service-description h2 {
+    border-left: 6px solid #1b5757;
+    padding-left: 1rem;
+}
+
+/* Estilo de imagen */
+.service-description img {
+    border-radius: 0.75rem;
+    border: 1px solid #e2e8f0;
+}
+
+/* Sección de servicios relacionados */
+.related-services h2 {
+    color: #1b5757;
+}
+
+.related-services a {
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.related-services a:hover {
+    text-decoration: underline;
+}
+
+/* Estilo del contenedor del slider */
+#image-slider {
+    position: relative;
+    height: 600px;
+}
+
+/* Ocultar por defecto las imágenes que no están activas */
+.slider-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Flechas de navegación */
+#prev-btn, #next-btn {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+
+/* Footer */
+footer {
+    background-color: #1b5757;
+    color: white;
+    padding: 1.5rem 0;
+}

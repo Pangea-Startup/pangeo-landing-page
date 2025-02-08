@@ -162,4 +162,33 @@ document.addEventListener("DOMContentLoaded", () => {
             changeLanguage(lang);
         });
     });
+
+
+    const images = document.querySelectorAll(".slider-image");
+    const prevBtn = document.getElementById("prev-btn");
+    const nextBtn = document.getElementById("next-btn");
+
+    let currentIndex = 0;
+
+    // Mostrar la imagen actual
+    function showImage(index) {
+        images.forEach((img, i) => {
+            img.classList.toggle("hidden", i !== index);
+        });
+    }
+
+    // Ir a la imagen anterior
+    prevBtn.addEventListener("click", () => {
+        currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
+        showImage(currentIndex);
+    });
+
+    // Ir a la siguiente imagen
+    nextBtn.addEventListener("click", () => {
+        currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
+        showImage(currentIndex);
+    });
+
+    // Inicializar mostrando la primera imagen
+    showImage(currentIndex);
 });
