@@ -215,3 +215,42 @@ footer .text-sm {
     opacity: 0.6;
     border-radius: 10px;
 }
+
+
+/* Estilos para la sección de servicios adicionales */
+.services-section {
+    color: #4C8791; /* Aplica el color a todo el texto */
+    text-align: center;
+}
+
+.services-section h3 {
+    font-size: 1.25rem; /* Tamaño del texto */
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+}
+
+.services-section .line {
+    border-top: 3px solid #4C8791; /* Hace las líneas más gruesas */
+    width: 40px; /* Ajusta la longitud de las líneas */
+    margin: 0 10px;
+}
+
+.services-section .services-links {
+    display: flex;
+    flex-direction: column; /* En móviles */
+    align-items: center;
+    font-weight: 600;
+    font-size: 1.25rem;
+    gap: 10px;
+}
+
+@media (min-width: 768px) {
+    .services-section .services-links {
+        flex-direction: row; /* En pantallas medianas y grandes */
+        gap: 50px;
+    }
+
+    .services-section .line {
+        width: 80px; /* Líneas más largas en pantallas grandes */
+    }
+}
