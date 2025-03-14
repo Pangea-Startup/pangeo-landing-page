@@ -61,7 +61,7 @@
         <div class="text-center px-4 relative z-10 hero-content">
             <h1 class="mb-4 text-white" data-i18n="hero.title"></h1>
             <p class="hero-subtitle text-white" data-i18n="hero.subtitle"></p>
-            <a href="#conozca" class="inline-block mt-6 btn-hero" data-i18n="hero.button"></a>
+            <a href="#nosotros" class="inline-block mt-6 btn-hero" data-i18n="hero.button"></a>
         </div>
     </section>
 
@@ -71,14 +71,13 @@
             <!-- Título de la sección -->
             <h2 class="text-4xl font-bold text-gray-800 mb-12" data-i18n="services.title"></h2>
 
-                        <!-- Servicio 1 con enlace a geotecnia.html -->
+            <!-- Servicio 1 con enlace a geotecnia.html -->
             <div class="flex flex-col md:flex-row items-start mb-12">
                 <!-- Imagen del servicio -->
                 <div class="w-full md:w-1/4 flex justify-center md:justify-start mb-4 md:mb-0">
                     <div class="service-image-wrapper">
-                        <a href="geotecnia.html">
-                            <img src="assets/06 Perfil Estratigráfico 2.png" alt="Geotecnia" class="service-image">
-                        </a>
+                        <img src="assets/06 Perfil Estratigráfico 2.png" alt="Geotecnia" class="service-image">
+                        <a href="geotecnia.html" class="service-link">VER MÁS</a>
                     </div>
                 </div>
                 <!-- Descripción del servicio -->
@@ -89,20 +88,19 @@
                     <p class="text-gray-600 leading-relaxed" data-i18n="services.geotecnia_description"></p>
                 </div>
             </div>
-
+            <hr class="my-8 border-gray-300">
 
             <!-- Servicio 2 -->
             <div class="flex flex-col md:flex-row items-start mb-12">
-                <!-- Imagen del servicio -->
                 <div class="w-full md:w-1/4 flex justify-center md:justify-start mb-4 md:mb-0">
                     <div class="service-image-wrapper">
                         <img src="assets/Portada Geologia.png" alt="Geología" class="service-image">
+                        <a href="geologia.html" class="service-link">VER MÁS</a>
                     </div>
                 </div>
-                <!-- Descripción del servicio -->
                 <div class="w-full md:w-3/4 md:pl-8">
-                    <a href="geologia.html">
-                    <h3 class="text-2xl font-semibold text-gray-800 mb-2" data-i18n="services.geologia_title"></h3>
+                    <a href="geologia.html" class="text-2xl font-semibold text-gray-800 mb-2">
+                        <h3 data-i18n="services.geologia_title">Geología</h3>
                     </a>
                     <p class="text-gray-600 leading-relaxed" data-i18n="services.geologia_description"></p>
                 </div>
@@ -111,15 +109,12 @@
 
             <!-- Servicio 3 -->
             <div class="flex flex-col md:flex-row items-start">
-                <!-- Imagen del servicio con enlace -->
                 <div class="w-full md:w-1/4 flex justify-center md:justify-start mb-4 md:mb-0">
                     <div class="service-image-wrapper">
-                        <a href="service/geofisica-y-sismologia.html">
-                            <img src="assets/3 1.png" alt="Geofísica" class="service-image">
-                        </a>
+                        <img src="assets/3 1.png" alt="Geofísica" class="service-image">
+                        <a href="service/geofisica-y-sismologia.html" class="service-link">VER MÁS</a>
                     </div>
                 </div>
-                <!-- Descripción del servicio -->
                 <div class="w-full md:w-3/4 md:pl-8">
                     <h3 class="text-2xl font-semibold text-gray-800 mb-2" data-i18n="services.geofisica_title"></h3>
                     <p class="text-gray-600 leading-relaxed" data-i18n="services.geofisica_description"></p>
@@ -129,21 +124,17 @@
 
             <!-- Servicio 4 -->
             <div class="flex flex-col md:flex-row items-start">
-                <!-- Imagen del servicio -->
                 <div class="w-full md:w-1/4 flex justify-center md:justify-start mb-4 md:mb-0">
                     <div class="service-image-wrapper">
-                        <a href="service/capacitaciones-in-house.html">
-                            <img src="assets/Portada Capacitaciones 1.png" alt="Capacitaciones" class="service-image">
-                        </a>
-                    </div>    
+                        <img src="assets/Portada Capacitaciones 1.png" alt="Capacitaciones" class="service-image">
+                        <a href="service/capacitaciones-in-house.html" class="service-link">VER MÁS</a>
+                    </div>
                 </div>
-                <!-- Descripción del servicio -->
                 <div class="w-full md:w-3/4 md:pl-8">
                     <h3 class="text-2xl font-semibold text-gray-800 mb-2" data-i18n="services.capacitaciones_title"></h3>
                     <p class="text-gray-600 leading-relaxed" data-i18n="services.capacitaciones_description"></p>
                 </div>
             </div>
-        </div>
     </section>
 
 
@@ -241,16 +232,24 @@
     <footer class="w-full max-w-7xl mx-auto text-gray-800 mt-16">
         <!-- Iconos de Redes Sociales -->
         <div class="flex justify-center space-x-4 mb-4">
-            <a href="#" class="text-gray-600 hover:text-gray-800">
+            <a href="https://www.facebook.com/profile.php?id=61572463567882&sk=about" 
+            class="text-gray-600 hover:text-gray-800 social-icon" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            aria-label="Facebook de Panamerican Geoscience Advisors">
                 <img src="https://img.icons8.com/ios-filled/24/000000/facebook--v1.png" alt="Facebook" />
             </a>
-            <a href="#" class="text-gray-600 hover:text-gray-800">
+            <a href="https://www.linkedin.com/company/panamerican-geoscience-advisors" 
+            class="text-gray-600 hover:text-gray-800 social-icon" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            aria-label="LinkedIn de Panamerican Geoscience Advisors">
                 <img src="https://img.icons8.com/ios-filled/24/000000/linkedin.png" alt="LinkedIn" />
             </a>
-            <a href="#" class="text-gray-600 hover:text-gray-800">
+            <a href="#" class="text-gray-600 hover:text-gray-800 social-icon">
                 <img src="https://img.icons8.com/ios-filled/24/000000/instagram-new.png" alt="Instagram" />
             </a>
-            <a href="#" class="text-gray-600 hover:text-gray-800">
+            <a href="#" class="text-gray-600 hover:text-gray-800 social-icon">
                 <img src="https://img.icons8.com/ios-filled/24/000000/twitter--v1.png" alt="Twitter" />
             </a>
         </div>
@@ -266,9 +265,9 @@
             </div>
             <!-- Enlaces de Navegación -->
             <div class="flex justify-center space-x-8 font-medium">
-                <a href="#" class="text-gray-600 hover:text-gray-800" data-i18n="footer.about_us"></a>
-                <a href="#" class="text-gray-600 hover:text-gray-800" data-i18n="footer.services"></a>
-                <a href="#" class="text-gray-600 hover:text-gray-800" data-i18n="footer.contact_us"></a>
+                <a href="#nosotros" class="text-gray-600 hover:text-gray-800" data-i18n="footer.about_us"></a>
+                <a href="#servicios" class="text-gray-600 hover:text-gray-800" data-i18n="footer.services"></a>
+                <a href="#contacto" class="text-gray-600 hover:text-gray-800" data-i18n="footer.contact_us"></a>
             </div>
             <!-- Información de Contacto -->
             <div class="text-center md:text-right">

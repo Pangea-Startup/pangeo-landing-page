@@ -115,6 +115,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
     window.addEventListener("scroll", handleScroll);
 
+    // Animación para las imágenes de servicios
+    const serviceImages = document.querySelectorAll(".service-image-wrapper");
+
+    // Detectar cuando las imágenes entren en el viewport
+    const serviceObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("show"); // Se agrega la clase para activar la animación
+            }
+        });
+    }, { threshold: 0.2 }); // El 20% de visibilidad activa la animación
+
+    serviceImages.forEach(image => serviceObserver.observe(image));
+
+
+
     let currentLanguage = "es";
     let translations = {};
 
