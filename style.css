@@ -23,6 +23,41 @@ body {
 }
 
 
+    /* Estilo personalizado para el header */
+header2 {
+        background-color: #1b5757; /* Color verde oscuro */
+}
+
+nav2 a {
+        font-size: 1.1rem;
+        font-weight: 500;
+        color: white;
+        transition: color 0.3s;
+}
+
+nav2 a:hover {
+        color: #d1d5db; /* Gris claro al pasar el cursor */
+}
+
+.logo2 img {
+        max-height: 70px;
+}
+
+
+.hero-section2 {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section2 h1, .hero-section2 h2 {
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
+}
+
+.bg-black2 {
+    background-color: rgba(0, 0, 0, 0.5); /* Sombra oscura en la imagen */
+}
+
+
 /* Estilos base del header */
 header {
     transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
@@ -174,16 +209,55 @@ nav a:hover {
     overflow: hidden;
     border-radius: 0 60px 60px 0; /* Esquinas redondeadas a la derecha */
     background: #f0f0f0; /* Fondo para imágenes de carga lenta */
+    opacity: 0;
+    transform: translateX(-30px); /* Inicio fuera de pantalla por la izquierda */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.service-image-wrapper.show {
+    opacity: 1;
+    transform: translateX(0); /* Movimiento de izquierda a derecha */
+}
+
+.service-image-wrapper .service-image {
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), 
+                box-shadow 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.service-image-wrapper:hover .service-image {
+    transform: translateY(-8px); /* Elevación más suave y ligera */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25); /* Sombra más suave y natural */
+}
+
+
+
+/* Efecto VER MÁS con cobertura completa */
+.service-image-wrapper .service-link {
+    position: absolute;
+    inset: 0;  /* Cubre completamente desde los 4 lados */
+    background-color: rgba(26, 32, 44, 0.603); /* #1A202C con 90% de opacidad */
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 500;
+    opacity: 0; /* Oculto por defecto */
+    text-decoration: none; /* Evita el subrayado */
+    transition: opacity 0.5s ease-in-out; /* Desvanecimiento suave */
+}
+.service-image-wrapper:hover .service-link {
+    opacity: 1;
 }
 
 /* Imagen dentro del contenedor */
-.service-image {
+.service-image-wrapper .service-image {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Asegura que la imagen se recorte y no se deforme */
+    object-fit: cover;
 }
 
 
@@ -225,17 +299,40 @@ nav a:hover {
     transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
-/* Cuando el menú móvil está activo */
+/* Animación del menú hamburguesa */
+#mobile-menu {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: -100%; /* El menú inicia fuera de la pantalla */
+    background-color: #1a202c;
+    width: 100%;
+    z-index: 9999;
+    opacity: 0;
+    transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+}
+
+/* Mostrar el menú con animación */
 #mobile-menu.active {
     display: flex;
-    opacity: 1; /* Totalmente visible */
-    transform: translateY(0); /* Posición original */
+    opacity: 1;
+    transform: translateX(0); /* El menú se desliza desde la izquierda */
+}
+
+#menu-toggle {
+    cursor: pointer;
 }
 
 
-/* Botón de hamburguesa */
-#menu-toggle {
-    cursor: pointer;
+/* Efecto de elevación en iconos de redes sociales */
+.social-icon {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.social-icon:hover {
+    transform: translateY(-5px); /* Eleva ligeramente */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra suave */
 }
 
 

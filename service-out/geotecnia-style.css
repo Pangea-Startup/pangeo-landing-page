@@ -1,0 +1,256 @@
+/* Estilo personalizado para el header */
+header2 {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 20;
+    background-color: #1b5757;
+    padding: 20px 0;
+}
+
+
+
+.geotecnia-services-section {
+    background-color: #f9fafb;
+    padding-top: 10rem; /* Aumentado de 8rem a 10rem */
+    padding-bottom: 10rem; /* Aumentado de 8rem a 10rem */
+}
+
+.geotecnia-services-section h1 {
+    border-left: 4px solid #0d9488;
+    padding-left: 15px;
+}
+
+.geotecnia-services-section .graphic-placeholder {
+    width: 100%;
+    height: 500px; /* Aumentado de 450px a 500px */
+    border: 1px solid #d1d5db;
+    position: relative;
+}
+
+.icon-button {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.geotecnia-services-section .graphic-placeholder::before {
+    content: " ";
+    display: block;
+    width: 90%;
+    height: 90%;
+    background-color: rgba(229, 231, 235, 0.7);
+    border-radius: 10px;
+    position: absolute;
+    top: 5%;
+    left: 5%;
+}
+
+
+
+
+
+/* Placeholder para empujar el contenido correctamente */
+.header-placeholder {
+    height: 80px; /* Igual a la altura del header */
+}
+
+nav2 a {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: white;
+    transition: color 0.3s;
+}
+
+nav2 a:hover {
+    color: #d1d5db;
+}
+
+.logo2 img {
+    max-height: 60px;
+}
+
+/* Hero Section */
+.hero-section2 {
+    position: relative;
+    overflow: hidden;
+    height: 80vh;
+    padding-top: 80px; /* Ajustar el espaciado dinámico según el header */
+}
+
+.hero-section2 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(65%);
+}
+
+.hero-section2-overlay2 {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.hero-section2-content2 {
+    position: absolute;
+    z-index: 10;
+    bottom: 15%;
+    left: 5%;
+    color: white;
+}
+
+.hero-section2 h2 {
+    font-size: 1.8rem;
+    font-weight: 300;
+}
+
+.hero-section2 h1 {
+    font-size: 3rem;
+    font-weight: 600;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
+}
+
+/* Estilo de la sección de contacto */
+.contact-section {
+    background-color: #f7fafc;
+    padding: 4rem 2rem;
+}
+
+.contact-section input, .contact-section textarea {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid #cbd5e0;
+    border-radius: 8px;
+}
+
+.contact-section button {
+    background-color: #1b5757;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    transition: background-color 0.3s;
+}
+
+.contact-section button:hover {
+    background-color: #145050;
+}
+
+/* Footer */
+footer {
+    padding: 4rem 0;
+    background-color: #f7fafc;
+}
+
+footer img {
+    max-height: 50px;
+}
+
+footer a {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #4A5568;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #2D3748;
+}
+
+footer hr {
+    border-top: 1px solid #e2e8f0;
+}
+
+footer .text-sm {
+    color: #718096;
+}
+
+.carousel-container {
+    width: 100%;
+    height: 500px;
+    position: relative;
+}
+
+.carousel-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: opacity 0.6s ease-in-out, transform 0.6s ease;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 128, 128, 0.8);
+    color: white;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+.carousel-button:hover {
+    background-color: #0d9488;
+}
+
+.carousel-button.left-2 {
+    left: 10px;
+}
+
+.carousel-button.right-2 {
+    right: 10px;
+}
+
+.carousel-placeholder::before {
+    content: '';
+    display: block;
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #d1d5db 25%, #f3f4f6);
+    opacity: 0.6;
+    border-radius: 10px;
+}
+
+
+/* Estilos para la sección de servicios adicionales */
+.services-section {
+    color: #4C8791; /* Aplica el color a todo el texto */
+    text-align: center;
+}
+
+.services-section h3 {
+    font-size: 1.25rem; /* Tamaño del texto */
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+}
+
+.services-section .line {
+    border-top: 3px solid #4C8791; /* Hace las líneas más gruesas */
+    width: 40px; /* Ajusta la longitud de las líneas */
+    margin: 0 10px;
+}
+
+.services-section .services-links {
+    display: flex;
+    flex-direction: column; /* En móviles */
+    align-items: center;
+    font-weight: 600;
+    font-size: 1.25rem;
+    gap: 10px;
+}
+
+@media (min-width: 768px) {
+    .services-section .services-links {
+        flex-direction: row; /* En pantallas medianas y grandes */
+        gap: 50px;
+    }
+
+    .services-section .line {
+        width: 80px; /* Líneas más largas en pantallas grandes */
+    }
+}

@@ -1,0 +1,467 @@
+/* Fondo del header siempre visible */
+header {
+    background-color: #1b5757;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+/* Estilo del hero */
+.hero-section-geologia {
+    position: relative;
+    height: 750px; /* Incrementamos la altura */
+    overflow: hidden;
+}
+
+/* Fondo con la imagen */
+.hero-background-geologia {
+    background-image: url('../../assets/geologia-bg.jpg'); /* Ajustar ruta si es necesario */
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    filter: brightness(70%);
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+/* Capa de superposición */
+.hero-overlay {
+    background: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+}
+
+/* Contenedor del texto */
+.hero-content {
+    position: absolute;
+    bottom: 7rem; /* Sección más hacia abajo */
+    left: 9rem; /* Separación del borde izquierdo */
+    z-index: 3;
+    color: white;
+    padding: 0; /* Quitamos padding adicional */
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* No se necesita centrar verticalmente */
+}
+
+/* Estilos del título */
+.hero-content h2 {
+    font-size: 1.75rem;
+    font-weight: 450;
+    margin-bottom: 0.5rem;
+}
+
+/* Estilos del encabezado principal */
+.hero-content h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+
+
+nav a {
+    font-size: 1.3rem;
+    font-weight: 400;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+}
+
+/* Estilo del hero */
+.hero-section-geologia {
+    position: relative;
+    overflow: hidden;
+    height: 80vh;
+    padding-top: 80px;
+}
+
+.hero-section-geologia img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(65%);
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+    position: absolute;
+    bottom: 15%;
+    left: 5%;
+    z-index: 10;
+    color: white;
+}
+
+.hero-content h2 {
+    font-size: 1.8rem;
+    font-weight: 300;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    font-weight: 600;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
+}
+
+.services-section {
+    background-color: white;
+    padding: 3rem 0;
+    text-align: center;
+}
+
+/* Contenedor de servicios adicionales */
+.services-container {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centra correctamente */
+    margin-top: 2rem;
+    padding: 2rem 0;
+    position: relative;
+    flex-wrap: wrap; /* Permite que los elementos se reorganicen en filas */
+    gap: 3rem; /* Espaciado horizontal entre títulos */
+}
+
+/* Líneas a los lados */
+.line {
+    flex: 1;
+    height: 1px;
+    background-color: #4a6371;
+    max-width: 120px; /* Ajusta el ancho máximo de las líneas */
+}
+
+/* Línea a los lados del título */
+.services-container::before,
+.services-container::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background-color: #6c8b94; /* Color similar al de la imagen */
+    margin: 0 1rem;
+    max-width: 600px;
+}
+
+
+/* Estilo del título */
+.services-container h3 {
+    font-size: 1.75rem;
+    font-weight: 500;
+    color: #6c8b94; /* Color del texto */
+    margin-bottom: 1.5rem; /* Espaciado entre títulos */
+    margin: 0 1.5rem; /* Espaciado entre líneas */
+    white-space: nowrap; /* Evita que el texto se divida */
+}
+
+
+/* Contenedor de los enlaces */
+.services-links {
+    display: flex;
+    justify-content: space-evenly;  /* Distribución uniforme en todo el ancho */
+    gap: 2rem; /* Espaciado entre enlaces */
+    margin-top: 2rem;
+}
+
+/* Estilos de los enlaces */
+.services-links a {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #6c8b94; /* Color del texto */
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Espaciado con la flecha */
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Flecha a la derecha */
+.services-links a::after {
+    content: "→";
+    font-size: 1.25rem;
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Efecto hover */
+.services-links a:hover {
+    text-decoration: underline;
+    transform: translateY(-2px); /* Ligero efecto de elevación */
+
+}
+
+.services-links a:hover::after {
+    transform: translateX(3px);
+}
+
+
+/* Sección de servicios relacionados */
+.related-services h2 {
+    color: #1b5757;
+}
+
+.related-services a {
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.related-services a:hover {
+    text-decoration: underline;
+}
+
+/* Contenedor del slider */
+.carousel-container {
+    width: 100%;
+    max-width: 600px; /* Tamaño máximo para mantener proporción */
+    height: 500px;
+    position: relative;
+    border-radius: 0; /* Se elimina el redondeado */
+    overflow: hidden; /* Para que las imágenes se mantengan dentro */
+    background-color: transparent; /* Sin fondo */
+    box-shadow: none; /* Elimina la sombra */
+    border: none; /* Elimina cualquier borde */
+}
+
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out; /* Efecto de desplazamiento suave */
+}
+
+.carousel-image {
+    min-width: 100%; /* Ocupa el 100% del ancho del contenedor */
+    height: 100%;
+    object-fit: contain; /* Mantiene la proporción */
+}
+
+.carousel-container img {
+    width: 100%;
+    height: 100%; 
+    background-color: transparent; /* Elimina el fondo gris en las imágenes */
+    object-fit: contain; /* Asegura que la imagen mantenga su proporción sin recortarse */
+    border-radius: 12px;
+    transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+}
+
+
+
+/* Botones del slider */
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 128, 128, 0.8);
+    color: white;
+    width: 32px; /* Tamaño reducido para que no destaque demasiado */
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease;
+}
+
+.carousel-container img:hover {
+    transform: scale(1.01); /* Efecto suave de ampliación */
+    opacity: 0.97; /* Ligero oscurecimiento para destacar */
+}
+
+.carousel-button:hover {
+    background-color: #0d9488;
+}
+
+.carousel-button.left-2 {
+    left: 10px;
+}
+
+.carousel-button.right-2 {
+    right: 10px;
+}
+
+/* Footer */
+footer {
+
+    color: white;
+    padding: 1.5rem 0;
+}
+
+/* Efecto de elevación en iconos del footer */
+.social-icon img {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.social-icon:hover img {
+    transform: translateY(-5px); /* Eleva ligeramente */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra suave */
+}
+
+/* Estado inicial del menú móvil */
+#mobile-menu {
+    display: none;
+    flex-direction: column;
+    position: fixed; /* Cambiado a fixed */
+    top: 0;
+    left: 0;
+    background-color: #1b5757; /* Azul oscuro */
+    width: 100%;
+    z-index: 9999; /* Muy alto para estar por encima de todo */
+    opacity: 0; /* Comienza invisible */
+    transform: translateY(-20px); /* Posición inicial fuera de vista */
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+/* Animación del menú hamburguesa */
+#mobile-menu {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: -100%; /* El menú inicia fuera de la pantalla */
+    background-color: #1b5757;
+    width: 100%;
+    z-index: 9999;
+    opacity: 0;
+    transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+}
+
+/* Mostrar el menú con animación */
+#mobile-menu.active {
+    display: flex;
+    opacity: 1;
+    transform: translateX(0); /* El menú se desliza desde la izquierda */
+}
+
+#menu-toggle {
+    cursor: pointer;
+}
+
+
+
+
+/* HERO SECTION RESPONSIVE */
+@media (max-width: 1024px) {
+    .hero-content {
+        bottom: 5rem; 
+        left: 5rem; 
+    }
+
+    .hero-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+
+    #mobile-menu {
+        display: none;
+    }
+
+    #menu-toggle {
+        display: none; /* Aparece solo en pantallas pequeñas */
+    }
+
+    #menu-toggle {
+        display: flex;
+        align-items: center; /* Centrar el contenido verticalmente */
+        justify-content: center; /* Centrar el contenido horizontalmente */
+    }
+
+    #mobile-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%; /* Justo debajo del header */
+        left: 0;
+        background-color: #1b5757; /* Color del menú desplegable */
+        width: 100%;
+        z-index: 50;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .hero-content {
+        bottom: 3rem; 
+        left: 2rem; 
+    }
+
+    .hero-content h2 {
+        font-size: 1.3rem;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+}
+
+/* CARRUSEL RESPONSIVE */
+@media (max-width: 1024px) {
+    .carousel-container {
+        height: 350px; /* Tamaño intermedio */
+    }
+
+    .carousel-button {
+        width: 32px;
+        height: 32px;
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel-container {
+        height: 280px; /* Reducido para pantallas pequeñas */
+        max-width: 100%; 
+    }
+
+    .carousel-button {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+/* SECCIÓN DE SERVICIOS RESPONSIVE */
+@media (max-width: 1024px) {
+    .services-links {
+        gap: 1rem; /* Espaciado menor para ocupar mejor el ancho */
+    }
+
+    .services-links a {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .services-links {
+        flex-direction: column;  
+        gap: 1.5rem;  
+        text-align: center;  
+        align-items: center;
+    }
+
+    .services-links a {
+        font-size: 1.25rem;  
+        align-items: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .services-container {
+        flex-direction: column; /* En móviles el título se apilará */
+        gap: 1rem; /* Espacio entre el título y las líneas */
+    }
+
+    .services-container::before,
+    .services-container::after {
+        width: 100%; /* Líneas completas para que se vea mejor */
+    }
+
+    .services-container h3 {
+        margin: 0; /* Centra el texto sin márgenes innecesarios */
+    }
+}

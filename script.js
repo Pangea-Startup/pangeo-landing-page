@@ -63,7 +63,19 @@ document.addEventListener("DOMContentLoaded", () => {
             header.classList.remove("scrolled");
         }
     }, { root: null, threshold: 0.1 });
-    observer.observe(heroSection);
+
+    if (heroSection) {
+        const observer = new IntersectionObserver((entries) => {
+            const entry = entries[0];
+            if (!entry.isIntersecting && !isMenuActive) {
+                header.classList.add("scrolled");
+            } else if (!isMenuActive) {
+                header.classList.remove("scrolled");
+            }
+        }, { root: null, threshold: 0.1 });
+    
+        observer.observe(heroSection);
+    }
 
     if (menuToggle && mobileMenu) {
         menuToggle.addEventListener("click", () => {
@@ -103,12 +115,34 @@ document.addEventListener("DOMContentLoaded", () => {
 
     window.addEventListener("scroll", handleScroll);
 
+    // Animación para las imágenes de servicios
+    const serviceImages = document.querySelectorAll(".service-image-wrapper");
+
+    // Detectar cuando las imágenes entren en el viewport
+    const serviceObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("show"); // Se agrega la clase para activar la animación
+            }
+        });
+    }, { threshold: 0.2 }); // El 20% de visibilidad activa la animación
+
+    serviceImages.forEach(image => serviceObserver.observe(image));
+
+
+
     let currentLanguage = "es";
     let translations = {};
 
     async function loadTranslations(lang) {
         try {
-            const response = await fetch(`./i18n/${lang}.json`);
+            // Detectar si estamos en una subcarpeta
+            const isSubfolder = window.location.pathname.includes("service");
+    
+            // Ajustar la ruta de los archivos JSON de traducción
+            const jsonPath = isSubfolder ? "../i18n/" : "./i18n/";
+    
+            const response = await fetch(`${jsonPath}${lang}.json`);
             translations = await response.json();
             updateText();
         } catch (error) {
@@ -117,6 +151,7 @@ document.addEventListener("DOMContentLoaded", () => {
             updateText();
         }
     }
+    
 
     function updatePlaceholders() {
         document.querySelectorAll("[data-placeholder-i18n]").forEach((element) => {
@@ -161,5 +196,93 @@ document.addEventListener("DOMContentLoaded", () => {
             const lang = e.target.getAttribute("data-lang-switch");
             changeLanguage(lang);
         });
+    });
+
+
+    const images = document.querySelectorAll(".slider-image");
+    const prevBtn = document.querySelector(".slider-prev");
+    const nextBtn = document.querySelector(".slider-next");
+    const sliderContainer = document.querySelector(".slider-container");
+
+    let currentIndex = 0;
+
+    // Mostrar la imagen actual
+    function showImage(index) {
+        images.forEach((img, i) => {
+            img.classList.remove("active");
+            if (i === index) {
+                img.classList.add("active");
+            }
+        });
+
+        adjustSliderSize();
+    }
+
+    // Ir a la imagen anterior
+    prevBtn.addEventListener("click", () => {
+        currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
+        showImage(currentIndex);
+    });
+
+    // Ir a la siguiente imagen
+    nextBtn.addEventListener("click", () => {
+        currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
+        showImage(currentIndex);
+    });
+
+    // Inicializar mostrando la primera imagen
+    showImage(currentIndex);
+
+
+    function adjustImageClasses() {
+        document.querySelectorAll(".slider-image").forEach(img => {
+            img.classList.remove("wide", "tall"); // Elimina clases anteriores
+            if (img.naturalWidth > img.naturalHeight) {
+                img.classList.add("wide"); // Imágenes más anchas que altas
+            } else {
+                img.classList.add("tall"); // Imágenes más altas que anchas
+            }
+        });
+    }
+    
+    // Función para ajustar el tamaño del contenedor basado en la imagen activa
+    function adjustSliderSize() {
+        const activeImage = document.querySelector(".slider-image.active");
+
+        if (activeImage) {
+            sliderContainer.style.width = `${activeImage.clientWidth}px`;
+            sliderContainer.style.height = `${activeImage.clientHeight}px`;
+        }
+    }
+    
+    prevBtn.addEventListener("click", () => {
+        currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
+        showImage(currentIndex);
+    });
+
+    nextBtn.addEventListener("click", () => {
+        currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
+        showImage(currentIndex);
+    });
+
+    // Ajustar el tamaño cuando la página carga
+    window.addEventListener("load", () => {
+        showImage(currentIndex);
+    });
+
+    // Ajustar tamaño cuando la página carga
+    window.addEventListener("load", adjustSliderSize);
+
+    // Espera a que las imágenes se carguen y ajusta
+    window.addEventListener("load", adjustImageClasses);
+    
+
+    const isSubfolder = window.location.pathname.includes("service");
+
+    document.querySelectorAll("nav a").forEach(link => {
+        const href = link.getAttribute("href");
+        if (href.startsWith("#")) {
+            link.setAttribute("href", isSubfolder ? `../index.html${href}` : `.${href}`);
+        }
     });
 });

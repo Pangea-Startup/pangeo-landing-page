@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geofísica y Sismología - Pangeo</title>
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Estilo personalizado -->
+    <link rel="stylesheet" href="geofisica-y-sismologia.css">
+</head>
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+
+    <!-- Header -->
+    <header class="bg-[#1b5757] fixed w-full top-0 z-10">
+        <div class="container mx-auto flex justify-between items-center py-6 px-8">
+            <!-- Logo -->
+            <div>
+                <img src="../assets/Logo-4.png" alt="Logo" class="h-10 md:h-16 w-auto">
+            </div>
+            <!-- Navegación centrada (pantallas grandes) -->
+            <nav class="hidden md:flex justify-center space-x-8 flex-1">
+                <a href="../index.html#inicio" class="text-white px-4 py-2" data-i18n="header.menu_inicio"></a>
+                <a href="../index.html#servicios" class="text-white px-4 py-2" data-i18n="header.menu_servicios"></a>
+                <a href="../index.html#nosotros" class="text-white px-4 py-2" data-i18n="header.menu_nosotros"></a>
+                <a href="../index.html#contacto" class="text-white px-4 py-2" data-i18n="header.menu_contacto"></a>
+            </nav>
+            <!-- Botones de idioma -->
+            <div id="language-switch" class="flex space-x-4">
+                <button data-lang-switch="es" class="text-white hover:underline">ES</button>
+                <button data-lang-switch="en" class="text-white hover:underline">EN</button>
+            </div>
+            <!-- Menú hamburguesa -->
+            <button id="menu-toggle" class="block md:hidden focus:outline-none">
+                <svg class="h-8 w-8 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+        <!-- Menú móvil -->
+        <nav id="mobile-menu" class="hidden">
+            <a href="../index.html#inicio" class="block text-white px-4 py-2" data-i18n="header.menu_inicio"></a>
+            <a href="../index.html#servicios" class="block text-white px-4 py-2" data-i18n="header.menu_servicios"></a>
+            <a href="../index.html#nosotros" class="block text-white px-4 py-2" data-i18n="header.menu_nosotros"></a>
+            <a href="../index.html#contacto" class="block text-white px-4 py-2" data-i18n="header.menu_contacto"></a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section-geofisica">
+        <div class="hero-background-geofisica"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h2>Servicio</h2>
+            <h1>Geofísica y Sismología</h1>
+        </div>
+    </section>
+
+    <section class="geotecnia-services-section container mx-auto py-20 px-6 md:px-12">
+        <div class="flex flex-col md:flex-row items-start md:items-center">
+            <!-- Descripción de los servicios -->
+            <div class="w-full md:w-2/3 pr-8">
+                <h1 class="text-5xl font-bold text-gray-800 mb-6">Servicios en Geofísica y Sismología</h1>
+                <p class="text-gray-600 text-lg leading-relaxed mb-6">
+                    Aplicamos técnicas geofísicas innovadoras para obtener una visión detallada de la estratigrafía del subsuelo y proporcionamos datos claves para el diseño geotécnico.
+                </p>
+                <p class="text-gray-600 text-lg leading-relaxed mb-6">Los cuales incluyen:</p>
+                <ul class="list-disc ml-6 text-gray-700">
+                    <li>Ensayo de Refracción Sísmica</li>
+                    <li>Procesamiento de ensayo MASW</li>
+                    <li>Análisis de Ajuste Espectral</li>
+                    <li>Ensayo de Microtremores</li>
+                    <li>Ensayo MASW</li>
+                </ul>
+            </div>
+    
+            <!-- Carrusel de imágenes -->
+            <div class="w-full md:w-1/2 mt-10 md:mt-0">
+                <div class="carousel-container relative bg-gray-300 rounded-lg overflow-hidden shadow-lg">
+                    <!-- Imagen dinámica -->
+                    <img id="carouselImage" src="assets/geofisica y sismologia/1 Ensayo de Refracción Sísmica.jpeg" alt="Imagen de geofísica" class="w-full h-auto object-cover rounded-lg transition-transform duration-500">
+            
+                    <!-- Botones de navegación -->
+                    <div onclick="prevImage()" class="carousel-button left-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                        </svg>
+                    </div>
+                    <div onclick="nextImage()" class="carousel-button right-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Importar el script -->
+            <script src="geofisica-y-sismologia.js"></script>
+        </div>
+    </section>
+
+    <!-- Sección de Servicios adicionales -->
+    <section class="services-section">
+        <div class="services-container">
+            <h3>Más servicios que ofrecemos</h3>
+        </div>
+
+        <div class="services-links">
+            <a href="#">Geotecnia</a>
+            <a href="#">Geología</a>
+            <a href="#">Capacitaciones in-house</a>
+        </div>
+    </section>
+
+
+        <!-- Sección de Contacto -->
+    <section id="contacto" class="w-full flex justify-center items-center py-40 bg-gray-100 relative min-h-screen">
+        <!-- Imagen de fondo -->
+        <div class="absolute inset-0 w-3/4 bg-cover bg-center" style="background-image: url('../assets/contact.png');"></div>
+        <!-- Contenedor del formulario -->
+        <div class="relative w-full max-w-7xl flex justify-end">
+            <div class="bg-white p-16 py-20 rounded-xl shadow-lg w-full max-w-2xl" style="min-height: 110%;">
+
+                <!-- Título y descripción -->
+                <h2 class="text-4xl font-bold text-black mb-4" data-i18n="contact.title"></h2>
+                <p class="text-gray-700 mb-8 leading-relaxed" data-i18n="contact.description"></p>
+
+                <!-- Formulario -->
+                <form class="grid grid-cols-1 gap-6">
+                    <!-- Campos del formulario en dos columnas -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label for="name" class="block text-gray-800 font-medium mb-2" data-i18n="contact.name"></label>
+                            <input type="text" id="name" placeholder="" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400" data-placeholder-i18n="contact.name">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-gray-800 font-medium mb-2" data-i18n="contact.email"></label>
+                            <input type="email" id="email" placeholder="" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400" data-placeholder-i18n="contact.email">
+                        </div>
+                        <div>
+                            <label for="phone" class="block text-gray-800 font-medium mb-2" data-i18n="contact.phone"></label>
+                            <input type="text" id="phone" placeholder="" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400" data-placeholder-i18n="contact.phone">
+                        </div>
+                        <div>
+                            <label for="company" class="block text-gray-800 font-medium mb-2" data-i18n="contact.company"></label>
+                            <input type="text" id="company" placeholder="" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400" data-placeholder-i18n="contact.company">
+                        </div>
+                    </div>
+
+                    <!-- Campo de mensaje -->
+                    <div>
+                        <label for="message" class="block text-gray-800 font-medium mb-2" data-i18n="contact.message"></label>
+                        <textarea id="message" placeholder="" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400" data-placeholder-i18n="contact.message"></textarea>
+                    </div>
+
+                    <!-- Botón de enviar -->
+                    <div class="flex justify-start mt-4">
+                        <button type="submit" class="bg-black text-white font-semibold py-3 px-8 rounded-full hover:bg-gray-700 transition-all" data-i18n="contact.send_button"></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+    <footer class="w-full max-w-7xl mx-auto text-gray-800 mt-16">
+        <!-- Iconos de Redes Sociales -->
+        <div class="flex justify-center space-x-4 mb-4">
+            <a href="https://www.facebook.com/profile.php?id=61572463567882&sk=about" 
+            class="text-gray-600 hover:text-gray-800 social-icon" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            aria-label="Facebook de Panamerican Geoscience Advisors">
+                <img src="https://img.icons8.com/ios-filled/24/000000/facebook--v1.png" alt="Facebook" />
+            </a>
+            <a href="https://www.linkedin.com/company/panamerican-geoscience-advisors" 
+            class="text-gray-600 hover:text-gray-800 social-icon" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            aria-label="LinkedIn de Panamerican Geoscience Advisors">
+                <img src="https://img.icons8.com/ios-filled/24/000000/linkedin.png" alt="LinkedIn" />
+            </a>
+            <a href="#" class="text-gray-600 hover:text-gray-800 social-icon">
+                <img src="https://img.icons8.com/ios-filled/24/000000/instagram-new.png" alt="Instagram" />
+            </a>
+            <a href="#" class="text-gray-600 hover:text-gray-800 social-icon">
+                <img src="https://img.icons8.com/ios-filled/24/000000/twitter--v1.png" alt="Twitter" />
+            </a>
+        </div>
+    
+        <!-- Línea Divisora -->
+        <hr class="border-gray-300 mb-10">
+    
+        <!-- Sección Central del Footer -->
+        <div class="grid grid-cols-1 md:grid-cols-3 text-center md:text-left items-center mb-8">
+            <!-- Logo -->
+            <div class="flex justify-center md:justify-start mb-4 md:mb-0">
+                <img src="../assets/Logo-1.png" alt="Logo Pangea" class="h-10 w-auto">
+            </div>
+            <!-- Enlaces de Navegación -->
+            <div class="flex justify-center space-x-8 font-medium">
+                <a href="#nosotros" class="text-gray-600 hover:text-gray-800" data-i18n="footer.about_us"></a>
+                <a href="#servicios" class="text-gray-600 hover:text-gray-800" data-i18n="footer.services"></a>
+                <a href="#contacto" class="text-gray-600 hover:text-gray-800" data-i18n="footer.contact_us"></a>
+            </div>
+            <!-- Información de Contacto -->
+            <div class="text-center md:text-right">
+                <p class="text-gray-600 hover:text-gray-800">
+                    <a href="tel:+51999999999" class="hover:underline" data-i18n="footer.phone"></a>
+                </p>
+                <p class="text-gray-600 hover:text-gray-800">
+                    <a href="mailto:pangea@gmail.com" class="hover:underline" data-i18n="footer.email"></a>
+                </p>
+            </div>
+        </div>
+    
+        <!-- Línea Divisora -->
+        <hr class="border-gray-300 mb-6">
+    
+        <!-- Copyright -->
+        <div class="text-center text-sm text-gray-600" data-i18n="footer.copyright"></div>
+    </footer>
+
+    <!-- Script general -->
+    <script src="../script.js"></script>
+</body>
+</html>
