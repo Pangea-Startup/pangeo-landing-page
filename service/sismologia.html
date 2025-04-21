@@ -7,7 +7,7 @@
     <!-- Tailwind CSS -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <!-- Estilo personalizado -->
-    <link rel="stylesheet" href="geofisica-y-sismologia.css">
+    <link rel="stylesheet" href="sismologia.css">
 </head>
 <body class="bg-gray-100 font-sans leading-normal tracking-normal">
 
@@ -47,12 +47,12 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero-section-geofisica">
-        <div class="hero-background-geofisica"></div>
+    <section class="hero-section-geotecnia">
+        <div class="hero-background-geotecnia"></div>
         <div class="hero-overlay"></div>
         <div class="hero-content">
             <h2>Servicio</h2>
-            <h1>Geofísica y Sismología</h1>
+            <h1>Sismología</h1>
         </div>
     </section>
 
@@ -184,11 +184,12 @@
             aria-label="LinkedIn de Panamerican Geoscience Advisors">
                 <img src="https://img.icons8.com/ios-filled/24/000000/linkedin.png" alt="LinkedIn" />
             </a>
-            <a href="#" class="text-gray-600 hover:text-gray-800 social-icon">
+            <a href="https://www.instagram.com/pangeo.advisors/" 
+            class="text-gray-600 hover:text-gray-800 social-icon" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            aria-label="Instagram de Panamerican Geoscience Advisors">
                 <img src="https://img.icons8.com/ios-filled/24/000000/instagram-new.png" alt="Instagram" />
-            </a>
-            <a href="#" class="text-gray-600 hover:text-gray-800 social-icon">
-                <img src="https://img.icons8.com/ios-filled/24/000000/twitter--v1.png" alt="Twitter" />
             </a>
         </div>
     
@@ -225,29 +226,28 @@
         <div class="text-center text-sm text-gray-600" data-i18n="footer.copyright"></div>
     </footer>
 
-    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
-    <script type="text/javascript">
-        (function(){
-            emailjs.init("B7NfAO-Tdsi42XWQQ"); // reemplaza con tu public key
-        })();
-    </script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
     <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      const form = document.getElementById('contact-form');
-    
-      form.addEventListener('submit', function(e) {
+    document.addEventListener("DOMContentLoaded", function () {
+        emailjs.init('B7NfAO-Tdsi42XWQQ'); // tu clave pública
+
+        const form = document.getElementById("contact-form");
+        if (!form) return;
+
+        form.addEventListener("submit", function (e) {
         e.preventDefault();
-    
-        emailjs.sendForm('service_yrttdh3', 'template_xceqckv', this)
-          .then(function(response) {
-             alert('Mensaje enviado correctamente. ¡Gracias por contactarnos!');
-             form.reset();
-          }, function(error) {
-             console.error('Error al enviar:', error);
-             alert('Hubo un problema al enviar el mensaje. Intenta nuevamente.');
-          });
-      });
+
+        emailjs.sendForm('service_yrttdh3', 'template_s6rgv2t', form)
+            .then(() => {
+            alert("Mensaje enviado correctamente.");
+            form.reset();
+            })
+            .catch((error) => {
+            console.error("Error al enviar:", error);
+            alert("Hubo un error al enviar el mensaje.");
+            });
+        });
     });
     </script>
 

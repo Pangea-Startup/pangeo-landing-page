@@ -15,7 +15,7 @@ header {
 .hero-background-geotecnia {
     background-image: url('../../assets/geotecnia-bg.jpeg'); /* Ajustar ruta si es necesario */
     background-size: cover;
-    background-position: bottom;
+    background-position: top;
     background-repeat: no-repeat;
     filter: brightness(70%);
     position: absolute;

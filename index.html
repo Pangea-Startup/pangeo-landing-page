@@ -107,34 +107,58 @@
             </div>
             <hr class="my-8 border-gray-300">
 
-            <!-- Servicio 3 -->
-            <div class="flex flex-col md:flex-row items-start">
+            <!-- Servicio 3 - Geofísica -->
+            <div class="flex flex-col md:flex-row items-start mb-12">
                 <div class="w-full md:w-1/4 flex justify-center md:justify-start mb-4 md:mb-0">
-                    <div class="service-image-wrapper">
-                        <img src="assets/3 1.png" alt="Geofísica" class="service-image">
-                        <a href="service/geofisica-y-sismologia.html" class="service-link">VER MÁS</a>
-                    </div>
+                <div class="service-image-wrapper">
+                    <img src="assets/3 1.png" alt="Geofísica" class="service-image">
+                    <a href="service/geofisica.html" class="service-link">VER MÁS</a>
+                </div>
                 </div>
                 <div class="w-full md:w-3/4 md:pl-8">
-                    <h3 class="text-2xl font-semibold text-gray-800 mb-2" data-i18n="services.geofisica_title"></h3>
-                    <p class="text-gray-600 leading-relaxed" data-i18n="services.geofisica_description"></p>
+                <a href="service/geofisica.html" class="text-2xl font-semibold text-gray-800 mb-2">
+                    <h3 data-i18n="services.geofisica_title">Geofísica</h3>
+                </a>
+                <p class="text-gray-600 leading-relaxed" data-i18n="services.geofisica_description"></p>
                 </div>
             </div>
             <hr class="my-8 border-gray-300">
-
-            <!-- Servicio 4 -->
-            <div class="flex flex-col md:flex-row items-start">
+            
+            <!-- Servicio 4 - Sismología -->
+            <div class="flex flex-col md:flex-row items-start mb-12">
                 <div class="w-full md:w-1/4 flex justify-center md:justify-start mb-4 md:mb-0">
-                    <div class="service-image-wrapper">
-                        <img src="assets/Portada Capacitaciones 1.png" alt="Capacitaciones" class="service-image">
-                        <a href="service/capacitaciones-in-house.html" class="service-link">VER MÁS</a>
-                    </div>
+                <div class="service-image-wrapper">
+                    <img src="assets/sismologia/Portada-sismologia-1.png" alt="Sismología" class="service-image">
+                    <a href="service/sismologia.html" class="service-link">VER MÁS</a>
+                </div>
                 </div>
                 <div class="w-full md:w-3/4 md:pl-8">
-                    <h3 class="text-2xl font-semibold text-gray-800 mb-2" data-i18n="services.capacitaciones_title"></h3>
-                    <p class="text-gray-600 leading-relaxed" data-i18n="services.capacitaciones_description"></p>
+                <a href="service/sismologia.html" class="text-2xl font-semibold text-gray-800 mb-2">
+                    <h3 data-i18n="services.sismologia_title">Sismología</h3>
+                </a>
+                <p class="text-gray-600 leading-relaxed" data-i18n="services.sismologia_description"></p>
                 </div>
             </div>
+            <hr class="my-8 border-gray-300">
+  
+
+
+            <!-- Servicio 4 - Sismología -->
+            <div class="flex flex-col md:flex-row items-start mb-12">
+                <div class="w-full md:w-1/4 flex justify-center md:justify-start mb-4 md:mb-0">
+                <div class="service-image-wrapper">
+                    <img src="assets/Portada Capacitaciones 1.png" alt="Capacitaciones" class="service-image">
+                    <a href="service/capacitaciones-in-house.html" class="service-link">VER MÁS</a>
+                </div>
+                </div>
+                <div class="w-full md:w-3/4 md:pl-8">
+                <a href="service/capacitaciones-in-house.htmll" class="text-2xl font-semibold text-gray-800 mb-2">
+                    <h3 data-i18n="services.capacitaciones_title">Sismología</h3>
+                </a>
+                <p class="text-gray-600 leading-relaxed" data-i18n="services.capacitaciones_description"></p>
+                </div>
+            </div>
+            <hr class="my-8 border-gray-300">
     </section>
 
 
@@ -249,13 +273,15 @@
             aria-label="LinkedIn de Panamerican Geoscience Advisors">
                 <img src="https://img.icons8.com/ios-filled/24/000000/linkedin.png" alt="LinkedIn" />
             </a>
-            <a href="#" class="text-gray-600 hover:text-gray-800 social-icon">
+            <a href="https://www.instagram.com/pangeo.advisors/" 
+            class="text-gray-600 hover:text-gray-800 social-icon" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            aria-label="Instagram de Panamerican Geoscience Advisors">
                 <img src="https://img.icons8.com/ios-filled/24/000000/instagram-new.png" alt="Instagram" />
             </a>
-            <a href="#" class="text-gray-600 hover:text-gray-800 social-icon">
-                <img src="https://img.icons8.com/ios-filled/24/000000/twitter--v1.png" alt="Twitter" />
-            </a>
         </div>
+
     
         <!-- Línea Divisora -->
         <hr class="border-gray-300 mb-10">
@@ -290,30 +316,32 @@
         <div class="text-center text-sm text-gray-600" data-i18n="footer.copyright"></div>
     </footer>
     
-    <script type="module">
-        import emailjs from 'https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js';
-      
-        emailjs.init('B7NfAO-Tdsi42XWQQ'); // tu clave pública 
-      
-        document.addEventListener("DOMContentLoaded", function () {
-          const form = document.getElementById("contact-form");
-          if (!form) return;
-      
-          form.addEventListener("submit", function (e) {
-            e.preventDefault();
-      
-            emailjs.sendForm('service_yrttdh3', 'template_xceqckv', form)
-              .then(() => {
-                alert("Mensaje enviado correctamente.");
-                form.reset();
-              })
-              .catch((error) => {
-                console.error("Error al enviar:", error);
-                alert("Hubo un error al enviar el mensaje.");
-              });
-          });
+    <!-- ✅ Usa este script clásico (no módulo) -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        emailjs.init('B7NfAO-Tdsi42XWQQ'); // tu clave pública
+
+        const form = document.getElementById("contact-form");
+        if (!form) return;
+
+        form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        emailjs.sendForm('service_yrttdh3', 'template_s6rgv2t', form)
+            .then(() => {
+            alert("Mensaje enviado correctamente.");
+            form.reset();
+            })
+            .catch((error) => {
+            console.error("Error al enviar:", error);
+            alert("Hubo un error al enviar el mensaje.");
+            });
         });
-      </script>
+    });
+    </script>
+
       
      
 

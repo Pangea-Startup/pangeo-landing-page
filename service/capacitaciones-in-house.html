@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Capacitaciones-In-House - Pangeo</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="geofisica-y-sismologia.css">
+    <link rel="stylesheet" href="capacitaciones-in-house.css">
 </head>
 
 <body class="bg-gray-100 font-sans leading-normal tracking-normal">
@@ -41,8 +41,8 @@
         </nav>
     </header>
 
-    <section class="hero-section-geofisica">
-        <div class="hero-background-geofisica"></div>
+    <section class="hero-section-geotecnia">
+        <div class="hero-background-geotecnia"></div>
         <div class="hero-overlay"></div>
         <div class="hero-content">
             <h2>Servicio</h2>
@@ -101,7 +101,7 @@
         <div class="services-links">
             <a href="#">Geotecnia</a>
             <a href="#">Geología</a>
-            <a href="#">Geofísica y Sismología</a>
+            <a href="#">Geofísica</a>
         </div>
     </section>
 
@@ -156,21 +156,26 @@
 
     <footer class="w-full max-w-7xl mx-auto text-gray-800 mt-16">
         <div class="flex justify-center space-x-4 mb-4">
-            <a href="https://www.facebook.com/profile.php?id=61572463567882&sk=about"
-                class="text-gray-600 hover:text-gray-800 social-icon" target="_blank" rel="noopener noreferrer"
-                aria-label="Facebook de Panamerican Geoscience Advisors">
+            <a href="https://www.facebook.com/profile.php?id=61572463567882&sk=about" 
+            class="text-gray-600 hover:text-gray-800 social-icon" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            aria-label="Facebook de Panamerican Geoscience Advisors">
                 <img src="https://img.icons8.com/ios-filled/24/000000/facebook--v1.png" alt="Facebook" />
             </a>
-            <a href="https://www.linkedin.com/company/panamerican-geoscience-advisors"
-                class="text-gray-600 hover:text-gray-800 social-icon" target="_blank" rel="noopener noreferrer"
-                aria-label="LinkedIn de Panamerican Geoscience Advisors">
+            <a href="https://www.linkedin.com/company/panamerican-geoscience-advisors" 
+            class="text-gray-600 hover:text-gray-800 social-icon" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            aria-label="LinkedIn de Panamerican Geoscience Advisors">
                 <img src="https://img.icons8.com/ios-filled/24/000000/linkedin.png" alt="LinkedIn" />
             </a>
-            <a href="#" class="text-gray-600 hover:text-gray-800 social-icon">
+            <a href="https://www.instagram.com/pangeo.advisors/" 
+            class="text-gray-600 hover:text-gray-800 social-icon" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            aria-label="Instagram de Panamerican Geoscience Advisors">
                 <img src="https://img.icons8.com/ios-filled/24/000000/instagram-new.png" alt="Instagram" />
-            </a>
-            <a href="#" class="text-gray-600 hover:text-gray-800 social-icon">
-                <img src="https://img.icons8.com/ios-filled/24/000000/twitter--v1.png" alt="Twitter" />
             </a>
         </div>
 
@@ -200,29 +205,28 @@
         <div class="text-center text-sm text-gray-600" data-i18n="footer.copyright"></div>
     </footer>
 
-    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
-    <script type="text/javascript">
-        (function(){
-            emailjs.init("B7NfAO-Tdsi42XWQQ"); // reemplaza con tu public key
-        })();
-    </script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
     <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      const form = document.getElementById('contact-form');
-    
-      form.addEventListener('submit', function(e) {
+    document.addEventListener("DOMContentLoaded", function () {
+        emailjs.init('B7NfAO-Tdsi42XWQQ'); // tu clave pública
+
+        const form = document.getElementById("contact-form");
+        if (!form) return;
+
+        form.addEventListener("submit", function (e) {
         e.preventDefault();
-    
-        emailjs.sendForm('service_yrttdh3', 'template_xceqckv', this)
-          .then(function(response) {
-             alert('Mensaje enviado correctamente. ¡Gracias por contactarnos!');
-             form.reset();
-          }, function(error) {
-             console.error('Error al enviar:', error);
-             alert('Hubo un problema al enviar el mensaje. Intenta nuevamente.');
-          });
-      });
+
+        emailjs.sendForm('service_yrttdh3', 'template_s6rgv2t', form)
+            .then(() => {
+            alert("Mensaje enviado correctamente.");
+            form.reset();
+            })
+            .catch((error) => {
+            console.error("Error al enviar:", error);
+            alert("Hubo un error al enviar el mensaje.");
+            });
+        });
     });
     </script>
 
