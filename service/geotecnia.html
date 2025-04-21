@@ -112,7 +112,7 @@
 
         <div class="services-links">
             <a href="#">Geología</a>
-            <a href="#">Geofísica y sismología</a>
+            <a href="#">Geofísica</a>
             <a href="#">Capacitaciones in-house</a>
         </div>
     </section>
@@ -189,11 +189,12 @@
             aria-label="LinkedIn de Panamerican Geoscience Advisors">
                 <img src="https://img.icons8.com/ios-filled/24/000000/linkedin.png" alt="LinkedIn" />
             </a>
-            <a href="#" class="text-gray-600 hover:text-gray-800 social-icon">
+            <a href="https://www.instagram.com/pangeo.advisors/" 
+            class="text-gray-600 hover:text-gray-800 social-icon" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            aria-label="Instagram de Panamerican Geoscience Advisors">
                 <img src="https://img.icons8.com/ios-filled/24/000000/instagram-new.png" alt="Instagram" />
-            </a>
-            <a href="#" class="text-gray-600 hover:text-gray-800 social-icon">
-                <img src="https://img.icons8.com/ios-filled/24/000000/twitter--v1.png" alt="Twitter" />
             </a>
         </div>
     
@@ -230,31 +231,30 @@
         <div class="text-center text-sm text-gray-600" data-i18n="footer.copyright"></div>
     </footer>
 
-    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
-    <script type="text/javascript">
-        (function(){
-            emailjs.init("B7NfAO-Tdsi42XWQQ"); // reemplaza con tu public key
-        })();
-    </script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
     <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      const form = document.getElementById('contact-form');
-    
-      form.addEventListener('submit', function(e) {
+    document.addEventListener("DOMContentLoaded", function () {
+        emailjs.init('B7NfAO-Tdsi42XWQQ'); // tu clave pública
+
+        const form = document.getElementById("contact-form");
+        if (!form) return;
+
+        form.addEventListener("submit", function (e) {
         e.preventDefault();
-    
-        emailjs.sendForm('service_yrttdh3', 'template_xceqckv', this)
-          .then(function(response) {
-             alert('Mensaje enviado correctamente. ¡Gracias por contactarnos!');
-             form.reset();
-          }, function(error) {
-             console.error('Error al enviar:', error);
-             alert('Hubo un problema al enviar el mensaje. Intenta nuevamente.');
-          });
-      });
+
+        emailjs.sendForm('service_yrttdh3', 'template_s6rgv2t', form)
+            .then(() => {
+            alert("Mensaje enviado correctamente.");
+            form.reset();
+            })
+            .catch((error) => {
+            console.error("Error al enviar:", error);
+            alert("Hubo un error al enviar el mensaje.");
+            });
+        });
     });
-    </script>    
+    </script>   
 
     <!-- Script general -->
     <script src="../script.js"></script>

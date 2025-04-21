@@ -16,10 +16,43 @@
       "geotecnia_description": "Ofrecemos soluciones especializadas en geotecnia para garantizar la seguridad y eficiencia de sus proyectos de ingeniería. Con experiencia en estudios de suelos, diseño de cimentaciones y modelamiento avanzado, acompañamos cada fase de su proyecto, desde la exploración inicial hasta su fase final de construcción.",
       "geologia_title": "Geología",
       "geologia_description": "Apoyamos sus proyectos con un análisis geológico detallado y preciso, esencial para anticipar y gestionar condiciones del terreno. Nuestra experiencia en evaluación geomecánica, mapeo geológico y análisis de estabilidad en taludes garantiza decisiones informadas y seguras en cada etapa de desarrollo.",
-      "geofisica_title": "Geofísica y sismología",
+      "geofisica_title": "Geofísica",
       "geofisica_description": "Aplicamos técnicas geofísicas innovadoras para obtener una visión detallada de la estratigrafía del subsuelo y proporcionamos datos claves para el diseño geotécnico. A través de ensayos geofísicos y su interpretación, combinamos métodos indirectos que permiten caracterizar el terreno con precisión, optimizando el diseño y la seguridad de las infraestructuras.",
       "capacitaciones_title": "Capacitaciones in-house",
-      "capacitaciones_description": "Nuestras capacitaciones permiten fortalecer los conocimientos y aptitudes que requieren su equipo de trabajo mediante programas especializados y personalizados diseñados exclusivamente para atender el objetivo específico de su organización."
+      "capacitaciones_description": "Nuestras capacitaciones permiten fortalecer los conocimientos y aptitudes que requieren su equipo de trabajo mediante programas especializados y personalizados diseñados exclusivamente para atender el objetivo específico de su organización.",
+      "sismologia_title":"Sismologia",
+      "sismologia_description":"Evaluamos los aspectos sismológicos considerando la ubicación del proyecto y las propiedades sísmicas del suelo, mediante estudios de peligrosidad sísmica, análisis de amplificación y licuación, con el objetivo de garantizar la seguridad y la vida útil de la estructura proyectada.",
+      "geotecnia_items": {
+        "runout": "Análisis de movimientos de masas",
+        "slope_3d": "Análisis de Estabilidad 3D",
+        "test_pits": "Ejecución de Calicata",
+        "foundation": "Análisis de cimentaciones",
+        "slope_2d": "Análisis de Estabilidad 2D",
+        "stratigraphic": "Perfil Estratigráfico",
+        "finite_element": "Análisis de elementos finitos",
+        "density": "Ensayo de densidad in situ",
+        "seepage": "Análisis de Filtraciones",
+        "dynamic": "Análisis dinámicos"
+      },
+      "geologia_items": {
+        "spt": "Ensayo de Penetración Estándar | SPT",
+        "permeability": "Ensayo de permeabilidad in situ",
+        "water_table": "Medición del Nivel freático",
+        "pit_stability": "Análisis Estabilidad del Tajo",
+        "diamond_drilling": "Perforación de diamantina",
+        "geomechanical": "Estación Geomecánica",
+        "stereographic": "Proyección Estereográfica",
+        "kinematic": "Análisis Cinemático",
+        "geological_logging": "Logueo geológico",
+        "geological_mapping": "Mapeo Geológico",
+        "slope_inspection": "Inspección de taludes rocosos"
+      }
+    },
+    "more_services": {
+      "title": "Más servicios que ofrecemos",
+      "geologia": "Geología",
+      "geofisica": "Geofísica",
+      "capacitaciones": "Capacitaciones in-house"
     },
     "about": {
       "title": "Nosotros",

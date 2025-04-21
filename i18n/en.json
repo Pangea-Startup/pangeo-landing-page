@@ -16,10 +16,43 @@
       "geotecnia_description": "We offer specialized geotechnical solutions to ensure the safety and efficiency of your engineering projects. With expertise in soil studies, foundation design, and advanced modeling, we support every phase of your project, from initial exploration to final construction.",
       "geologia_title": "Geology",
       "geologia_description": "We support your projects with detailed and precise geological analysis, essential to anticipate and manage terrain conditions. Our experience in geomechanical evaluation, geological mapping, and slope stability analysis ensures informed and safe decisions at every development stage.",
-      "geofisica_title": "Geophysics and Seismology",
+      "geofisica_title": "Geophysics",
       "geofisica_description": "We apply innovative geophysical techniques to obtain a detailed view of subsurface stratigraphy and provide key data for geotechnical design. Through geophysical testing and its interpretation, we combine indirect methods to precisely characterize the terrain, optimizing infrastructure design and safety.",
       "capacitaciones_title": "In-House Training",
-      "capacitaciones_description": "Our training programs strengthen the knowledge and skills your team requires through specialized and customized programs designed exclusively to address your organization's specific objectives."
+      "capacitaciones_description": "Our training programs strengthen the knowledge and skills your team requires through specialized and customized programs designed exclusively to address your organization's specific objectives.",
+      "sismologia_title":"Seismology",
+      "sismologia_description":"We evaluate seismological aspects based on the project's location and the seismic properties of the soil through seismic hazard studies, amplification analysis, and liquefaction analysis, with the aim of ensuring the safety and service life of the proposed structure.",
+      "geotecnia_items": {
+        "runout": "Runout analysis",
+        "slope_3d": "Slope Stability 3D",
+        "test_pits": "Test Pits",
+        "foundation": "Foundation analysis",
+        "slope_2d": "Slope Stability 2D",
+        "stratigraphic": "Stratigraphic Profile",
+        "finite_element": "Finite element analysis",
+        "density": "In situ density test",
+        "seepage": "Seepage analysis",
+        "dynamic": "Dynamic analysis"
+      },
+      "geologia_items": {
+        "spt": "Standard Penetration Test | SPT",
+        "permeability": "In situ permeability test",
+        "water_table": "Water table measurement",
+        "pit_stability": "Open Pit Stability Analysis",
+        "diamond_drilling": "Diamond Drilling",
+        "geomechanical": "Geomechanical mapping",
+        "stereographic": "Stereographic Projection",
+        "kinematic": "Kinematic analysis",
+        "geological_logging": "Geological Logging",
+        "geological_mapping": "Geological Mapping",
+        "slope_inspection": "Rock slope inspection"
+      }
+    },
+    "more_services": {
+      "title": "More Services We Offer",
+      "geologia": "Geology",
+      "geofisica": "Geophysics",
+      "capacitaciones": "In-House Training"
     },
     "about": {
       "title": "About Us",

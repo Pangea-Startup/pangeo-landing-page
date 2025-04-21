@@ -5,15 +5,15 @@ header {
 }
 
 /* Estilo del hero */
-.hero-section-geologia {
+.hero-section-geotecnia {
     position: relative;
     height: 750px; /* Incrementamos la altura */
     overflow: hidden;
 }
 
 /* Fondo con la imagen */
-.hero-background-geologia {
-    background-image: url('../../assets/geologia-bg.jpg'); /* Ajustar ruta si es necesario */
+.hero-background-geotecnia {
+    background-image: url('../../assets/Portada-sismologia-1.png'); /* Ajustar ruta si es necesario */
     background-size: cover;
     background-position: top;
     background-repeat: no-repeat;
@@ -71,14 +71,14 @@ body {
 }
 
 /* Estilo del hero */
-.hero-section-geologia {
+.hero-section-geotecnia {
     position: relative;
     overflow: hidden;
     height: 80vh;
     padding-top: 80px;
 }
 
-.hero-section-geologia img {
+.hero-section-geotecnia img {
     width: 100%;
     height: 100%;
     object-fit: cover;
