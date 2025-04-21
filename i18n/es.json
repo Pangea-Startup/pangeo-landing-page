@@ -21,34 +21,35 @@
       "capacitaciones_title": "Capacitaciones in-house",
       "capacitaciones_description": "Nuestras capacitaciones permiten fortalecer los conocimientos y aptitudes que requieren su equipo de trabajo mediante programas especializados y personalizados diseñados exclusivamente para atender el objetivo específico de su organización.",
       "sismologia_title":"Sismologia",
-      "sismologia_description":"Evaluamos los aspectos sismológicos considerando la ubicación del proyecto y las propiedades sísmicas del suelo, mediante estudios de peligrosidad sísmica, análisis de amplificación y licuación, con el objetivo de garantizar la seguridad y la vida útil de la estructura proyectada.",
-      "geotecnia_items": {
-        "runout": "Análisis de movimientos de masas",
-        "slope_3d": "Análisis de Estabilidad 3D",
-        "test_pits": "Ejecución de Calicata",
-        "foundation": "Análisis de cimentaciones",
-        "slope_2d": "Análisis de Estabilidad 2D",
-        "stratigraphic": "Perfil Estratigráfico",
-        "finite_element": "Análisis de elementos finitos",
-        "density": "Ensayo de densidad in situ",
-        "seepage": "Análisis de Filtraciones",
-        "dynamic": "Análisis dinámicos"
-      },
-      "geologia_items": {
-        "spt": "Ensayo de Penetración Estándar | SPT",
-        "permeability": "Ensayo de permeabilidad in situ",
-        "water_table": "Medición del Nivel freático",
-        "pit_stability": "Análisis Estabilidad del Tajo",
-        "diamond_drilling": "Perforación de diamantina",
-        "geomechanical": "Estación Geomecánica",
-        "stereographic": "Proyección Estereográfica",
-        "kinematic": "Análisis Cinemático",
-        "geological_logging": "Logueo geológico",
-        "geological_mapping": "Mapeo Geológico",
-        "slope_inspection": "Inspección de taludes rocosos"
-      }
+      "sismologia_description":"Evaluamos los aspectos sismológicos considerando la ubicación del proyecto y las propiedades sísmicas del suelo, mediante estudios de peligrosidad sísmica, análisis de amplificación y licuación, con el objetivo de garantizar la seguridad y la vida útil de la estructura proyectada."
     },
+    "geotecnia_items": {
+      "runout": "Análisis de movimientos de masas",
+      "slope_3d": "Análisis de Estabilidad 3D",
+      "test_pits": "Ejecución de Calicata",
+      "foundation": "Análisis de cimentaciones",
+      "slope_2d": "Análisis de Estabilidad 2D",
+      "stratigraphic": "Perfil Estratigráfico",
+      "finite_element": "Análisis de elementos finitos",
+      "density": "Ensayo de densidad in situ",
+      "seepage": "Análisis de Filtraciones",
+      "dynamic": "Análisis dinámicos"
+    },
+    "geologia_items": {
+      "spt": "Ensayo de Penetración Estándar | SPT",
+      "permeability": "Ensayo de permeabilidad in situ",
+      "water_table": "Medición del Nivel freático",
+      "pit_stability": "Análisis Estabilidad del Tajo",
+      "diamond_drilling": "Perforación de diamantina",
+      "geomechanical": "Estación Geomecánica",
+      "stereographic": "Proyección Estereográfica",
+      "kinematic": "Análisis Cinemático",
+      "geological_logging": "Logueo geológico",
+      "geological_mapping": "Mapeo Geológico",
+      "slope_inspection": "Inspección de taludes rocosos"
+    },    
     "more_services": {
+      "service": "Servicio",
       "title": "Más servicios que ofrecemos",
       "geologia": "Geología",
       "geofisica": "Geofísica",
