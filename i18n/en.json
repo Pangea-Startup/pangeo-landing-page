@@ -11,6 +11,7 @@
       "button": "Discover Pangeo →"
     },
     "services": {
+      "geotecnia_list_intro": "Which include:",
       "title": "Our Services",
       "geotecnia_title": "Geotechnics",
       "geotecnia_description": "We offer specialized geotechnical solutions to ensure the safety and efficiency of your engineering projects. With expertise in soil studies, foundation design, and advanced modeling, we support every phase of your project, from initial exploration to final construction.",
@@ -48,12 +49,36 @@
       "geological_mapping": "Geological Mapping",
       "slope_inspection": "Rock slope inspection"
     },
+    "geofisica_items":{
+      "geofisica_item_refraccion": "Seismic Refraction Test",
+      "geofisica_item_masw_proc": "MASW Test Processing",
+      "geofisica_item_ajuste_espectral": "Spectral Fitting Analysis",
+      "geofisica_item_microtremores": "Microtremor Test",
+      "geofisica_item_masw": "MASW Test"
+    },
+    "capacitaciones_items":{
+      "capacitaciones_item_cursos": "In-House Courses and Training",
+      "capacitaciones_item_operatividad": "Explanation of the operation of geophysics equipment",
+      "capacitaciones_item_aplicacion": "Explanation of the application of geophysics equipment"
+    },
+    "sismologia_items":{
+      "sismologia_item_peligro": "Probabilistic and deterministic seismic hazard studies",
+      "sismologia_item_acelerogramas": "Generation of synthetic accelerograms",
+      "sismologia_item_desagregacion": "Seismic disaggregation analysis",
+      "sismologia_item_respuesta": "Site response analysis",
+      "sismologia_item_licuacion": "Liquefaction analysis"
+    },
     "more_services": {
       "service": "Service",
       "title": "More Services We Offer",
       "geologia": "Geology",
       "geofisica": "Geophysics",
-      "capacitaciones": "In-House Training"
+      "capacitaciones": "In-House Training",
+      "service_geotecnia": "Geotechnical Services",
+      "service_geologia": "Geology Services",
+      "service_geofisica": "Geophysics Services",
+      "service_capacitaciones": "In-House Training Services",
+      "service_sismologia": "Seismology Services"
     },
     "about": {
       "title": "About Us",

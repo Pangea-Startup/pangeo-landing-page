@@ -11,6 +11,7 @@
       "button": "Conozca Pangeo →"
     },
     "services": {
+      "geotecnia_list_intro": "Los cuales incluyen:",
       "title": "Nuestros Servicios",
       "geotecnia_title": "Geotecnia",
       "geotecnia_description": "Ofrecemos soluciones especializadas en geotecnia para garantizar la seguridad y eficiencia de sus proyectos de ingeniería. Con experiencia en estudios de suelos, diseño de cimentaciones y modelamiento avanzado, acompañamos cada fase de su proyecto, desde la exploración inicial hasta su fase final de construcción.",
@@ -48,12 +49,36 @@
       "geological_mapping": "Mapeo Geológico",
       "slope_inspection": "Inspección de taludes rocosos"
     },    
+    "geofisica_items":{
+      "geofisica_item_refraccion": "Ensayo de Refracción Sísmica",
+      "geofisica_item_masw_proc": "Procesamiento de ensayo MASW",
+      "geofisica_item_ajuste_espectral": "Análisis de Ajuste Espectral",
+      "geofisica_item_microtremores": "Ensayo de Microtremores",
+      "geofisica_item_masw": "Ensayo MASW"
+    },
+    "capacitaciones_items":{
+      "capacitaciones_item_cursos": "Dictado de cursos y capacitaciones In House",
+      "capacitaciones_item_operatividad": "Explicación de la operatividad de equipos de geofísica",
+      "capacitaciones_item_aplicacion": "Explicación de la aplicación de equipos de geofísica"
+    },
+    "sismologia_items":{
+      "sismologia_item_peligro": "Estudios de peligro sísmico probabilístico y determinístico",
+      "sismologia_item_acelerogramas": "Generación de acelerogramas sintéticos",
+      "sismologia_item_desagregacion": "Análisis de desagregación sísmica",
+      "sismologia_item_respuesta": "Análisis de respuesta de sitio",
+      "sismologia_item_licuacion": "Análisis de licuación"    
+    },
     "more_services": {
       "service": "Servicio",
       "title": "Más servicios que ofrecemos",
       "geologia": "Geología",
       "geofisica": "Geofísica",
-      "capacitaciones": "Capacitaciones in-house"
+      "capacitaciones": "Capacitaciones in-house",
+      "service_geotecnia": "Servicios en Geotecnia",
+      "service_geologia": "Servicios en Geología",
+      "service_geofisica": "Servicios en Geofísica",
+      "service_capacitaciones": "Servicios en Capacitaciones In-House",
+      "service_sismologia": "Servicios en Sismología"
     },
     "about": {
       "title": "Nosotros",
