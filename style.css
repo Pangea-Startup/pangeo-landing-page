@@ -5,6 +5,42 @@
 /* Importar la fuente Raleway */
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap');
 
+/* --- Modo Oscuro --- */
+body.dark {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+.dark header, .dark footer {
+    background-color: #1a1a1a !important;
+}
+
+.dark .bg-white {
+    background-color: #1e1e1e !important;
+}
+
+.dark .text-gray-800, .dark .text-black {
+    color: #e0e0e0 !important;
+}
+
+.dark .text-gray-600, .dark .text-gray-700 {
+    color: #bbbbbb !important;
+}
+
+.dark .service-image-wrapper .service-link {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.dark .btn-hero {
+    background-color: #333;
+    color: #fff;
+}
+
+.dark .btn-hero:hover {
+    background-color: #555;
+}
+
+
 /* Fuente general */
 body {
     font-family: 'Raleway', sans-serif;

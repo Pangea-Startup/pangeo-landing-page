@@ -285,4 +285,39 @@ document.addEventListener("DOMContentLoaded", () => {
             link.setAttribute("href", isSubfolder ? `../index.html${href}` : `.${href}`);
         }
     });
+
+    const themeToggle = document.getElementById("theme-toggle");
+    const themeIcon = document.getElementById("theme-icon");
+    
+    if (themeToggle && themeIcon) {
+        // Función para alternar tema y cambiar icono
+        function toggleTheme() {
+            const html = document.documentElement;
+            const isDark = html.classList.toggle("dark");
+    
+            if (isDark) {
+                localStorage.setItem("theme", "dark");
+                themeIcon.innerHTML = `
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M21 12.79A9 9 0 1111.21 3a7 7 0 009.79 9.79z" />`; // Luna
+            } else {
+                localStorage.setItem("theme", "light");
+                themeIcon.innerHTML = `
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M12 4V2m0 20v-2m8-8h2M2 12h2m15.07 7.07l1.42 1.42M4.93 4.93L3.51 3.51m16.56 0l-1.42 1.42M4.93 19.07l-1.42 1.42M16 12a4 4 0 11-8 0 4 4 0 018 0z" />`; // Sol
+            }
+        }
+    
+        themeToggle.addEventListener("click", toggleTheme);
+    
+        // Aplicar tema guardado al cargar
+        const savedTheme = localStorage.getItem("theme");
+        if (savedTheme === "dark") {
+            document.documentElement.classList.add("dark");
+            themeIcon.innerHTML = `
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M21 12.79A9 9 0 1111.21 3a7 7 0 009.79 9.79z" />`; // Luna
+        }
+    }    
+
 });
