@@ -82,16 +82,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Lista de imágenes para Geofísica y Sismología
 let images = [
-    '../assets/geofisica y sismologia/1 Ensayo de Refracción Sísmica.jpeg',
-    '../assets/geofisica y sismologia/10.jpg',
-    '../assets/geofisica y sismologia/11 espectro3D.png',
-    '../assets/geofisica y sismologia/12 figure.png',
-    '../assets/geofisica y sismologia/13 Procesamiento de ensayo MASW.png',
-    '../assets/geofisica y sismologia/3.jpg',
-    '../assets/geofisica y sismologia/5 Ensayo MASW.jpg',
-    '../assets/geofisica y sismologia/9 Ensayo de Microtremores.jpg',
-    '../assets/geofisica y sismologia/Análisis de Ajuste Espectral.png',
-    '../assets/geofisica y sismologia/Análisis de Respuesta de Sitio.png'
+    '../assets/sismologia/Análisis de Ajuste Espectral.png',
+    '../assets/sismologia/Análisis de Respuesta de Sitio.png',
+    '../assets/sismologia/sismologia-ima.png',
 ];
 
 let currentIndex = 0;
