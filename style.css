@@ -5,40 +5,6 @@
 /* Importar la fuente Raleway */
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap');
 
-/* --- Modo Oscuro --- */
-body.dark {
-    background-color: #121212;
-    color: #e0e0e0;
-}
-
-.dark header, .dark footer {
-    background-color: #1a1a1a !important;
-}
-
-.dark .bg-white {
-    background-color: #1e1e1e !important;
-}
-
-.dark .text-gray-800, .dark .text-black {
-    color: #e0e0e0 !important;
-}
-
-.dark .text-gray-600, .dark .text-gray-700 {
-    color: #bbbbbb !important;
-}
-
-.dark .service-image-wrapper .service-link {
-    background-color: rgba(255, 255, 255, 0.1);
-}
-
-.dark .btn-hero {
-    background-color: #333;
-    color: #fff;
-}
-
-.dark .btn-hero:hover {
-    background-color: #555;
-}
 
 
 /* Fuente general */
@@ -434,4 +400,149 @@ nav a:hover {
     .hidden.md\\:flex {
         display: none; /* Esconde los botones de idioma en pantallas pequeñas */
     }
+}
+
+/* 🌙 Modo Oscuro - Fondo y texto base */
+body.dark-mode {
+    background-color: #1a202c; /* Fondo oscuro general */
+    color: #f7fafc; /* Texto claro */
+}
+
+/* 🌙 Sección Nosotros - Fondo y texto */
+body.dark-mode #nosotros {
+    background: linear-gradient(to bottom, #1a202c, #2d3748, #1a202c); /* Gradiente oscuro */
+}
+
+body.dark-mode #nosotros h2,
+body.dark-mode #nosotros p {
+    color: #f7fafc; /* Texto claro */
+}
+
+/* 🌙 Navegación en modo oscuro */
+body.dark-mode nav a {
+    color: #edf2f7; /* Casi blanco */
+}
+
+body.dark-mode nav a:hover {
+    color: #a0aec0; /* Gris claro */
+}
+
+/* 🌙 Títulos */
+body.dark-mode h1, 
+body.dark-mode h2, 
+body.dark-mode .subtitle, 
+body.dark-mode .content-text {
+    color: #f7fafc;
+}
+
+body.dark-mode section:not(.hero-section) h2,
+body.dark-mode section:not(.hero-section) h3,
+body.dark-mode section:not(.hero-section) p {
+    color: #f7fafc;
+}
+
+/* 🌙 Botones */
+body.dark-mode .btn-hero {
+    background-color: white;
+    color: #1a202c;
+}
+
+body.dark-mode .btn-hero:hover {
+    background-color: #f7fafc;
+}
+
+/* 🌙 Fondo de servicios o cajas claras */
+body.dark-mode .service-image-wrapper {
+    background: #2d3748; /* Un gris más oscuro */
+}
+
+body.dark-mode section:not(.hero-section) {
+    background-color: #1a202c;
+    color: #f7fafc;
+}
+
+/* 🌙 Footer - Fondo y texto claros */
+body.dark-mode footer {
+    background-color: #1a202c;
+    color: #f7fafc;
+}
+
+body.dark-mode footer a {
+    color: #f7fafc; /* Blanco para enlaces */
+}
+
+body.dark-mode footer a:hover {
+    color: #90cdf4; /* Azul claro al pasar el mouse */
+}
+
+body.dark-mode footer .social-icon img {
+    filter: brightness(5) invert(1); /* Hace los íconos blancos */
+}
+
+/* 🌙 Footer logo en modo oscuro */
+body.dark-mode footer img[src="assets/Logo-1.png"] {
+    content: url("assets/Logo-4.png"); /* Cambia al logo claro */
+}
+
+
+/* 🌙 Sección de Contacto: Contenedor del formulario */
+body.dark-mode #contacto .bg-white {
+    background-color: #2d3748 !important; /* Fondo oscuro para el contenedor */
+    color: #f7fafc; /* Texto claro dentro del contenedor */
+}
+
+/* 🌙 Textos del formulario */
+body.dark-mode #contacto h2,
+body.dark-mode #contacto p,
+body.dark-mode #contacto label {
+    color: #f7fafc; /* Texto claro */
+}
+
+/* 🌙 Inputs y Textareas dentro del formulario */
+body.dark-mode #contacto input,
+body.dark-mode #contacto textarea {
+    background-color: #4a5568; /* Fondo de campos */
+    color: #f7fafc; /* Texto dentro */
+    border-color: #718096; /* Borde más claro */
+}
+
+body.dark-mode #contacto input::placeholder,
+body.dark-mode #contacto textarea::placeholder {
+    color: #cbd5e0; /* Placeholder claro */
+}
+
+/* 🌙 Botón de enviar */
+body.dark-mode #contacto button {
+    background-color: #587299; /* Igual al fondo del contenedor */
+    color: #f7fafc; /* Texto claro */
+    border: 1px solid #718096;
+}
+
+body.dark-mode #contacto button:hover {
+    background-color: #4a5568; /* Más claro al hover */
+}
+
+/* Animación al cambiar de ícono (tema claro/oscuro) */
+#theme-icon {
+    transition: transform 0.4s ease-in-out, color 0.3s ease-in-out;
+}
+
+#theme-toggle.clicked #theme-icon {
+    transform: rotate(180deg);
+}
+
+/* 🌗 Transición suave en fondo y color, excepto header y hero */
+body section:not(.hero-section),
+body footer,
+body .service-image-wrapper,
+body input,
+body textarea,
+body label,
+body h1, 
+body h2, 
+body .subtitle, 
+body .content-text,
+body p,
+body a {
+    transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease;
 }
