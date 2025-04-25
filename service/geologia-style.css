@@ -465,3 +465,162 @@ footer {
         margin: 0; /* Centra el texto sin márgenes innecesarios */
     }
 }
+
+/* 🌙 Hero Geotecnia permanece sin cambios visuales */
+body.dark-mode .hero-section-geotecnia {
+    background: inherit; /* No afecta el fondo */
+}
+
+body.dark-mode .hero-section-geologia h1,
+body.dark-mode .hero-section-geologia h2 {
+    color: #f7fafc; /* Asegura que el texto sea claro si es necesario */
+}
+
+/* 🌙 Sección Principal de Geotecnia */
+body.dark-mode .geologia-services-section {
+    background-color: #1a202c; /* Fondo oscuro */
+    color: #f7fafc; /* Texto claro */
+}
+
+body.dark-mode .geologia-services-section h1,
+body.dark-mode .geologia-services-section p,
+body.dark-mode .geologia-services-section li {
+    color: #f7fafc;
+}
+
+/* 🌙 Carousel Geotecnia */
+body.dark-mode .carousel-container {
+    background-color: #2d3748; /* Fondo más oscuro del carousel */
+}
+
+body.dark-mode .carousel-button svg {
+    stroke: #f7fafc; /* Iconos blancos */
+}
+
+
+body.dark-mode .services-section h3,
+body.dark-mode .services-section a {
+    color: #f7fafc;
+}
+
+body.dark-mode .services-section a:hover {
+    color: #90cdf4; /* Azul claro al hover */
+}
+
+/* 🌙 Difuminación tipo "Nosotros" para Servicios adicionales SOLO en modo oscuro */
+body.dark-mode .services-section {
+    background: linear-gradient(to bottom, #1a202c, #2d3748, #1a202c);
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+/* 🌞 Modo claro - Sección Servicios mantiene su fondo original */
+.services-section {
+    background: linear-gradient(to bottom, #ffffff, #f7fafc, #ffffff); /* Ajusta al fondo claro original */
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+
+
+/* 🌙 Sección de Contacto específica */
+body.dark-mode #contacto {
+    background-color: #1a202c; /* Fondo general oscuro */
+}
+
+body.dark-mode #contacto .bg-white {
+    background-color: #2d3748 !important; /* Fondo del contenedor oscuro */
+    color: #f7fafc;
+}
+
+body.dark-mode #contacto h2,
+body.dark-mode #contacto p,
+body.dark-mode #contacto label {
+    color: #f7fafc;
+}
+
+body.dark-mode #contacto input,
+body.dark-mode #contacto textarea {
+    background-color: #4a5568;
+    color: #f7fafc;
+    border-color: #718096;
+}
+
+body.dark-mode #contacto input::placeholder,
+body.dark-mode #contacto textarea::placeholder {
+    color: #cbd5e0;
+}
+
+body.dark-mode #contacto button {
+    background-color: #587299;
+    color: #f7fafc;
+    border: 1px solid #718096;
+}
+
+body.dark-mode #contacto button:hover {
+    background-color: #4a5568;
+}
+
+body.dark-mode section:not(.hero-section-geotecnia) {
+    background-color: #1a202c;
+    color: #f7fafc;
+}
+
+/* 🌙 Footer - Fondo y texto claros */
+body.dark-mode footer {
+    background-color: #1a202c;
+    color: #f7fafc;
+}
+
+body.dark-mode footer a {
+    color: #f7fafc; /* Blanco para enlaces */
+}
+
+body.dark-mode footer a:hover {
+    color: #90cdf4; /* Azul claro al pasar el mouse */
+}
+
+body.dark-mode footer .social-icon img {
+    filter: brightness(5) invert(1); /* Hace los íconos blancos */
+}
+
+/* 🌙 Footer logo en modo oscuro */
+body.dark-mode footer img[src="../assets/Logo-1.png"] {
+    content: url("../assets/Logo-4.png"); /* Cambia al logo claro */
+}
+
+/* Animación al cambiar de ícono (tema claro/oscuro) */
+#theme-icon {
+    transition: transform 0.4s ease-in-out, color 0.3s ease-in-out;
+}
+
+#theme-toggle.clicked #theme-icon {
+    transform: rotate(180deg);
+}
+
+/* 🌗 Transición suave en fondo y color, excepto header y hero */
+body section:not(.hero-section),
+body footer,
+body .service-image-wrapper,
+body input,
+body textarea,
+body label,
+body h1, 
+body h2, 
+body .subtitle, 
+body .content-text,
+body p,
+body a {
+    transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease;
+}
+
+/* 🌙 Fondo Global Asegurado */
+body.dark-mode {
+    background-color: #1a202c;
+    color: #f7fafc;
+}
+
+/* 🌙 Fondo base para todo el body excepto hero */
+body.dark-mode > *:not(header):not(.hero-section):not(.hero-section-geotecnia) {
+    background-color: #1a202c !important;
+}
