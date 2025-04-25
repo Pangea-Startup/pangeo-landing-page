@@ -25,10 +25,23 @@
                 <a href="../index.html#nosotros" class="text-white px-4 py-2" data-i18n="header.menu_nosotros"></a>
                 <a href="../index.html#contacto" class="text-white px-4 py-2" data-i18n="header.menu_contacto"></a>
             </nav>
-            <!-- Botones de idioma -->
-            <div id="language-switch" class="flex space-x-4">
-                <button data-lang-switch="es" class="text-white hover:underline">ES</button>
-                <button data-lang-switch="en" class="text-white hover:underline">EN</button>
+            <!-- Botones idioma + tema -->
+            <div class="flex items-center space-x-4">
+                <!-- Botón para cambiar modo -->
+                <div id="theme-toggle" class="ml-4 cursor-pointer">
+                    <svg id="theme-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <!-- Ícono inicial del sol -->
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M12 4V2m0 20v-2m8-8h2M2 12h2m15.07 7.07l1.42 1.42M4.93 4.93L3.51 3.51m16.56 0l-1.42 1.42M4.93 19.07l-1.42 1.42M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                </div>                
+
+    
+                <!-- Idioma -->
+                <div id="language-switch" class="flex space-x-2">
+                    <button data-lang-switch="es" class="text-white hover:underline">ES</button>
+                    <button data-lang-switch="en" class="text-white hover:underline">EN</button>
+                </div>
             </div>
             <!-- Menú hamburguesa -->
             <button id="menu-toggle" class="block md:hidden focus:outline-none">
@@ -114,7 +127,7 @@
           <a href="capacitaciones-in-house.html " data-i18n="services.capacitaciones_title"></a>
           <a href="sismologia.html" data-i18n="services.sismologia_title"></a>
         </div>
-      </section>
+    </section>
 
 
         <!-- Sección de Contacto -->
