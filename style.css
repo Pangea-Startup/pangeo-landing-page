@@ -22,7 +22,9 @@ body {
     position: absolute;
     inset: 0;
     z-index: 1;
+    transition: background-image 1s ease-in-out;
 }
+
 
 
     /* Estilo personalizado para el header */
