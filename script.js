@@ -1,6 +1,8 @@
 // Lógica para el formulario de contacto y funcionalidades adicionales
 document.addEventListener("DOMContentLoaded", () => {
 
+
+    
         // 🌙☀️ Modo Oscuro Manual (MOVER AQUÍ)
     const themeIcon = document.getElementById("theme-icon");
     console.log("DOM fully loaded"); // 👈 Verificamos si entra aquí
@@ -330,4 +332,23 @@ document.addEventListener("DOMContentLoaded", () => {
             link.setAttribute("href", isSubfolder ? `../index.html${href}` : `.${href}`);
         }
     });
+
+    const heroBackground = document.querySelector('.hero-background');
+    const heroImages = [
+        'assets/fondo-pangeo-2.png',
+        'assets/fondo-pangeo-3.png',
+        'assets/fondo-pangeo.png'
+    ];
+    let currentHeroIndex = 0;
+
+    function changeHeroBackground() {
+        heroBackground.style.backgroundImage = `url('${heroImages[currentHeroIndex]}')`;
+        currentHeroIndex = (currentHeroIndex + 1) % heroImages.length;
+    }
+
+    // Mostrar la primera imagen al cargar
+    changeHeroBackground();
+    // Cambiar cada 5 segundos
+    setInterval(changeHeroBackground, 5000);
+    
 });
