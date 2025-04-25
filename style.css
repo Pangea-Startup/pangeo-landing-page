@@ -14,7 +14,6 @@ body {
 
 /* Hero Section Background */
 .hero-background {
-    background-image: url('assets/fondo-pangeo.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -22,8 +21,26 @@ body {
     position: absolute;
     inset: 0;
     z-index: 1;
-    transition: background-image 1s ease-in-out;
+
+    animation: backgroundCarousel 20s infinite ease-in-out;
 }
+
+/* Carrusel de fondos */
+@keyframes backgroundCarousel {
+    0% {
+        background-image: url('assets/fondo-pangeo.png');
+    }
+    33% {
+        background-image: url('assets/fondo-pangeo-2.png');
+    }
+    66% {
+        background-image: url('assets/fondo-pangeo-3.png');
+    }
+    100% {
+        background-image: url('assets/fondo-pangeo.png');
+    }
+}
+
 
 
 
