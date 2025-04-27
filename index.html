@@ -12,7 +12,7 @@
 </head>
 <body class="bg-gray-100 font-sans leading-normal tracking-normal">
 
-    <header class="bg-transparent fixed w-full top-0 z-10">
+    <header class="bg-[#1b5757] fixed w-full top-0 z-50">
         <div class="container mx-auto flex justify-between items-center py-6 px-8">
             <!-- Logo -->
             <div>
@@ -20,7 +20,7 @@
             </div>            
     
             <!-- Navegación centrada (pantallas grandes) -->
-            <nav class="hidden md:flex justify-center space-x-8 flex-1">
+            <nav class="hidden lg:flex justify-center space-x-8 flex-1">
                 <a href="#inicio" class="text-white px-4 py-2" data-i18n="header.menu_inicio"></a>
                 <a href="#servicios" class="text-white px-4 py-2" data-i18n="header.menu_servicios"></a>
                 <a href="#nosotros" class="text-white px-4 py-2" data-i18n="header.menu_nosotros"></a>
@@ -28,16 +28,15 @@
             </nav>
     
             <!-- Botones idioma + tema -->
-            <div class="flex items-center space-x-4">
+            <div class="flex items-center space-x-3">
                 <!-- Botón para cambiar modo -->
-                <div id="theme-toggle" class="ml-4 cursor-pointer">
+                <div id="theme-toggle" class="cursor-pointer">
                     <svg id="theme-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <!-- Ícono inicial del sol -->
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                               d="M12 4V2m0 20v-2m8-8h2M2 12h2m15.07 7.07l1.42 1.42M4.93 4.93L3.51 3.51m16.56 0l-1.42 1.42M4.93 19.07l-1.42 1.42M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
                     </svg>
                 </div>                
-
     
                 <!-- Idioma -->
                 <div id="language-switch" class="flex space-x-2">
@@ -47,7 +46,7 @@
             </div>
     
             <!-- Menú hamburguesa (pantallas pequeñas) -->
-            <button id="menu-toggle" class="block md:hidden focus:outline-none ml-4">
+            <button id="menu-toggle" class="block lg:hidden focus:outline-none ml-4">
                 <svg class="h-8 w-8 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
@@ -55,13 +54,14 @@
         </div>
     
         <!-- Menú móvil (pantallas pequeñas) -->
-        <nav id="mobile-menu" class="hidden">
+        <nav id="mobile-menu" class="hidden bg-[#1b5757]">
             <a href="#inicio" class="block text-white px-4 py-2" data-i18n="header.menu_inicio"></a>
             <a href="#servicios" class="block text-white px-4 py-2" data-i18n="header.menu_servicios"></a>
             <a href="#nosotros" class="block text-white px-4 py-2" data-i18n="header.menu_nosotros"></a>
             <a href="#contacto" class="block text-white px-4 py-2" data-i18n="header.menu_contacto"></a>
         </nav>
     </header>
+    
     
     <!-- Hero Section -->
     <section class="hero-section flex items-center justify-center h-screen relative">
