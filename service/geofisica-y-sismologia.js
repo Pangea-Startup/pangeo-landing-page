@@ -90,7 +90,7 @@ let images = [
     '../assets/geofisica y sismologia/5 Ensayo MASW.jpg',
     '../assets/geofisica y sismologia/9 Ensayo de Microtremores.jpg',
     '../assets/geofisica y sismologia/7. Multiple filter analysis (MFA).png',
-    '../assets/geofisica y sismologia/11 espectro3D.png'
+    '../assets/geofisica y sismologia/11 espectro3D.png',
 ];
 
 let currentIndex = 0;
@@ -138,14 +138,26 @@ function prevImage() {
     }, 750); // Ajusté el tiempo para que no desaparezca antes de tiempo
 }
 
-// Cambio automático cada 5 segundos
-setInterval(nextImage, 5000);
+let intervalId; // Nuevo intervalo global para este servicio
+
+function startAutoSlide() {
+    clearInterval(intervalId); // Detiene cualquier intervalo previo
+    intervalId = setInterval(nextImage, 8000); // Reinicia con la función correcta
+}
+
+// Ajustar botones para reiniciar temporizador correctamente
+document.querySelector('.carousel-button.left-2').addEventListener('click', () => {
+    prevImage();
+    startAutoSlide(); // Reinicia cuando el usuario interactúa
+});
+
+document.querySelector('.carousel-button.right-2').addEventListener('click', () => {
+    nextImage();
+    startAutoSlide(); // Reinicia cuando el usuario interactúa
+});
 
 // Mostrar la imagen inicial al cargar la página
 document.addEventListener('DOMContentLoaded', () => {
     showImage(currentIndex);
+    startAutoSlide(); // Inicia el auto-slide correctamente
 });
-
-// Eventos para botones de navegación
-document.querySelector('.carousel-button.left-2').addEventListener('click', prevImage);
-document.querySelector('.carousel-button.right-2').addEventListener('click', nextImage);

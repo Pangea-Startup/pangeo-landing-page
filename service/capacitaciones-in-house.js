@@ -79,7 +79,7 @@ let imagesCapacitaciones = [
     '../assets/capacitaciones in-house/1. Dictado de cursos y capacitaciones In House.jfif',
     '../assets/capacitaciones in-house/2. Explicación de la operatividad de equipos de geofísica.jpeg',
     '../assets/capacitaciones in-house/3. Explicación de la aplicación de equipos de geofísica.jpeg',
-    '../assets/capacitaciones in-house/Portada Capacitaciones.jfif'
+    '../assets/capacitaciones in-house/Portada Capacitaciones.jfif',
 ];
 
 let currentIndexCapacitaciones = 0;
@@ -127,14 +127,25 @@ function prevImageCapacitaciones() {
     }, 750); // Ajusté el tiempo para que no desaparezca antes de tiempo
 }
 
-// Cambio automático cada 5 segundos para Capacitaciones
-setInterval(nextImageCapacitaciones, 5000);
+let intervalIdCapacitaciones; // Guardamos el intervalo global
 
+function startAutoSlideCapacitaciones() {
+    clearInterval(intervalIdCapacitaciones); // Detiene cualquier intervalo previo
+    intervalIdCapacitaciones = setInterval(nextImageCapacitaciones, 8000); // Reinicia
+}
+
+// Ajustar botones para reiniciar temporizador
+document.querySelector('.carousel-button.left-2').addEventListener('click', () => {
+    prevImageCapacitaciones();
+    startAutoSlideCapacitaciones(); // 🔄 Reinicia cuando el usuario interactúa
+});
+
+document.querySelector('.carousel-button.right-2').addEventListener('click', () => {
+    nextImageCapacitaciones();
+    startAutoSlideCapacitaciones(); // 🔄 Reinicia cuando el usuario interactúa
+});
 // Mostrar la imagen inicial al cargar la página para Capacitaciones
 document.addEventListener('DOMContentLoaded', () => {
     showImageCapacitaciones(currentIndexCapacitaciones);
+    startAutoSlideCapacitaciones(); // 🔄 Empieza automáticamente
 });
-
-// Eventos para botones de navegación para Capacitaciones
-document.querySelector('.carousel-button.left-2').addEventListener('click', prevImageCapacitaciones);
-document.querySelector('.carousel-button.right-2').addEventListener('click', nextImageCapacitaciones);
