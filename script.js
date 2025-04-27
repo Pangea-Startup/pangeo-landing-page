@@ -94,12 +94,12 @@ document.addEventListener("DOMContentLoaded", () => {
         lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
 
         if (!isMenuActive) {
-            if (currentScroll > heroSection.offsetHeight - 50) {
-                header.classList.add("scrolled");
+            if (currentScroll === 0) {
+                header.classList.remove("scrolled"); // transparente solo si scroll === 0
             } else {
-                header.classList.remove("scrolled");
+                header.classList.add("scrolled"); // fondo visible al hacer cualquier scroll
             }
-        }
+        }        
     };
 
     const observer = new IntersectionObserver((entries) => {

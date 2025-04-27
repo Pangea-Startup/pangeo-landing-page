@@ -490,7 +490,7 @@ body.dark-mode .geotecnia-services-section li {
 
 /* 🌙 Carousel Geotecnia */
 body.dark-mode .carousel-container {
-    background-color: #2d3748; /* Fondo más oscuro del carousel */
+    background-color: transparent; /* Sin fondo grisáceo */
 }
 
 body.dark-mode .carousel-button svg {
