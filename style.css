@@ -336,30 +336,30 @@ nav a:hover {
     transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
-/* Animación del menú hamburguesa */
+/* Estado inicial y animación del menú móvil */
 #mobile-menu {
     display: none;
     flex-direction: column;
     position: fixed;
     top: 0;
-    left: -100%; /* El menú inicia fuera de la pantalla */
-    background-color: #1a202c;
+    left: -100%;
+    background-color: #1a202c; /* o #1b5757 si prefieres */
     width: 100%;
     z-index: 9999;
     opacity: 0;
     transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
 }
 
-/* Mostrar el menú con animación */
 #mobile-menu.active {
     display: flex;
     opacity: 1;
-    transform: translateX(0); /* El menú se desliza desde la izquierda */
+    transform: translateX(0); /* Se desliza desde la izquierda */
 }
 
 #menu-toggle {
     cursor: pointer;
 }
+
 
 
 /* Efecto de elevación en iconos de redes sociales */
@@ -372,9 +372,27 @@ nav a:hover {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra suave */
 }
 
+@media (max-width: 1024px) {
+    #mobile-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #1a202c;
+        width: 100%;
+        z-index: 50;
+        transition: all 0.3s ease-in-out;
+    }
 
-/* Ocultar menú móvil en pantallas grandes */
-@media (min-width: 768px) {
+    #mobile-menu.active {
+        display: flex;
+    }
+    
+}
+
+@media (max-width: 768px) {
+
     #mobile-menu {
         display: none;
     }
@@ -383,25 +401,6 @@ nav a:hover {
         display: none; /* Aparece solo en pantallas pequeñas */
     }
 
-    nav.md\\:flex {
-        display: flex;
-        justify-content: center; /* Centra las opciones en pantallas grandes */
-        flex-grow: 1; /* Permite centrar completamente en el espacio disponible */
-    }
-
-    .hidden.md\\:flex {
-        display: flex;
-        justify-content: flex-end; /* Botones de idioma alineados a la derecha */
-    }
-
-    #language-switch {
-        top: 50%; /* Mantén centrado verticalmente */
-        right: 40%; /* Ajusta posición horizontal para pantallas grandes */
-    }
-}
-
-/* Mostrar menú móvil en pantallas pequeñas */
-@media (max-width: 768px) {
     #menu-toggle {
         display: flex;
         align-items: center; /* Centrar el contenido verticalmente */
@@ -419,23 +418,8 @@ nav a:hover {
         z-index: 50;
         transition: all 0.3s ease-in-out;
     }
-
-    #language-switch {
-        top: 50%; /* Ajusta más arriba para pantallas pequeñas */
-        right: 50%; /* Centrado horizontalmente */
-
-    }
-
-    nav.md\\:flex {
-        display: flex;
-        justify-content: center; /* Centra las opciones en pantallas grandes */
-        flex-grow: 1;
-    }
-
-    .hidden.md\\:flex {
-        display: none; /* Esconde los botones de idioma en pantallas pequeñas */
-    }
 }
+
 
 /* 🌙 Modo Oscuro - Fondo y texto base */
 body.dark-mode {
