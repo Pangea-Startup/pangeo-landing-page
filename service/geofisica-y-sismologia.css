@@ -344,6 +344,22 @@ footer {
 
 /* HERO SECTION RESPONSIVE */
 @media (max-width: 1024px) {
+    #mobile-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #1b5757;
+        width: 100%;
+        z-index: 50;
+        transition: all 0.3s ease-in-out;
+    }
+
+    #mobile-menu.active {
+        display: flex;
+    }
+    
     .hero-content {
         bottom: 5rem; 
         left: 5rem; 
