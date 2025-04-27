@@ -42,21 +42,17 @@ document.addEventListener("DOMContentLoaded", () => {
     if (menuToggle && mobileMenu) {
         menuToggle.addEventListener("click", () => {
             isMenuActive = !isMenuActive;
-
+    
             if (isMenuActive) {
-                mobileMenu.style.display = "flex";
-                setTimeout(() => {
-                    mobileMenu.classList.add("active");
-                }, 10);
+                mobileMenu.classList.remove("hidden");
+                mobileMenu.classList.add("flex"); // <--- Asegúrate que el menú se muestre como "flex" o "block"
                 header.classList.add("menu-active");
                 header.style.transform = "translateY(0)";
                 window.removeEventListener("scroll", handleScroll);
             } else {
-                mobileMenu.classList.remove("active");
+                mobileMenu.classList.remove("flex");
+                mobileMenu.classList.add("hidden");
                 header.classList.remove("menu-active");
-                setTimeout(() => {
-                    if (!isMenuActive) mobileMenu.style.display = "none";
-                }, 400); // Se espera que termine la animación antes de ocultar
                 window.addEventListener("scroll", handleScroll);
             }
         });

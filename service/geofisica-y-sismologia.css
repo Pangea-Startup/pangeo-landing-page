@@ -626,3 +626,35 @@ body.dark-mode {
 body.dark-mode > *:not(header):not(.hero-section):not(.hero-section-geotecnia) {
     background-color: #1a202c !important;
 }
+
+/* 🌙 Modo Oscuro para íconos personalizados */
+body.dark-mode footer .icon-transition {
+    filter: brightness(5) invert(1); /* Igual que las redes sociales */
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.icon-transition {
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+/* Animación de escala ya aplicada con Tailwind, pero puedes ajustar: */
+a:hover .icon-transition {
+    transform: scale(1.1);
+}
+
+/* 🌐 Íconos de Redes Sociales - Tamaño 20% más grande */
+footer .social-icon img {
+    width: 28px; /* antes 24px */
+    height: 28px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Animación al pasar el mouse */
+footer .social-icon:hover img {
+    transform: scale(1.1); /* efecto suave */
+}
+
+/* 🌙 Modo Oscuro */
+body.dark-mode footer .social-icon img {
+    filter: brightness(5) invert(1); /* mantiene coherencia en oscuro */
+}

@@ -103,6 +103,22 @@ header.menu-active {
     background-color: #1a202c !important; /* Fuerza el fondo azul */
 }
 
+
+/* 🌙 Gradiente con transición cuando scroll o menú activo */
+body.dark-mode header.scrolled,
+body.dark-mode header.menu-active {
+    background-color: #1a202c; /* Usamos color base, gradiente simulado */
+    background-image: linear-gradient(to right, #1a202c, #2d3748, #1a202c); /* Añadimos gradiente */
+}
+
+
+/* 🌙 Transparente mientras está en hero */
+body.dark-mode header:not(.scrolled):not(.menu-active) {
+    background-color: transparent;
+    background-image: none;
+}
+
+
 .hero-section {
     position: relative;
     z-index: 1; /* Mantén esto bajo */
@@ -564,4 +580,36 @@ body .content-text,
 body p,
 body a {
     transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease;
+}
+
+/* 🌙 Modo Oscuro para íconos personalizados */
+body.dark-mode footer .icon-transition {
+    filter: brightness(5) invert(1); /* Igual que las redes sociales */
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.icon-transition {
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+/* Animación de escala ya aplicada con Tailwind, pero puedes ajustar: */
+a:hover .icon-transition {
+    transform: scale(1.1);
+}
+
+/* 🌐 Íconos de Redes Sociales - Tamaño 20% más grande */
+footer .social-icon img {
+    width: 28px; /* antes 24px */
+    height: 28px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Animación al pasar el mouse */
+footer .social-icon:hover img {
+    transform: scale(1.1); /* efecto suave */
+}
+
+/* 🌙 Modo Oscuro */
+body.dark-mode footer .social-icon img {
+    filter: brightness(5) invert(1); /* mantiene coherencia en oscuro */
 }
