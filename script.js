@@ -178,7 +178,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-    let currentLanguage = "es";
+    let currentLanguage = localStorage.getItem("lang") || "es";
     let translations = {};
 
     async function loadTranslations(lang) {
@@ -226,9 +226,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function changeLanguage(lang) {
         currentLanguage = lang;
+        localStorage.setItem("lang", lang); // <--- Esto guarda el idioma
         loadTranslations(lang);
         highlightCurrentLanguage(lang);
     }
+    
 
     function highlightCurrentLanguage(lang) {
         document.querySelectorAll("[data-lang-switch]").forEach((button) => {

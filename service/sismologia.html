@@ -8,11 +8,12 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <!-- Estilo personalizado -->
     <link rel="stylesheet" href="sismologia.css">
+    <link rel="icon" href="../assets/Simbolo_V1.png" type="image/png">
 </head>
 <body class="bg-gray-100 font-sans leading-normal tracking-normal">
 
     <!-- Header -->
-    <header class="bg-[#1b5757] fixed w-full top-0 z-10">
+    <header class="bg-[#1b5757] fixed w-full top-0 z-50">
         <div class="container mx-auto flex justify-between items-center py-6 px-8">
             <!-- Logo -->
             <div>
@@ -212,7 +213,7 @@
         <div class="grid grid-cols-1 md:grid-cols-3 text-center md:text-left items-center mb-8">
             <!-- Logo -->
             <div class="flex justify-center md:justify-start mb-4 md:mb-0">
-                <img src="../assets/Logo-1.png" alt="Logo Pangea" class="h-10 w-auto">
+                <img src="assets/Logo-1.png" alt="Logo Pangea" class="h-10 w-auto">
             </div>
             <!-- Enlaces de Navegación -->
             <div class="flex justify-center space-x-8 font-medium">
@@ -221,12 +222,20 @@
                 <a href="#contacto" class="text-gray-600 hover:text-gray-800" data-i18n="footer.contact_us"></a>
             </div>
             <!-- Información de Contacto -->
-            <div class="text-center md:text-right">
-                <p class="text-gray-600 hover:text-gray-800">
-                    <a href="tel:+51961786564" class="hover:underline" data-i18n="footer.phone"></a>
+            <div class="text-center md:text-right space-y-2">
+                <p class="flex items-center justify-center md:justify-end space-x-2">
+                    <!-- WhatsApp -->
+                    <a href="https://wa.me/51961786564" target="_blank" class="flex items-center space-x-2 transition-transform duration-300 transform hover:scale-110 text-gray-600 hover:text-gray-800 dark:text-gray-300 dark:hover:text-white">
+                        <img src="https://img.icons8.com/ios-filled/24/000000/whatsapp.png" alt="WhatsApp" class="icon-transition" />
+                        <span data-i18n="footer.phone" class="hover:underline"></span>
+                    </a>
                 </p>
-                <p class="text-gray-600 hover:text-gray-800">
-                    <a href="mailto:clientes@pangeoadvisors.com" class="hover:underline" data-i18n="footer.email"></a>
+                <p class="flex items-center justify-center md:justify-end space-x-2">
+                    <!-- Email -->
+                    <a href="mailto:clientes@pangeoadvisors.com" class="flex items-center space-x-2 transition-transform duration-300 transform hover:scale-110 text-gray-600 hover:text-gray-800 dark:text-gray-300 dark:hover:text-white">
+                        <img src="https://img.icons8.com/ios-filled/24/000000/new-post.png" alt="Correo" class="icon-transition" />
+                        <span data-i18n="footer.email" class="hover:underline"></span>
+                    </a>
                 </p>
             </div>
         </div>
