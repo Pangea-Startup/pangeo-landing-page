@@ -1,6 +1,6 @@
 # 📘 Pangeo - Documentación del Proyecto
 
-**Pangeo Advisors** es una empresa especializada en brindar servicios geotécnicos, geofísicos y sismológicos, con el objetivo de garantizar la seguridad y eficiencia de proyectos de ingeniería civil.
+**Pangeo Advisors** es una empresa especializada en brindar servicios geotécnicos, geológicos, geofísicos y sismológicos, con el objetivo de garantizar la seguridad y eficiencia de proyectos de ingeniería civil.
 
 ---
 
