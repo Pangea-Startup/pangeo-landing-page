@@ -95,69 +95,82 @@ let images = [
 
 let currentIndex = 0;
 const imageElement = document.getElementById('carouselImage');
+let transitionInProgress = false;
+let intervalId;
+const TRANSITION_TIME = 800;
 
-// Mostrar la imagen inicial correctamente
+// Mostrar imagen directamente
 function showImage(index) {
     imageElement.src = images[index];
+    imageElement.style.transition = 'none';
     imageElement.style.transform = 'translateX(0)';
 }
 
-// Función para pasar a la siguiente imagen con efecto de cinta
-function nextImage() {
-    imageElement.style.transition = 'transform 0.8s ease-in-out';
-    imageElement.style.transform = 'translateX(-100%)';
-
-    setTimeout(() => {
-        currentIndex = (currentIndex + 1) % images.length;
-        imageElement.src = images[currentIndex];
-        imageElement.style.transition = 'none';  // Elimina la transición para el reinicio
-        imageElement.style.transform = 'translateX(100%)'; // La nueva imagen inicia desde la derecha
-
-        setTimeout(() => {
-            imageElement.style.transition = 'transform 0.8s ease-in-out';
-            imageElement.style.transform = 'translateX(0)'; // Imagen vuelve al centro suavemente
-        }, 50);
-    }, 750); // Ajusté el tiempo para que no desaparezca antes de tiempo
+// Precargar imagen
+function preloadImage(src, callback) {
+    const img = new Image();
+    img.onload = callback;
+    img.src = src;
 }
 
-// Función para pasar a la imagen anterior
-function prevImage() {
-    imageElement.style.transition = 'transform 0.8s ease-in-out';
-    imageElement.style.transform = 'translateX(100%)';
+function changeImage(direction) {
+    if (transitionInProgress) return;
+    transitionInProgress = true;
+
+    const offsetOut = direction === 'next' ? '-100%' : '100%';
+    const offsetIn = direction === 'next' ? '100%' : '-100%';
+
+    // Transición de salida
+    imageElement.style.transition = `transform ${TRANSITION_TIME}ms ease-in-out`;
+    imageElement.style.transform = `translateX(${offsetOut})`;
 
     setTimeout(() => {
-        currentIndex = (currentIndex - 1 + images.length) % images.length;
-        imageElement.src = images[currentIndex];
-        imageElement.style.transition = 'none'; // Elimina la transición para el reinicio
-        imageElement.style.transform = 'translateX(-100%)'; // La nueva imagen inicia desde la izquierda
+        // Cálculo del siguiente índice
+        if (direction === 'next') {
+            currentIndex = (currentIndex + 1) % images.length;
+        } else {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+        }
 
-        setTimeout(() => {
-            imageElement.style.transition = 'transform 0.8s ease-in-out';
-            imageElement.style.transform = 'translateX(0)'; // Imagen vuelve al centro suavemente
-        }, 50);
-    }, 750); // Ajusté el tiempo para que no desaparezca antes de tiempo
+        // Precarga la imagen
+        preloadImage(images[currentIndex], () => {
+            // Reset sin transición
+            imageElement.style.transition = 'none';
+            imageElement.style.transform = `translateX(${offsetIn})`;
+            imageElement.src = images[currentIndex];
+
+            // Forzar reflujo y aplicar entrada
+            void imageElement.offsetWidth;
+
+            imageElement.style.transition = `transform ${TRANSITION_TIME}ms ease-in-out`;
+            imageElement.style.transform = 'translateX(0)';
+
+            setTimeout(() => {
+                transitionInProgress = false;
+            }, TRANSITION_TIME);
+        });
+    }, TRANSITION_TIME);
 }
 
-let intervalId; // Nuevo intervalo global para este servicio
-
+// Auto-slide
 function startAutoSlide() {
-    clearInterval(intervalId); // Detiene cualquier intervalo previo
-    intervalId = setInterval(nextImage, 8000); // Reinicia con la función correcta
+    clearInterval(intervalId);
+    intervalId = setInterval(() => changeImage('next'), 8000);
 }
 
-// Ajustar botones para reiniciar temporizador correctamente
+// Botones
 document.querySelector('.carousel-button.left-2').addEventListener('click', () => {
-    prevImage();
-    startAutoSlide(); // Reinicia cuando el usuario interactúa
+    changeImage('prev');
+    startAutoSlide();
 });
 
 document.querySelector('.carousel-button.right-2').addEventListener('click', () => {
-    nextImage();
-    startAutoSlide(); // Reinicia cuando el usuario interactúa
+    changeImage('next');
+    startAutoSlide();
 });
 
-// Mostrar la imagen inicial al cargar la página
+// Inicialización
 document.addEventListener('DOMContentLoaded', () => {
     showImage(currentIndex);
-    startAutoSlide(); // Inicia el auto-slide correctamente
+    startAutoSlide();
 });

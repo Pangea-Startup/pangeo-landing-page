@@ -84,68 +84,79 @@ let imagesCapacitaciones = [
 
 let currentIndexCapacitaciones = 0;
 const imageElementCapacitaciones = document.getElementById('carouselImage');
+let transitionInProgressCapacitaciones = false;
+let intervalIdCapacitaciones;
+const TRANSITION_TIME_CAPACITACIONES = 800;
 
-// Mostrar la imagen inicial correctamente para Capacitaciones
+// Mostrar imagen directamente
 function showImageCapacitaciones(index) {
     imageElementCapacitaciones.src = imagesCapacitaciones[index];
+    imageElementCapacitaciones.style.transition = 'none';
     imageElementCapacitaciones.style.transform = 'translateX(0)';
 }
 
-// Función para pasar a la siguiente imagen con efecto de cinta para Capacitaciones
-function nextImageCapacitaciones() {
-    imageElementCapacitaciones.style.transition = 'transform 0.8s ease-in-out';
-    imageElementCapacitaciones.style.transform = 'translateX(-100%)';
-
-    setTimeout(() => {
-        currentIndexCapacitaciones = (currentIndexCapacitaciones + 1) % imagesCapacitaciones.length;
-        imageElementCapacitaciones.src = imagesCapacitaciones[currentIndexCapacitaciones];
-        imageElementCapacitaciones.style.transition = 'none';  // Elimina la transición para el reinicio
-        imageElementCapacitaciones.style.transform = 'translateX(100%)'; // La nueva imagen inicia desde la derecha
-
-        setTimeout(() => {
-            imageElementCapacitaciones.style.transition = 'transform 0.8s ease-in-out';
-            imageElementCapacitaciones.style.transform = 'translateX(0)'; // Imagen vuelve al centro suavemente
-        }, 50);
-    }, 750); // Ajusté el tiempo para que no desaparezca antes de tiempo
+// Precargar imagen
+function preloadImageCapacitaciones(src, callback) {
+    const img = new Image();
+    img.onload = callback;
+    img.src = src;
 }
 
-// Función para pasar a la imagen anterior para Capacitaciones
-function prevImageCapacitaciones() {
-    imageElementCapacitaciones.style.transition = 'transform 0.8s ease-in-out';
-    imageElementCapacitaciones.style.transform = 'translateX(100%)';
+function changeImageCapacitaciones(direction) {
+    if (transitionInProgressCapacitaciones) return;
+    transitionInProgressCapacitaciones = true;
+
+    const offsetOut = direction === 'next' ? '-100%' : '100%';
+    const offsetIn = direction === 'next' ? '100%' : '-100%';
+
+    // Transición de salida
+    imageElementCapacitaciones.style.transition = `transform ${TRANSITION_TIME_CAPACITACIONES}ms ease-in-out`;
+    imageElementCapacitaciones.style.transform = `translateX(${offsetOut})`;
 
     setTimeout(() => {
-        currentIndexCapacitaciones = (currentIndexCapacitaciones - 1 + imagesCapacitaciones.length) % imagesCapacitaciones.length;
-        imageElementCapacitaciones.src = imagesCapacitaciones[currentIndexCapacitaciones];
-        imageElementCapacitaciones.style.transition = 'none'; // Elimina la transición para el reinicio
-        imageElementCapacitaciones.style.transform = 'translateX(-100%)'; // La nueva imagen inicia desde la izquierda
+        if (direction === 'next') {
+            currentIndexCapacitaciones = (currentIndexCapacitaciones + 1) % imagesCapacitaciones.length;
+        } else {
+            currentIndexCapacitaciones = (currentIndexCapacitaciones - 1 + imagesCapacitaciones.length) % imagesCapacitaciones.length;
+        }
 
-        setTimeout(() => {
-            imageElementCapacitaciones.style.transition = 'transform 0.8s ease-in-out';
-            imageElementCapacitaciones.style.transform = 'translateX(0)'; // Imagen vuelve al centro suavemente
-        }, 50);
-    }, 750); // Ajusté el tiempo para que no desaparezca antes de tiempo
+        // Precargar imagen
+        preloadImageCapacitaciones(imagesCapacitaciones[currentIndexCapacitaciones], () => {
+            imageElementCapacitaciones.style.transition = 'none';
+            imageElementCapacitaciones.style.transform = `translateX(${offsetIn})`;
+            imageElementCapacitaciones.src = imagesCapacitaciones[currentIndexCapacitaciones];
+
+            void imageElementCapacitaciones.offsetWidth;
+
+            imageElementCapacitaciones.style.transition = `transform ${TRANSITION_TIME_CAPACITACIONES}ms ease-in-out`;
+            imageElementCapacitaciones.style.transform = 'translateX(0)';
+
+            setTimeout(() => {
+                transitionInProgressCapacitaciones = false;
+            }, TRANSITION_TIME_CAPACITACIONES);
+        });
+    }, TRANSITION_TIME_CAPACITACIONES);
 }
 
-let intervalIdCapacitaciones; // Guardamos el intervalo global
-
+// Auto-slide
 function startAutoSlideCapacitaciones() {
-    clearInterval(intervalIdCapacitaciones); // Detiene cualquier intervalo previo
-    intervalIdCapacitaciones = setInterval(nextImageCapacitaciones, 8000); // Reinicia
+    clearInterval(intervalIdCapacitaciones);
+    intervalIdCapacitaciones = setInterval(() => changeImageCapacitaciones('next'), 8000);
 }
 
-// Ajustar botones para reiniciar temporizador
+// Botones con reinicio de temporizador
 document.querySelector('.carousel-button.left-2').addEventListener('click', () => {
-    prevImageCapacitaciones();
-    startAutoSlideCapacitaciones(); // 🔄 Reinicia cuando el usuario interactúa
+    changeImageCapacitaciones('prev');
+    startAutoSlideCapacitaciones();
 });
 
 document.querySelector('.carousel-button.right-2').addEventListener('click', () => {
-    nextImageCapacitaciones();
-    startAutoSlideCapacitaciones(); // 🔄 Reinicia cuando el usuario interactúa
+    changeImageCapacitaciones('next');
+    startAutoSlideCapacitaciones();
 });
-// Mostrar la imagen inicial al cargar la página para Capacitaciones
+
+// Inicialización
 document.addEventListener('DOMContentLoaded', () => {
     showImageCapacitaciones(currentIndexCapacitaciones);
-    startAutoSlideCapacitaciones(); // 🔄 Empieza automáticamente
+    startAutoSlideCapacitaciones();
 });
