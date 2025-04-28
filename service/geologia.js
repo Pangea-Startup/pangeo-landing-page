@@ -84,16 +84,16 @@ document.addEventListener("DOMContentLoaded", () => {
 let images = [
     '../assets/geologia/1.png',
     '../assets/geologia/2.jpg',
-    '../assets/geologia/3.png',
+    '../assets/geologia/3.jpg',
     '../assets/geologia/4.jpg',
     '../assets/geologia/5.png',
     '../assets/geologia/6.jpg',
     '../assets/geologia/7.jpg',
     '../assets/geologia/8.png',
-    '../assets/geologia/9.png',
+    '../assets/geologia/9.jpg',
     '../assets/geologia/10.jpg',
     '../assets/geologia/11.jpg',
-    '../assets/geologia/12.png',
+    '../assets/geologia/12.jpg',
 ];
 
 let currentIndex = 0;

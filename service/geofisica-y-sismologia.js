@@ -83,14 +83,15 @@ document.addEventListener("DOMContentLoaded", () => {
 // Lista de imágenes para Geofísica y Sismología
 let images = [
     '../assets/geofisica y sismologia/1 Ensayo de Refracción Sísmica.jpeg',
-    '../assets/geofisica y sismologia/2. Refraccion sismica.png',
-    '../assets/geofisica y sismologia/3. Sondaje MASW.png',
+    '../assets/geofisica y sismologia/2. Refraccion sismica.jpg',
+    '../assets/geofisica y sismologia/3. Sondaje MASW.jpg',
     '../assets/geofisica y sismologia/13 Procesamiento de ensayo MASW.png',
     '../assets/geofisica y sismologia/3.jpg',
     '../assets/geofisica y sismologia/5 Ensayo MASW.jpg',
     '../assets/geofisica y sismologia/9 Ensayo de Microtremores.jpg',
     '../assets/geofisica y sismologia/7. Multiple filter analysis (MFA).png',
     '../assets/geofisica y sismologia/11 espectro3D.png',
+    '../assets/geofisica y sismologia/12 figure.png',
 ];
 
 let currentIndex = 0;

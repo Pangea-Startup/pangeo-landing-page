@@ -82,9 +82,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Lista de imágenes para Geofísica y Sismología
 let images = [
-    '../assets/sismologia/Análisis de Ajuste Espectral.png',
-    '../assets/sismologia/Análisis de Respuesta de Sitio.png',
-    '../assets/sismologia/sismologia-ima.png',
+    '../assets/sismologia/Análisis de Ajuste Espectral.jpg',
+    '../assets/sismologia/Análisis de Respuesta de Sitio.jpg',
+    '../assets/sismologia/sismologia-ima.jpg',
 ];
 
 let currentIndex = 0;

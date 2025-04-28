@@ -81,16 +81,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
 let images = [
     '../assets/geotecnia/1.png',
-    '../assets/geotecnia/2.png',
-    '../assets/geotecnia/3.png',
-    '../assets/geotecnia/4.png',
-    '../assets/geotecnia/5.png',
-    '../assets/geotecnia/6.png',
+    '../assets/geotecnia/2.jpg',
+    '../assets/geotecnia/3.jpg',
+    '../assets/geotecnia/4.jpg',
+    '../assets/geotecnia/5.jpg',
+    '../assets/geotecnia/6.jpg',
     '../assets/geotecnia/7.jpg',
     '../assets/geotecnia/8.jpg',
-    '../assets/geotecnia/9.png',
+    '../assets/geotecnia/9.jpg',
     '../assets/geotecnia/10.jpg',
-    '../assets/geotecnia/11.png',
+    '../assets/geotecnia/11.jpg',
 ];
 
 let currentIndex = 0;
